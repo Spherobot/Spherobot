@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef GENERAL_H_
-#define GENERAL_H_
+#ifndef GENERAL_ATMEGA2560_H_
+#define GENERAL_ATMEGA2560_H_
 
 //DDR
 #define DDR_IIC			DDRD
@@ -24,4 +24,4 @@
 //#define DEBUG_MPU9150	1
 //#define DEBUG_MADGWICK	1
 
-#endif /* GENERAL_H_ */
+#endif /* GENERAL_ATMEGA2560_H_ */
