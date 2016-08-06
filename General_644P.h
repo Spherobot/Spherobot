@@ -9,6 +9,9 @@
 #ifndef GENERAL_644P_H_
 #define GENERAL_644P_H_
 
+//constants
+#define F_OSC				20000000
+
 //DDRx
 #define DDR_IIC				DDRD
 #define DDR_L6206_DIR		DDRA

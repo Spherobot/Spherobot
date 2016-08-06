@@ -12,7 +12,7 @@
 #include "MPU9150.h"
 
 //choose correct General-File
-//#include "General_644P.h"
+#include "General_644P.h"
 //#include "General_ATMega2560.h"
 
 volatile static uint8_t busFree;
@@ -34,7 +34,7 @@ void IIC_init(uint32_t frequency)
 	callbackFunction = 0;
 	
 	TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
-	TWBR = ((16000000/frequency)-16)/2; 
+	TWBR = ((F_OSC/frequency)-16)/2; 
 	
 	DDR_IIC &= ~((1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA));
 	PORT_IIC |= (1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA); //set internal pull up resistors
@@ -124,7 +124,7 @@ void IIC_RegisterWrite()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_putsln("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -175,7 +175,7 @@ void IIC_RegisterWrite()
 		//Other TWSR codes
 		default:
 			uart0_puts("Write-ERROR: ");
-			uart0_putCharAsDigits((TWSR & 0xF8));
+			uart0_putChar((TWSR & 0xF8));
 			uart0_newline();
 			
 			TWCR |= (1 << TWSTO);
@@ -252,7 +252,7 @@ void IIC_RegisterRead()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_putsln("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -276,7 +276,7 @@ void IIC_RegisterRead()
 			
 		//Data byte has been transmitted; NACK has been recieved
 		case 0x30:
-			uart0_putsln("Data byte has been transmitted; NACK has been recieved");
+			uart0_puts("Data byte has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -313,7 +313,7 @@ void IIC_RegisterRead()
 			
 		//SLA+R has been transmitted; NACK has been recieved
 		case 0x48:
-			uart0_putsln("SLA+R has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+R has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
