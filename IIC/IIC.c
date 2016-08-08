@@ -34,7 +34,12 @@ void IIC_init(uint32_t frequency)
 	callbackFunction = 0;
 	
 	TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
-	TWBR = ((F_OSC/frequency)-16)/2; 
+	TWBR = ((F_OSC/frequency)-16)/8; 
+	
+	#ifdef DEBUG_IIC
+		uart0_putChar(TWBR);
+		uart0_newline();
+	#endif
 	
 	DDR_IIC &= ~((1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA));
 	PORT_IIC |= (1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA); //set internal pull up resistors
@@ -116,7 +121,7 @@ void IIC_RegisterWrite()
 			TWCR &= ~((1 << TWSTA) | (1 << TWSTO));
 			
 			#ifdef DEBUG_IIC
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 				uart0_newline();
 			#endif
 			
@@ -146,7 +151,7 @@ void IIC_RegisterWrite()
 				
 				#ifdef DEBUG_IIC
 					uart0_puts("TWDR Value: ");
-					uart0_putCharAsDigits(TWDR);
+					uart0_putChar(TWDR);
 					uart0_newline();
 				#endif
 										
@@ -193,9 +198,9 @@ void IIC_RegisterReadStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_
 	if(IIC_busFree() == 1)
 	{
 		#ifdef DEBUG_IIC
-			uart0_putCharAsDigits(TWSR);
+			uart0_putChar(TWSR);
 			uart0_putsln("Bus free");
-			uart0_putCharAsDigits((TWCR & (1<<TWSTO)));
+			uart0_putChar((TWCR & (1<<TWSTO)));
 		#endif
 		
 		IsrSlaveAddress = SlaveAddress;
@@ -243,7 +248,7 @@ void IIC_RegisterRead()
 			TWDR = IsrRegisterAddress; 	//send Register Address
 			
 			#ifdef DEBUG_IIC
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 			#endif
 				
 			TWCR &= ~((1 << TWSTA) | (1 << TWSTO));
@@ -265,7 +270,7 @@ void IIC_RegisterRead()
 		case 0x28:
 			#ifdef DEBUG_IIC
 				uart0_putsln("Data Byte has been transmitted, ACK has been received	");
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 			#endif
 			
 			
@@ -360,7 +365,7 @@ void IIC_RegisterRead()
 		default:
 			#ifdef DEBUG_IIC
 				uart0_puts("Read-ERROR: ");
-				uart0_putCharAsDigits((TWSR & 0xF8));
+				uart0_putChar((TWSR & 0xF8));
 				uart0_newline();
 			#endif
 			
