@@ -43,16 +43,16 @@ int main(void)
 	uart0_puts("OK");
 	
 	
-	IIC_init(300000);
+	IIC_init(400000);
 	MPU_init(&xAccel, &yAccel, &zAccel, &xGyro, &yGyro, &zGyro, &xCompass, &yCompass, &zCompass, 0);
-	AHRS_begin(50.0);
+	AHRS_begin(100.0);
 	
 	TCCR1A &= ~((1<<WGM10) | (1<<WGM11));
 	TCCR1B &= ~((1<<WGM13) | (1<<CS12));
 	TCCR1B |= (1<<WGM12) | (1<<CS10) | (1<<CS11);
 	TIMSK1 |= (1<<OCIE1A);
 
-	OCR1A = 6249;
+	OCR1A = 3124;
 	
 	sei();
 	

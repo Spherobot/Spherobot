@@ -33,9 +33,30 @@ void IIC_init(uint32_t frequency)
 	write = 0;
 	callbackFunction = 0;
 	
-	TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
-	TWBR = ((F_OSC/frequency)-16)/2; 
-	
+	if(frequency >= 38020)
+	{
+			TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
+			TWBR = ((F_OSC/frequency)-16)/2;
+	} else if(frequency >= 9728) 
+	{
+		TWSR &= ~(1<<TWPS1); //prescaler 4
+		TWSR |= (1<<TWPS0);
+		TWBR = ((F_OSC/frequency)-16)/8;
+	} else if(frequency >= 2446) 
+	{
+		TWSR &= ~(1<<TWPS0); //prescaler 16
+		TWSR |= (1<<TWPS1);
+		TWBR = ((F_OSC/frequency)-16)/32;
+	} else if(frequency >= 613)
+	{
+		TWSR |= (1<<TWPS0) | (1<<TWPS1); //prescaler 64
+		TWBR = ((F_OSC/frequency)-16)/128;
+	} else
+	{
+		TWSR |= (1<<TWPS0) | (1<<TWPS1);
+		TWBR = 255;
+	}
+		
 	#ifdef DEBUG_IIC
 		uart0_putChar(TWBR);
 		uart0_newline();
