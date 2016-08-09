@@ -34,7 +34,7 @@ void IIC_init(uint32_t frequency)
 	callbackFunction = 0;
 	
 	TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
-	TWBR = ((F_OSC/frequency)-16)/8; 
+	TWBR = ((F_OSC/frequency)-16)/2; 
 	
 	#ifdef DEBUG_IIC
 		uart0_putChar(TWBR);
