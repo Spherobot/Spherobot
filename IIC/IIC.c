@@ -12,7 +12,7 @@
 #include "MPU9150.h"
 
 //choose correct General-File
-//#include "General_644P.h"
+#include "General_644P.h"
 //#include "General_ATMega2560.h"
 
 volatile static uint8_t busFree;
@@ -33,8 +33,34 @@ void IIC_init(uint32_t frequency)
 	write = 0;
 	callbackFunction = 0;
 	
-	TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
-	TWBR = ((16000000/frequency)-16)/2; 
+	if(frequency >= 38020)
+	{
+			TWSR &= ~((1<<TWPS0) | (1<<TWPS1)); //prescaler 1
+			TWBR = ((F_OSC/frequency)-16)/2;
+	} else if(frequency >= 9728) 
+	{
+		TWSR &= ~(1<<TWPS1); //prescaler 4
+		TWSR |= (1<<TWPS0);
+		TWBR = ((F_OSC/frequency)-16)/8;
+	} else if(frequency >= 2446) 
+	{
+		TWSR &= ~(1<<TWPS0); //prescaler 16
+		TWSR |= (1<<TWPS1);
+		TWBR = ((F_OSC/frequency)-16)/32;
+	} else if(frequency >= 613)
+	{
+		TWSR |= (1<<TWPS0) | (1<<TWPS1); //prescaler 64
+		TWBR = ((F_OSC/frequency)-16)/128;
+	} else
+	{
+		TWSR |= (1<<TWPS0) | (1<<TWPS1);
+		TWBR = 255;
+	}
+		
+	#ifdef DEBUG_IIC
+		uart0_putChar(TWBR);
+		uart0_newline();
+	#endif
 	
 	DDR_IIC &= ~((1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA));
 	PORT_IIC |= (1<<PIN_IIC_SCL) | (1<<PIN_IIC_SDA); //set internal pull up resistors
@@ -116,7 +142,7 @@ void IIC_RegisterWrite()
 			TWCR &= ~((1 << TWSTA) | (1 << TWSTO));
 			
 			#ifdef DEBUG_IIC
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 				uart0_newline();
 			#endif
 			
@@ -124,7 +150,7 @@ void IIC_RegisterWrite()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_putsln("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -146,7 +172,7 @@ void IIC_RegisterWrite()
 				
 				#ifdef DEBUG_IIC
 					uart0_puts("TWDR Value: ");
-					uart0_putCharAsDigits(TWDR);
+					uart0_putChar(TWDR);
 					uart0_newline();
 				#endif
 										
@@ -175,7 +201,7 @@ void IIC_RegisterWrite()
 		//Other TWSR codes
 		default:
 			uart0_puts("Write-ERROR: ");
-			uart0_putCharAsDigits((TWSR & 0xF8));
+			uart0_putChar((TWSR & 0xF8));
 			uart0_newline();
 			
 			TWCR |= (1 << TWSTO);
@@ -193,9 +219,9 @@ void IIC_RegisterReadStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_
 	if(IIC_busFree() == 1)
 	{
 		#ifdef DEBUG_IIC
-			uart0_putCharAsDigits(TWSR);
+			uart0_putChar(TWSR);
 			uart0_putsln("Bus free");
-			uart0_putCharAsDigits((TWCR & (1<<TWSTO)));
+			uart0_putChar((TWCR & (1<<TWSTO)));
 		#endif
 		
 		IsrSlaveAddress = SlaveAddress;
@@ -243,7 +269,7 @@ void IIC_RegisterRead()
 			TWDR = IsrRegisterAddress; 	//send Register Address
 			
 			#ifdef DEBUG_IIC
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 			#endif
 				
 			TWCR &= ~((1 << TWSTA) | (1 << TWSTO));
@@ -252,7 +278,7 @@ void IIC_RegisterRead()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_putsln("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -265,7 +291,7 @@ void IIC_RegisterRead()
 		case 0x28:
 			#ifdef DEBUG_IIC
 				uart0_putsln("Data Byte has been transmitted, ACK has been received	");
-				uart0_putCharAsDigits(TWDR);
+				uart0_putChar(TWDR);
 			#endif
 			
 			
@@ -276,7 +302,7 @@ void IIC_RegisterRead()
 			
 		//Data byte has been transmitted; NACK has been recieved
 		case 0x30:
-			uart0_putsln("Data byte has been transmitted; NACK has been recieved");
+			uart0_puts("Data byte has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -313,7 +339,7 @@ void IIC_RegisterRead()
 			
 		//SLA+R has been transmitted; NACK has been recieved
 		case 0x48:
-			uart0_putsln("SLA+R has been transmitted; NACK has been recieved");
+			uart0_puts("SLA+R has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
@@ -360,7 +386,7 @@ void IIC_RegisterRead()
 		default:
 			#ifdef DEBUG_IIC
 				uart0_puts("Read-ERROR: ");
-				uart0_putCharAsDigits((TWSR & 0xF8));
+				uart0_putChar((TWSR & 0xF8));
 				uart0_newline();
 			#endif
 			
