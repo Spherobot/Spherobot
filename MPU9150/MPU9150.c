@@ -12,7 +12,7 @@
 #include "MPU9150.h"
 
 //choose correct General-File
-//#include "General_644P.h"
+#include "General_644P.h"
 //#include "General_ATMega2560.h"
 
 static uint8_t accelerometer[6];
@@ -198,7 +198,7 @@ void MPU_CompassReadStart()
 	{
 		#ifdef DEBUG_MPU9150
 			uart0_puts("Compass Data Ready = ");
-			uart0_putCharAsDigits(compassDataReady);
+			uart0_putChar(compassDataReady);
 			uart0_newline();
 		#endif
 		
@@ -207,7 +207,7 @@ void MPU_CompassReadStart()
 		
 		#ifdef	DEBUG_MPU9150
 			uart0_puts("Data Ready read = ");
-			uart0_putCharAsDigits(compassDataReady);
+			uart0_putChar(compassDataReady);
 			uart0_newline();
 		#endif
 	}
@@ -243,7 +243,7 @@ uint8_t MPU_CompassDataReady()
 	
 	#ifdef DEBUG_MPU9150
 		uart0_puts("Compass Data Ready = ");
-		uart0_putCharAsDigits(compassDataReady);
+		uart0_putChar(compassDataReady);
 		uart0_newline();
 	#endif
 	
@@ -252,7 +252,7 @@ uint8_t MPU_CompassDataReady()
 	
 	#ifdef	DEBUG_MPU9150
 		uart0_puts("Data Ready read = ");
-		uart0_putCharAsDigits(compassDataReady);
+		uart0_putChar(compassDataReady);
 		uart0_newline();
 	#endif
 	
@@ -267,6 +267,15 @@ void MPU_CompassReadStartFast()
 		IIC_registerCallback(MPU_dataReceived);
 	
 	IIC_RegisterReadStart(SLAVE_COMPASS, HXL, 6, compass);
+}
+
+void MPU_getRawAccelData()
+{
+	*xAccel = (accelerometer[0]<<8) | accelerometer[1];
+	*yAccel = (accelerometer[2]<<8) | accelerometer[3];
+	*zAccel = (accelerometer[4]<<8) | accelerometer[5];
+	
+	dataReady = 0;
 }
 
 void MPU_getAccelData()
@@ -348,6 +357,15 @@ void MPU_getAccelData()
 	
 	dataReady = 0;
 	
+}
+
+void MPU_getRawGyroData()
+{
+	*xGyro = (gyroscope[0]<<8) | gyroscope[1];
+	*yGyro = (gyroscope[2]<<8) | gyroscope[3];
+	*zGyro = (gyroscope[4]<<8) | gyroscope[5];
+	
+	dataReady = 0;
 }
 
 void MPU_getGyroData()
@@ -510,6 +528,18 @@ void MPU_getCompassData()
 	
 	dataReady = 0;
 	
+}
+
+void MPU_getRawAccelGyroData()
+{
+	for(uint8_t i=0; i<6; i++)
+	{
+		accelerometer[i] = accelGyroTemp[i];
+		gyroscope[i] = accelGyroTemp[i+8];
+	}
+	
+	MPU_getRawAccelData();
+	MPU_getRawGyroData();
 }
 
 void MPU_getAccelGyroData()

@@ -9,6 +9,9 @@
 #ifndef GENERAL_ATMEGA2560_H_
 #define GENERAL_ATMEGA2560_H_
 
+//constants
+#define F_OSC			16000000
+
 //DDR
 #define DDR_IIC			DDRD
 

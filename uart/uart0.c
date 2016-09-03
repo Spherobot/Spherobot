@@ -8,9 +8,9 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#define FOSC 16000000
 #define BUFFER_SIZE_SEND 30
 #include <string.h>
+#include "General_644P.h"
 
 volatile static char sendBuffer[BUFFER_SIZE_SEND];
 volatile static uint8_t sendIndex;
@@ -22,7 +22,7 @@ volatile static char receveReady;
 
 void uart0_init(uint32_t baudRate, uint8_t send, uint8_t receive)
 {
-	baudRate=FOSC/16/baudRate - 1;
+	baudRate=F_OSC/16/baudRate - 1;
 	UBRR0  = baudRate+((baudRate-((int)baudRate))*10>=5); //round function
 	
 	if(send)
@@ -83,9 +83,15 @@ void uart0_puts(char text[])
 			uart0_putc(text[i]);
 	}
 }
-void uart0_putChar(uint16_t number)
+
+void uart0_putsln(char text[])
 {
-	number=number-((int)number/1000)*1000;
+	uart0_puts(text);
+	uart0_newline();
+}
+
+void uart0_putChar(uint8_t number)
+{
 	uint8_t h, t, o, help;
 	h=number/100;
 	help = number%100;
@@ -96,6 +102,21 @@ void uart0_putChar(uint16_t number)
 	uart0_putc(t+'0');
 	uart0_putc(o+'0');
 }
+
+// void uart0_putChar(uint16_t number)
+// {
+// 	number=number-((int)number/1000)*1000;
+// 	uint8_t h, t, o, help;
+// 	h=number/100;
+// 	help = number%100;
+// 	t= help/10;
+// 	o = help%10;
+// 	
+// 	uart0_putc(h+'0');
+// 	uart0_putc(t+'0');
+// 	uart0_putc(o+'0');
+// }
+
 void uart0_putInt(uint16_t number)
 {
 	uint8_t zt, t, h, z, e, help;
@@ -127,6 +148,12 @@ void uart0_putInt(uint16_t number)
 }
 void uart0_putFloat(float number)
 {
+	if(number < 1)
+	{
+		uart0_putc('-');
+		number = number * (-1);
+	}
+	
 	uart0_putInt(((int)number));
 	uart0_putc('.');
 	uart0_putChar((number-((int)number))*1000);

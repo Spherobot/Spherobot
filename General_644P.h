@@ -9,21 +9,24 @@
 #ifndef GENERAL_644P_H_
 #define GENERAL_644P_H_
 
+//constants
+#define F_OSC				20000000
+
 //DDRx
-#define DDR_IIC				DDRD
+#define DDR_IIC				DDRC
 #define DDR_L6206_DIR		DDRA
 #define DDR_L6206_EN12		DDRB
 #define DDR_L6206_EN3		DDRD
 
 //PORTx
-#define PORT_IIC			PORTD
+#define PORT_IIC			PORTC
 #define PORT_L6206_DIR		PORTA
 
 //PINx
 
 //Pins
-#define PIN_IIC_SCL			PIN0
-#define PIN_IIC_SDA			PIN1
+#define PIN_IIC_SCL			PC0
+#define PIN_IIC_SDA			PC1
 #define PIN_L6206_M1_DIR1	PA0
 #define PIN_L6206_M1_DIR2	PA1
 #define PIN_L6206_M2_DIR1	PA2

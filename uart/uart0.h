@@ -32,6 +32,7 @@ void uart0_init_x(uint32_t baudRate,
 uint8_t uart0_getData_int(char* pData);
 uint8_t uart0_readyToSend_int();
 void uart0_puts_int(char text[]);
+void uart0_putsln(char text[]);
 
 void uart0_deactivate();
 

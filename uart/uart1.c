@@ -7,9 +7,9 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#define FOSC 16000000
 #define BUFFER_SIZE_SEND 30
 #include <string.h>
+#include "General_644P.h"
 
 volatile static char sendBuffer[BUFFER_SIZE_SEND];
 volatile static uint8_t sendIndex;
@@ -21,7 +21,7 @@ volatile static char receveReady;
 
 void uart1_init(uint32_t baudRate, uint8_t send, uint8_t receive)
 {
-	baudRate=FOSC/16/baudRate - 1;
+	baudRate=F_OSC/16/baudRate - 1;
 	UBRR1  = baudRate+((baudRate-((int)baudRate))*10>=5); //round function
 	
 	if(send)
