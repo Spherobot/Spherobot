@@ -5,9 +5,12 @@
  *  Author: Michael
  */ 
 
+#define PI		3.141592
+
 #include <avr/io.h>
 #include "L6206.h"
 #include "General_644P.h"
+#include <math.h>
 
 void motor123_init()
 {
@@ -118,5 +121,100 @@ void motor3_control(uint8_t direction, uint8_t speed)
 		default:
 		PORT_L6206_DIR &= ~(1<<PIN_L6206_M3_DIR1);
 		PORT_L6206_DIR &= ~(1<<PIN_L6206_M3_DIR2);
+	}
+}
+
+void motor_drive(uint16_t angle, uint8_t speed)
+{
+	float anglerad, wheelangle, a, b, x, xhelp, y;
+	
+	wheelangle = 60.0/180.0*PI;
+	
+	if(angle >= 0 && angle <= 360 && speed >= 0 && speed <= 100)
+	{
+		if(angle >= 0 && angle <= 60)
+		{
+			anglerad = (float)angle/180.0*PI;
+			
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+			
+			motor1_control('l', y);
+			motor2_control('r', x);
+			motor3_control('r', 0);
+		}else if(angle > 60 && angle <= 120)
+		{
+			angle = angle-60;
+			anglerad = (float)angle/180.0*PI;
+			
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+			
+			motor1_control('l', 0);
+			motor2_control('r', y);
+			motor3_control('l', x);
+		}else if(angle > 120 && angle <= 180)
+		{
+			angle = angle-120;
+			anglerad = (float)angle/180.0*PI;
+		
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+		
+			motor1_control('r', x);
+			motor2_control('r', 0);
+			motor3_control('l', y);
+		}else if(angle > 180 && angle <= 240)
+		{
+			angle = angle-180;
+			anglerad = (float)angle/180.0*PI;
+			
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+			
+			motor1_control('r', y);
+			motor2_control('l', x);
+			motor3_control('l', 0);
+		}else if(angle > 240 && angle <= 300)
+		{
+			angle = angle-240;
+			anglerad = (float)angle/180.0*PI;
+			
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+			
+			motor1_control('r', 0);
+			motor2_control('l', y);
+			motor3_control('r', x);
+		}else if(angle > 300 && angle <= 360)
+		{
+			angle = angle-300;
+			anglerad = (float)angle/180.0*PI;
+			
+			a=cos(anglerad)*speed;
+			b=sin(anglerad)*speed;
+			x=b/sin(wheelangle);
+			xhelp=cos(wheelangle)*x;
+			y = a-xhelp;
+			
+			motor1_control('l', x);
+			motor2_control('l', 0);
+			motor3_control('r', y);
+		}
 	}
 }
