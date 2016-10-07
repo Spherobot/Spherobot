@@ -42,6 +42,8 @@ src\core\USBCore.cpp
 
 src\core\UTFT.cpp
 
+src\core\UTFT_Geometry.cpp
+
 src\core\WInterrupts.c
 
 src\core\wiring.c

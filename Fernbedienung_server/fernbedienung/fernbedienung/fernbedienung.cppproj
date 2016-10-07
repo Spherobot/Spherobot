@@ -220,6 +220,12 @@
     <Compile Include="esp8266.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Joystick.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Joystick.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Sketch.cpp">
       <SubType>compile</SubType>
     </Compile>

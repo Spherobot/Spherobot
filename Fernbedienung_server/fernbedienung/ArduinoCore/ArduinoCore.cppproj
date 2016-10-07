@@ -217,6 +217,9 @@
     <Compile Include="include\core\Client.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\core\EEPROM.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\core\HardwareSerial.h">
       <SubType>compile</SubType>
     </Compile>
@@ -275,6 +278,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\core\UTFT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\UTFT_Geometry.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\core\WCharacter.h">
@@ -356,6 +362,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\core\UTFT.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\UTFT_Geometry.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\core\WInterrupts.c">

@@ -40,6 +40,7 @@ C_SRCS +=  \
 ../BB8.c \
 ../caution_sign.c \
 ../esp8266.c \
+../Joystick.cpp \
 ../Sketch.cpp \
 ../uart1.c
 
@@ -54,6 +55,7 @@ OBJS +=  \
 BB8.o \
 caution_sign.o \
 esp8266.o \
+Joystick.o \
 Sketch.o \
 uart1.o
 
@@ -61,6 +63,7 @@ OBJS_AS_ARGS +=  \
 BB8.o \
 caution_sign.o \
 esp8266.o \
+Joystick.o \
 Sketch.o \
 uart1.o
 
@@ -68,6 +71,7 @@ C_DEPS +=  \
 BB8.d \
 caution_sign.d \
 esp8266.d \
+Joystick.d \
 Sketch.d \
 uart1.d
 
@@ -75,6 +79,7 @@ C_DEPS_AS_ARGS +=  \
 BB8.d \
 caution_sign.d \
 esp8266.d \
+Joystick.d \
 Sketch.d \
 uart1.d
 
@@ -93,6 +98,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

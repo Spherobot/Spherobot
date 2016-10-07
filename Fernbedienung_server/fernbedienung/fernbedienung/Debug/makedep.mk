@@ -8,6 +8,8 @@ caution_sign.c
 
 esp8266.c
 
+Joystick.cpp
+
 Sketch.cpp
 
 uart1.c

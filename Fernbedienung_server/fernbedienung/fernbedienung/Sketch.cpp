@@ -7,7 +7,9 @@
 
 #include <UTFT.h>
 #include <URTouch.h>
+#include <UTFT_Geometry.h>
 #include <avr/pgmspace.h>
+#include "Joystick.h"
 extern "C"
 {
 	#include "esp8266.h"
@@ -51,6 +53,8 @@ extern uint8_t SevenSegNumFont[];
 //constructors
 UTFT myGLCD(ILI9341_16, 38, 39, 40, 41);
 URTouch  myTouch( 6, 5, 4, 3, 2);
+UTFT_Geometry geo(&myGLCD);
+Joystick myJoystick(10);
 
 
 //Type definitions
@@ -108,6 +112,7 @@ bool check(int x, int y, int x1, int y1, int x2, int y2);
 int drawKeyboardScreen(int Number);
 void waitForIt(int x1, int y1, int x2, int y2);
 void addLog(String Text);
+void LockDisplay(bool State);
 
 //functions
 
@@ -241,15 +246,23 @@ void DrawInterface()
     }
   }
   if (ESP8266_isConnected())
-    myGLCD.setColor(GREEN);
-  else
-    myGLCD.setColor(RED);
+  {
+	  myGLCD.setColor(GREEN);
+	  myGLCD.setBackColor(GREEN);
+  }else
+  {
+	  myGLCD.setColor(RED);
+	  myGLCD.setBackColor(GREEN);
+  }
   //xB, yB, xE, yE
   myGLCD.fillRoundRect (175, 0, 145, 20);
   myGLCD.fillRect (175, 0, 145, 1);
   myGLCD.setColor(BLUE);
   myGLCD.drawRoundRect (300, 0, 319, 119);
   myGLCD.drawRoundRect (300, 121, 319, 239);
+  myGLCD.setColor(BLACK);
+  myGLCD.setFont(various_symbols);
+  myGLCD.print("t", CENTER, 3);
   myGLCD.setColor(WHITE);
   myGLCD.setBackColor(BLACK);
   myGLCD.setFont(various_symbols);
@@ -335,51 +348,14 @@ void applyChanges()
 	}
 }
 
-
 void drawMsgBox()
 {
 	ActiveScreen = 3;
-	
-	if (ESP8266_isConnected())
-		myGLCD.setColor(GREEN);
-	else
-		myGLCD.setColor(RED);
-	//xB, yB, xE, yE
-	myGLCD.fillRoundRect (175, 0, 145, 20);
-	myGLCD.fillRect (175, 0, 145, 1);
-	
-	myGLCD.setColor(BLUE);
-	myGLCD.drawRoundRect (30, 50, 280, 200);
-	myGLCD.setColor(BLACK);
-	myGLCD.fillRoundRect (31, 51, 279, 199);
-	
-	
-	myGLCD.setColor(WHITE);
-	myGLCD.setBackColor(BLACK);
-	myGLCD.setFont(SmallFont);
-	myGLCD.print("Status: ", 50, 70);
-	myGLCD.print("Connection details: ", 50, 90);
-	if(ESP8266_isConnected())
-	{
-		myGLCD.setColor(GREEN);
-		myGLCD.print("1 Active connection", 50, 110);
-	}else{
-		myGLCD.setColor(RED);
-		myGLCD.print("No active connection", 50, 110);
-	}
-	
-	
-	if(InitSucsessfull==true)
-	{
-		drawButton(122,170,188,190," Apply",2);
-		myGLCD.setColor(GREEN);
-		myGLCD.print("Server running", 120, 70);
-	}else{
-		drawButton(122,170,188,190," Start",2);
-		myGLCD.setColor(RED);
-		myGLCD.print("Server stopped", 120, 70);
-	}
-	
+	myGLCD.clrScr();
+	drawButton(20,20,300,60,"       Calibrate Joysticks",2);
+	drawButton(20,70,300,110,"          Joystick Test",2);
+	drawButton(20,120,300,160,"        Start Transmission",2);
+	drawButton(1,200,100,240,"    Back",2);
 }
 
 int drawKeyboardScreen(int Number)
@@ -618,9 +594,41 @@ void IntCallBack(int8_t ID, int Number)
 	
 }
 
+void drawCalibrateInterface()
+{
+	myGLCD.clrScr();
+	ActiveScreen=6;
+	drawButton(1,200,100,240,"    Back",2);
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(BLACK);
+	myGLCD.setFont(SmallFont);
+	myGLCD.print("Joystick Calibration",CENTER,1);
+	drawButton(120,200,319,240,"    Clear all Values",2);
+	
+	myGLCD.setColor(BLUE);
+	myGLCD.fillRect(10,60,130,180);//left
+	myGLCD.fillRect(190,60,310,180);//right
+}
+
+void drawTestInterface()
+{
+	myGLCD.clrScr();
+	ActiveScreen=7;
+	drawButton(1,200,100,240,"    Back",2);
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(BLACK);
+	myGLCD.setFont(SmallFont);
+	myGLCD.print("Joystick Test",CENTER,1);
+	myGLCD.fillCircle(70,120,60);
+	
+	myGLCD.setColor(BLUE);
+	myGLCD.fillRect(10,60,130,180);//left
+	myGLCD.fillRect(190,60,310,180);//right
+}
+
 void TouchEventManagement()
 {
-	if (myTouch.dataAvailable() && DisplayLocked!=true)
+	if (myTouch.dataAvailable())
 	{
 		myTouch.read();
 		x = myTouch.getX();
@@ -630,7 +638,6 @@ void TouchEventManagement()
 			ActiveScreen = 1;
 			myGLCD.clrScr();
 			DrawInterface();
-
 		} else if (ActiveScreen == 1) //main screen
 		{
 			if (x >= 290 && x <= 320 && y >= 0 && y <= 119) //down button
@@ -684,28 +691,36 @@ void TouchEventManagement()
 				//myGLCD.drawRoundRect (145, 210, 200, 242);
 				//myGLCD.drawRoundRect (90, 210, 145, 242);
 				
-			} else if (x >= 145 && x <= 175 && y >= 0 && y <= 20) //Connect Button
+			} else if (x >= 130 && x <= 180 && y >= 0 && y <= 40) //Connect Button
 			{
 				waitForIt(175, 0, 145, 20);
 				drawMsgBox();
 				
 				//--------------------------------------------------------------------------------------------------------------------------menu entry touch management
-				} else if (y >= 0 && y <= 46) {
-					EntryTouchCalc(0);                                                                                                                       //menu Entry No. 1
-					//redrawing connection button
-					if (ESP8266_isConnected())
-						myGLCD.setColor(GREEN);
-					else
-						myGLCD.setColor(RED);
-					myGLCD.fillRoundRect (175, 0, 145, 20);
-				} else if (y >= 45 && y <= 91) {                                                                                                                        //menu Entry No. 2
-					EntryTouchCalc(1);
-				} else if (y >= 90 && y <= 136) {                                                                                                                        //menu Entry No. 3
-					EntryTouchCalc(2);
-				} else if (y >= 135 && y <= 181) {																														//menu Entry No. 4
-					EntryTouchCalc(3);
-				} else if (y >= 180 && y <= 226) {                                                                                                                        //menu Entry No. 5
-					EntryTouchCalc(4);
+			} else if (y >= 0 && y <= 46) {
+				EntryTouchCalc(0);                                                                                                                       //menu Entry No. 1
+				//redrawing connection button
+				if (ESP8266_isConnected())
+				{
+					myGLCD.setColor(GREEN);
+					myGLCD.setBackColor(GREEN);
+				}else
+				{
+					myGLCD.setColor(RED);
+					myGLCD.setBackColor(GREEN);
+				}
+				myGLCD.fillRoundRect (175, 0, 145, 20);
+				myGLCD.setColor(BLACK);
+				myGLCD.setFont(various_symbols);
+				myGLCD.print("t", CENTER, 3);
+			} else if (y >= 45 && y <= 91) {                                                                                                                        //menu Entry No. 2
+				EntryTouchCalc(1);
+			} else if (y >= 90 && y <= 136) {                                                                                                                        //menu Entry No. 3
+				EntryTouchCalc(2);
+			} else if (y >= 135 && y <= 181) {																														//menu Entry No. 4
+				EntryTouchCalc(3);
+			} else if (y >= 180 && y <= 226) {                                                                                                                        //menu Entry No. 5
+				EntryTouchCalc(4);
 				//redrawing LOG button
 				myGLCD.setColor(BLUE);
 				myGLCD.drawRoundRect (138, 210, 179, 242);
@@ -724,33 +739,107 @@ void TouchEventManagement()
 				myGLCD.clrScr();
 				DrawInterface();
 			}
-			} else if (ActiveScreen == 3) { //Msg Box
+		} else if (ActiveScreen == 3) { //Msg Box
+			if (x >= 1 && x <= 100 && y >= 200 && y <= 240) //Back Button
 			{
-				if (x >= 145 && x <= 175 && y >= 0 && y <= 20) //Connect Button
-				{
-					waitForIt(175, 0, 145, 20);
-					if(NumberOfMenuEntries<5)
-						myGLCD.clrScr();
-					DrawInterface();
-				}else if(x >= 122 && x <= 188 && y >= 170 && y <= 190)//apply or connect button
-				{
-					//drawButton(122,170,188,190," Apply",2);
-					waitForIt(122, 170, 188, 190);
-					if(InitSucsessfull==false)
-					{
-						//InitSucsessfull=ERROR_handeling(1,ESP8266_init(1,"server"));
-						drawMsgBox();
-					}else{
-						applyChanges();
-						DrawInterface();
-					}
-					
-				}
+				waitForIt(1,200,100,240);
+				myGLCD.clrScr();
+				DrawInterface();
+			}else if(x >= 20 && x <= 300 && y >= 20 && y <= 60)//calibrate Joysticks button
+			{
+				waitForIt(20,20,300,60);
+				drawCalibrateInterface();
+			}else if(x >= 20 && x <= 300 && y >= 70 && y <= 110)//Joystick Test button
+			{
+				waitForIt(20,70,300,110);
+				drawTestInterface();
+			}else if(x >= 20 && x <= 300 && y >= 120 && y <= 160)//Start Transmission button
+			{
+				waitForIt(20,120,300,160);
+				LockDisplay(0);
 			}
 		} else if (ActiveScreen == 4) //Keyboard
 		{
 			myGLCD.clrScr();
 			DrawInterface();
+		}else if(ActiveScreen==5)//Lockscreen
+		{
+			int duration=2000;
+			double before=millis();
+			myGLCD.setColor(120,120,120);
+			int state=0;
+			while (myTouch.dataAvailable())
+			{
+				myTouch.read();
+				if(before+(duration/8)<=millis() && state==0)//1/8
+				{
+					state=1;
+					geo.fillTriangle(160,0,320,0,160,120);
+				}
+				else if(before+(duration/4)<=millis() && state==1)//1/4
+				{
+					state=2;
+					geo.fillTriangle(160,120,319,1,319,120);
+				}else if(before+((duration*3)/8)<=millis() && state==2)//3/8
+				{
+					state=3;
+					geo.fillTriangle(160,120,319,239,319,120);
+				}else if(before+(duration/2)<=millis() && state==3)//1/2
+				{
+					state=4;
+					geo.fillTriangle(160,120,319,239,160,239);
+				}else if(before+((duration*5)/8)<=millis() && state==4)//5/8
+				{
+					state=5;
+					geo.fillTriangle(160,120,1,239,160,239);
+				}else if(before+((duration*3)/4)<=millis() && state==5)//3/4
+				{
+					state=6;
+					geo.fillTriangle(160,120,1,239,1,120);
+				}else if(before+((duration*7)/8)<=millis() && state==6)//7/8
+				{
+					state=7;
+					geo.fillTriangle(160,120,1,1,1,120);
+				}else if(before+duration<=millis() && state==7)//1
+				{
+					state=8;
+					geo.fillTriangle(160,120,1,1,160,1);
+				}
+			}
+			if(before+duration<=millis())
+				LockDisplay(1);
+			else if(state!=0)
+			{
+				myGLCD.clrScr();
+				#ifdef USE_GRAPHICS
+				myGLCD.drawBitmap (110, 54, 50,44, caution_sign,2);
+				#endif
+				myGLCD.setColor(WHITE);
+				myGLCD.setBackColor(BLACK);
+				myGLCD.setFont(BigFont);
+				myGLCD.print("Screen is Locked!", CENTER, 150);
+			}
+		}else if(ActiveScreen==6)//Joystick Calibration
+		{
+			if (x >= 1 && x <= 100 && y >= 200 && y <= 240) //Back Button
+			{
+				waitForIt(1,200,100,240);
+				myGLCD.clrScr();
+				drawMsgBox();
+			}else if (x >= 120 && x <= 319 && y >= 200 && y <= 240) //Back Button
+			{
+				waitForIt(120,200,319,240);
+				myJoystick.Calibrate(true);
+				addLog("Cleared calibration values");
+			}
+		}else if(ActiveScreen==7)//Joystick Test
+		{
+			if (x >= 1 && x <= 100 && y >= 200 && y <= 240) //Back Button
+			{
+				waitForIt(1,200,100,240);
+				myGLCD.clrScr();
+				drawMsgBox();
+			}
 		}
 	}
 }
@@ -765,6 +854,7 @@ void LockDisplay(bool State)//1--> Unlocked
 		DrawInterface();
 	}else{
 		DisplayLocked=true;
+		ActiveScreen = 5;
 		myGLCD.clrScr();
 		#ifdef USE_GRAPHICS
 			myGLCD.drawBitmap (110, 54, 50,44, caution_sign,2);
@@ -874,19 +964,18 @@ void recMessFunc1(char Message[])
 
 void setup()
 {
-	//randomSeed(analogRead(0));
+	
 	myTouch.InitTouch();
 	myTouch.setPrecision(PREC_MEDIUM);
 	// Setup the LCD
 	myGLCD.InitLCD();
+	
 	myGLCD.setFont(BigFont);
 
-
-	int buf[318];
+	/*int buf[318];
 	int x, x2;
 	int y, y2;
-	int r;
-
+	int r;*/
 
 	// Clear the screen and draw the frame
 	myGLCD.clrScr();
@@ -894,11 +983,10 @@ void setup()
 	myGLCD.setBackColor(WHITE);
 	myGLCD.fillRect(0,0,319,239);
 	
-	#ifdef USE_GRAPHICS
-		myGLCD.drawBitmap (110, 47, 100,146, BB8);
+	#ifdef USE_GRAPHICS
+		myGLCD.drawBitmap (110, 47, 100,146, BB8);
 	#endif
-	
-	
+
 	myGLCD.setColor(BLACK);
 	myGLCD.setFont(SmallFont);
 	myGLCD.print("Universal Remote", CENTER, 0);
@@ -907,14 +995,12 @@ void setup()
 	
 	String test="PT1";
 	addMenuEntryIntNum(test, 0, 1,IntCallBack);			//control Char; type; init value max 3 digits ended with ';'; label ending with ';'
-	//Serial.begin(9600);
-	
 	ESP8266_registerMessageCallback(&recMessFunc1);
-	
 	InitSucsessfull=0;
 	ESP8266_Init();
 	
 	
+	/* transmission timer
 	TCCR1A &= ~((1<<WGM10) | (1<<WGM11));
 	TCCR1B &= ~((1<<WGM13) | (1<<CS12));
 	TCCR1B |= (1<<WGM12) | (1<<CS10) | (1<<CS11);
@@ -922,21 +1008,87 @@ void setup()
 
 	OCR1A = 3124;//12.4ms
 	
-	sei();
+	sei();*/
+	Serial.begin(9600);
+}
+
+void drawLinePolar(int x, int y, int r, int p)
+{
+	int x1,y1;
+	
+	if(p<=180)
+	{
+		p=((2*PI)/360)*p;
+		x1=r*cos(p);
+		y1=r*sin(p);
+	}
+	else
+	{
+		p=((2*PI)/360)*p;
+		x1=r*cos(p);
+		p-=180;
+		y1=r*sin(p)*-1;
+	}
+	Serial.print(x1);
+	Serial.print(",");
+	Serial.println(y1);
+	myGLCD.drawLine(x,y,x+x1,y+y1);
+}
+
+void drawJoystickTest()
+{
+	static RandL values,oldValues;
+	values=myJoystick.Calulate();
+	
+	if(values.L.extend!=oldValues.L.extend||values.L.angle!=oldValues.L.angle)
+	{
+		myGLCD.setColor(RED);
+		myGLCD.fillCircle(70,120,60);
+		myGLCD.setColor(GREEN);
+		myGLCD.drawCircle(70,120,60);
+		drawLinePolar(70,120,values.L.extend,values.L.angle);
+		/*myGLCD.setColor(BLUE);
+		myGLCD.fillRect(60,1,180,120);*/
+		oldValues=values;
+	}if(values.R.extend!=oldValues.R.extend||values.R.angle!=oldValues.R.angle)
+	{		
+		myGLCD.setColor(RED);
+		myGLCD.fillCircle(250,120,60);
+		myGLCD.setColor(GREEN);
+		myGLCD.drawCircle(250,120,60);
+		
+		oldValues=values;
+	}
 }
 
 void loop()
 {
-	
-	
-	/*static bool a=false;
-	if(Serial.available())
-	{
-		Serial.read();
-		a=!a;
-		LockDisplay(a);
-	}*/
   	TouchEventManagement();
+	  
+	if(ActiveScreen==6)//calibration
+	{
+		myJoystick.Calibrate(false);
+		drawJoystickTest();
+	}else if(ActiveScreen==7)//test
+	{
+		drawJoystickTest();
+	}
+	  
+	  
+	  
+	RandL joystick;
+	if(DisplayLocked==true)
+	{
+		joystick=myJoystick.Calulate();
+		/*Serial.print("L:");
+		Serial.print(joystick.L.extend);
+		Serial.print(", ");
+		Serial.print(joystick.L.angle);
+		Serial.print(", R:");
+		Serial.print(joystick.R.extend);
+		Serial.print(", ");
+		Serial.println(joystick.R.angle);*/
+	}
 }
 
 

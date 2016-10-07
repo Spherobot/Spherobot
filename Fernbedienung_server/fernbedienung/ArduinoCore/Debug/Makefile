@@ -63,6 +63,7 @@ C_SRCS +=  \
 ../src/core/URTouch.cpp \
 ../src/core/USBCore.cpp \
 ../src/core/UTFT.cpp \
+../src/core/UTFT_Geometry.cpp \
 ../src/core/WInterrupts.c \
 ../src/core/wiring.c \
 ../src/core/wiring_analog.c \
@@ -101,6 +102,7 @@ src/core/Tone.o \
 src/core/URTouch.o \
 src/core/USBCore.o \
 src/core/UTFT.o \
+src/core/UTFT_Geometry.o \
 src/core/WInterrupts.o \
 src/core/wiring.o \
 src/core/wiring_analog.o \
@@ -131,6 +133,7 @@ src/core/Tone.o \
 src/core/URTouch.o \
 src/core/USBCore.o \
 src/core/UTFT.o \
+src/core/UTFT_Geometry.o \
 src/core/WInterrupts.o \
 src/core/wiring.o \
 src/core/wiring_analog.o \
@@ -161,6 +164,7 @@ src/core/Tone.d \
 src/core/URTouch.d \
 src/core/USBCore.d \
 src/core/UTFT.d \
+src/core/UTFT_Geometry.d \
 src/core/WInterrupts.d \
 src/core/wiring.d \
 src/core/wiring_analog.d \
@@ -191,6 +195,7 @@ src/core/Tone.d \
 src/core/URTouch.d \
 src/core/USBCore.d \
 src/core/UTFT.d \
+src/core/UTFT_Geometry.d \
 src/core/WInterrupts.d \
 src/core/wiring.d \
 src/core/wiring_analog.d \
@@ -214,6 +219,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

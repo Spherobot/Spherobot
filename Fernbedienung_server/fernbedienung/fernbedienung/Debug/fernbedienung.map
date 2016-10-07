@@ -1,37 +1,79 @@
 Archive member included to satisfy reference by file (symbol)
 
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o)
+                              Joystick.o (acos)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
-                              uart1.o (__subsf3)
+                              Joystick.o (__subsf3)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o) (__addsf3x)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o) (__addsf3x)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+                              Joystick.o (__eqsf2)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
+                              Sketch.o (cos)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                              Joystick.o (__divsf3)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o) (__divsf3x)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
-                              uart1.o (__fixsfsi)
+                              Sketch.o (__fixsfsi)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
                               uart1.o (__fixunssfsi)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
-                              uart1.o (__floatsisf)
+                              Sketch.o (__floatunsisf)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o) (__fp_arccos)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o) (__fp_cmp)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_inf)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_nan)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o) (__fp_powser)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_pscA)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_pscB)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o) (__fp_rempio2)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o) (__fp_round)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o) (__fp_round)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o) (__fp_sinus)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_split3)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_zero)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
-                              uart1.o (__mulsf3)
+                              Joystick.o (__mulsf3)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o) (__mulsf3x)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o) (__mulsf3x)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
+                              Sketch.o (sin)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o)
+                              Joystick.o (sqrt)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o) (__fp_mpack)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_norm2.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o) (__fp_norm2)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
+                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o) (__fp_powsodd)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                              Sketch.o (_ZN14HardwareSerial5beginEmh)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                              Sketch.o (Serial)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
                               D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o (main)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o) (_ZN5Print5writeEPKhj)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o) (init)
+                              Sketch.o (millis)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+                              Joystick.o (analogRead)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                              Joystick.o (pinMode)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+                              Joystick.o (_Z3maplllll)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
                               Sketch.o (_ZN6StringD2Ev)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
@@ -40,32 +82,18 @@ D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\
                               Sketch.o (_ZN4UTFTC1Ehiiiii)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
                               Sketch.o (various_symbols)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+                              Sketch.o (_ZN13UTFT_GeometryC1EP4UTFT)
+D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o) (__cxa_pure_virtual)
 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
                               D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o) (yield)
-D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o) (pinMode)
-D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o) (_Z3maplllll)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o) (__ltsf2)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o) (cos)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o) (__fp_cmp)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o) (__fp_rempio2)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o) (__fp_sinus)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o) (sin)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o) (__fp_mpack_finite)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o) (__fp_powsodd)
-d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
-                              d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o) (__fp_powser)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o) (__gtsf2)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o) (__unordsf2)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o) (__mulsi3)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o) (__mulsi3)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodqi4.o)
                               Sketch.o (__udivmodqi4)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
@@ -75,13 +103,13 @@ d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/a
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
                               uart1.o (__udivmodsi4)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o) (__divmodsi4)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o) (__divmodsi4)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_negsi2.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o) (__negsi2)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
                               D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o (exit)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
-                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o) (__tablejump2__)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o) (__tablejump2__)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
                               Sketch.o (__do_copy_data)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
@@ -102,6 +130,8 @@ d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/a
                               D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o) (random)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
                               D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o) (realloc)
+d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+                              D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o) (abort)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(atof.o)
                               D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o) (atof)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(atol.o)
@@ -168,6 +198,10 @@ d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/a
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(ultoa_ncheck.o) (strrev)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(errno.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strtod.o) (errno)
+D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eerd_byte.o)
+                              Joystick.o (eeprom_read_byte)
+D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eewr_byte.o)
+                              Joystick.o (eeprom_write_byte)
 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulshisi3.o)
                               d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(random.o) (__mulohisi3)
 
@@ -209,13 +243,24 @@ Discarded input sections
  .text          0x00000000        0x0 esp8266.o
  .data          0x00000000        0x0 esp8266.o
  .bss           0x00000000        0x0 esp8266.o
+ .text          0x00000000        0x0 Joystick.o
+ .data          0x00000000        0x0 Joystick.o
+ .bss           0x00000000        0x0 Joystick.o
+ .text._ZN11EEPROMClass3putIiEERKT_iS3_.isra.1
+                0x00000000       0x68 Joystick.o
+ .text._ZN8Joystick19getValuesFromEEpromEv
+                0x00000000       0xa4 Joystick.o
+ .text._ZN8Joystick17setValuesToEEpromEv
+                0x00000000       0xa4 Joystick.o
+ .text._ZN8Joystick15getMinMaxValuesEv
+                0x00000000       0x66 Joystick.o
  .text          0x00000000        0x0 Sketch.o
  .data          0x00000000        0x0 Sketch.o
  .bss           0x00000000        0x0 Sketch.o
+ .text._Z12applyChangesv
+                0x00000000       0xb6 Sketch.o
  .text._Z5checkiiiiii
                 0x00000000       0x2e Sketch.o
- .text._Z11LockDisplayb
-                0x00000000       0x7c Sketch.o
  .text._Z9EventFuncab
                 0x00000000      0x110 Sketch.o
  .data.Connected
@@ -241,12 +286,27 @@ Discarded input sections
                 0x00000000       0x34 uart1.o
  .text.uart1_readyToSend_int
                 0x00000000        0x6 uart1.o
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
@@ -256,21 +316,36 @@ Discarded input sections
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
@@ -283,18 +358,113 @@ Discarded input sections
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_norm2.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_norm2.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_norm2.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
+ .group         0x00000000        0x8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .text._ZN14HardwareSerial3endEv
+                0x00000000       0x44 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .text._ZN14HardwareSerial17availableForWriteEv
+                0x00000000       0x1e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
  .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
  .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
  .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
  .text.atexit   0x00000000        0x6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
  .text._Z8setupUSBv
                 0x00000000        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .group         0x00000000        0x8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .group         0x00000000        0x8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printEPK19__FlashStringHelper
+                0x00000000       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printERK6String
+                0x00000000       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printERK9Printable
+                0x00000000       0x14 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEPK19__FlashStringHelper
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnERK6String
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEPKc
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEc
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnERK9Printable
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEli
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printEmi
+                0x00000000       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printEhi
+                0x00000000        0xe D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEhi
+                0x00000000       0x2e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printEji
+                0x00000000        0xc D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEji
+                0x00000000       0x2c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEmi
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print10printFloatEdh
+                0x00000000      0x1ca D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print5printEdi
+                0x00000000        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .text._ZN5Print7printlnEdi
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .rodata._ZTV5Print
+                0x00000000        0x8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
  .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
  .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
  .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .text.millis   0x00000000       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
  .text.delayMicroseconds
                 0x00000000       0x16 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .text.analogReference
+                0x00000000        0x6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .text.analogWrite
+                0x00000000      0x192 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .progmem.gcc_sw_table.analogWrite
+                0x00000000       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.digitalRead
+                0x00000000       0x52 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .text._Z10randomSeedm
+                0x00000000       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .text._Z6randoml
+                0x00000000       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .text._Z6randomll
+                0x00000000       0x44 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .text._Z8makeWordj
+                0x00000000        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .text._Z8makeWordhh
+                0x00000000        0xa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
  .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
@@ -336,6 +506,8 @@ Discarded input sections
                 0x00000000       0x1e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .text._ZN6String6concatEc
                 0x00000000       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .text._ZN6String6concatEi
+                0x00000000       0x60 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .text._ZN6String6concatEj
                 0x00000000       0x60 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .text._ZN6String6concatEl
@@ -351,6 +523,8 @@ Discarded input sections
  .text._ZplRK15StringSumHelperRK6String
                 0x00000000       0x26 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .text._ZplRK15StringSumHelperc
+                0x00000000       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .text._ZplRK15StringSumHelperi
                 0x00000000       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .text._ZplRK15StringSumHelperj
                 0x00000000       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
@@ -442,8 +616,6 @@ Discarded input sections
                 0x00000000        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT18LCD_Write_COM_DATAEci
                 0x00000000       0x32 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .text._ZN4UTFT10drawCircleEiii
-                0x00000000      0x2cc D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT7fillScrEj
                 0x00000000      0x140 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT7fillScrEhhh
@@ -456,8 +628,6 @@ Discarded input sections
                 0x00000000       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT12getBackColorEv
                 0x00000000       0x14 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .text._ZN4UTFT10fillCircleEiii
-                0x00000000       0xca D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT9printNumFEdhiicic
                 0x00000000      0x10e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .text._ZN4UTFT7getFontEv
@@ -491,58 +661,44 @@ Discarded input sections
  .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
  .progmem.data.Dingbats1_XL
                 0x00000000     0x23a4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .text._ZN13UTFT_Geometry12drawTriangleEiiiiii
+                0x00000000       0x74 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .text._ZN13UTFT_Geometry7drawArcEiiiiii
+                0x00000000      0x3c8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .text._ZN13UTFT_Geometry7drawPieEiiiii
+                0x00000000      0x244 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .text.__cxa_pure_virtual
+                0x00000000        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .text.__cxa_deleted_virtual
+                0x00000000        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_info    0x00000000       0x8e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_abbrev  0x00000000       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_aranges
+                0x00000000       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_ranges  0x00000000       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_line    0x00000000       0xb5 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_str     0x00000000      0x1ab D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .comment       0x00000000       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
+ .debug_frame   0x00000000       0x34 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(abi.o)
  .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
  .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
  .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .text.digitalRead
-                0x00000000       0x52 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .text          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .data          0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .bss           0x00000000        0x0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text._Z10randomSeedm
-                0x00000000       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text._Z6randoml
-                0x00000000       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text._Z6randomll
-                0x00000000       0x44 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text._Z8makeWordj
-                0x00000000        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text._Z8makeWordhh
-                0x00000000        0xa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
  .text.avr-libc.fplib
-                0x00000000        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+                0x00000000        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
  .text.avr-libc.fplib
-                0x00000000       0x48 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
- .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
- .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
- .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
+                0x00000000        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
@@ -781,6 +937,11 @@ Discarded input sections
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
+ .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+ .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+ .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+ .text.avr-libc
+                0x00000000        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(atof.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(atof.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(atof.o)
@@ -936,6 +1097,14 @@ Discarded input sections
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(errno.o)
  .comment       0x00000000       0x2d d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(errno.o)
  COMMON         0x00000000        0x2 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(errno.o)
+ .text          0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eerd_byte.o)
+ .data          0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eerd_byte.o)
+ .bss           0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eerd_byte.o)
+ .text          0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eewr_byte.o)
+ .data          0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eewr_byte.o)
+ .bss           0x00000000        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eewr_byte.o)
+ .text.avr-libc
+                0x00000000       0x1c D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eewr_byte.o)
  .text          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulshisi3.o)
  .data          0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulshisi3.o)
  .bss           0x00000000        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulshisi3.o)
@@ -972,6 +1141,7 @@ LOAD D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega
 LOAD BB8.o
 LOAD caution_sign.o
 LOAD esp8266.o
+LOAD Joystick.o
 LOAD Sketch.o
 LOAD uart1.o
 START GROUP
@@ -1084,611 +1254,747 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x9bf0
+.text           0x00000000     0xb976
  *(.vectors)
  .vectors       0x00000000       0xe4 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
- .progmem.gcc_sw_table.turnOffPWM
-                0x000000e4       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
  .progmem.gcc_fplib
-                0x00000108       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
-                0x00000126                . = ALIGN (0x2)
-                0x00000126                __trampolines_start = .
+                0x000000e4       0x28 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+ .progmem.gcc_fplib
+                0x0000010c       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
+ .progmem.gcc_sw_table.turnOffPWM
+                0x0000012a       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x0000014e                . = ALIGN (0x2)
+                0x0000014e                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x00000126        0x0 linker stubs
+ .trampolines   0x0000014e        0x0 linker stubs
  *(.trampolines*)
-                0x00000126                __trampolines_end = .
+                0x0000014e                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
- .progmem.data.various_symbols
-                0x00000126      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                0x00000126                various_symbols
- .progmem.data.arial_bold
-                0x00000d0a      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                0x00000d0a                arial_bold
- .progmem.data.SevenSegNumFont
-                0x000018ee      0x7d4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                0x000018ee                SevenSegNumFont
- .progmem.data.BigFont
-                0x000020c2      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                0x000020c2                BigFont
- .progmem.data.SmallFont
-                0x00002ca6      0x478 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                0x00002ca6                SmallFont
  .progmem.data.digital_pin_to_timer_PGM
-                0x0000311e       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x0000311e                digital_pin_to_timer_PGM
+                0x0000014e       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x0000014e                digital_pin_to_timer_PGM
  .progmem.data.digital_pin_to_bit_mask_PGM
-                0x00003164       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x00003164                digital_pin_to_bit_mask_PGM
+                0x00000194       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000194                digital_pin_to_bit_mask_PGM
  .progmem.data.digital_pin_to_port_PGM
-                0x000031aa       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x000031aa                digital_pin_to_port_PGM
+                0x000001da       0x46 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000001da                digital_pin_to_port_PGM
  .progmem.data.port_to_input_PGM
-                0x000031f0       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x000031f0                port_to_input_PGM
+                0x00000220       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000220                port_to_input_PGM
  .progmem.data.port_to_output_PGM
-                0x0000320a       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x0000320a                port_to_output_PGM
+                0x0000023a       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x0000023a                port_to_output_PGM
  .progmem.data.port_to_mode_PGM
-                0x00003224       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x00003224                port_to_mode_PGM
-                0x0000323e                . = ALIGN (0x2)
+                0x00000254       0x1a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000254                port_to_mode_PGM
+ .progmem.data.various_symbols
+                0x0000026e      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x0000026e                various_symbols
+ .progmem.data.arial_bold
+                0x00000e52      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x00000e52                arial_bold
+ .progmem.data.SevenSegNumFont
+                0x00001a36      0x7d4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x00001a36                SevenSegNumFont
+ .progmem.data.BigFont
+                0x0000220a      0xbe4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x0000220a                BigFont
+ .progmem.data.SmallFont
+                0x00002dee      0x478 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x00002dee                SmallFont
+                0x00003266                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000323e                __ctors_start = .
+                0x00003266                __ctors_start = .
  *(.ctors)
- .ctors         0x0000323e        0x2 Sketch.o
-                0x00003240                __ctors_end = .
-                0x00003240                __dtors_start = .
+ .ctors         0x00003266        0x2 Sketch.o
+ .ctors         0x00003268        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x0000326a                __ctors_end = .
+                0x0000326a                __dtors_start = .
  *(.dtors)
- .dtors         0x00003240        0x2 Sketch.o
-                0x00003242                __dtors_end = .
+ .dtors         0x0000326a        0x2 Sketch.o
+                0x0000326c                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00003242        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
-                0x00003242                __init
+ .init0         0x0000326c        0x0 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
+                0x0000326c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00003242       0x10 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .init2         0x0000326c       0x10 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00003252       0x1a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
-                0x00003252                __do_copy_data
- .init4         0x0000326c       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
-                0x0000326c                __do_clear_bss
+ .init4         0x0000327c       0x1a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
+                0x0000327c                __do_copy_data
+ .init4         0x00003296       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
+                0x00003296                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
  *(.init6)
- .init6         0x0000327c       0x20 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_ctors.o)
-                0x0000327c                __do_global_ctors
+ .init6         0x000032a6       0x20 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_ctors.o)
+                0x000032a6                __do_global_ctors
  *(.init6)
  *(.init7)
  *(.init7)
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000329c        0x8 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .init9         0x000032c6        0x8 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
  *(.init9)
  *(.text)
- .text          0x000032a4        0x4 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
-                0x000032a4                __vector_22
-                0x000032a4                __vector_28
-                0x000032a4                __vector_1
-                0x000032a4                __vector_32
-                0x000032a4                __vector_34
-                0x000032a4                __vector_24
-                0x000032a4                __vector_12
-                0x000032a4                __vector_55
-                0x000032a4                __vector_46
-                0x000032a4                __bad_interrupt
-                0x000032a4                __vector_6
-                0x000032a4                __vector_31
-                0x000032a4                __vector_35
-                0x000032a4                __vector_39
-                0x000032a4                __vector_3
-                0x000032a4                __vector_30
-                0x000032a4                __vector_45
-                0x000032a4                __vector_25
-                0x000032a4                __vector_11
-                0x000032a4                __vector_54
-                0x000032a4                __vector_13
-                0x000032a4                __vector_19
-                0x000032a4                __vector_56
-                0x000032a4                __vector_7
-                0x000032a4                __vector_49
-                0x000032a4                __vector_41
-                0x000032a4                __vector_43
-                0x000032a4                __vector_27
-                0x000032a4                __vector_5
-                0x000032a4                __vector_33
-                0x000032a4                __vector_47
-                0x000032a4                __vector_52
-                0x000032a4                __vector_37
-                0x000032a4                __vector_4
-                0x000032a4                __vector_44
-                0x000032a4                __vector_51
-                0x000032a4                __vector_9
-                0x000032a4                __vector_2
-                0x000032a4                __vector_21
-                0x000032a4                __vector_15
-                0x000032a4                __vector_29
-                0x000032a4                __vector_40
-                0x000032a4                __vector_8
-                0x000032a4                __vector_26
-                0x000032a4                __vector_48
-                0x000032a4                __vector_14
-                0x000032a4                __vector_53
-                0x000032a4                __vector_10
-                0x000032a4                __vector_50
-                0x000032a4                __vector_16
-                0x000032a4                __vector_18
-                0x000032a4                __vector_20
-                0x000032a4                __vector_42
-                0x000032a8                . = ALIGN (0x2)
+ .text          0x000032ce        0x4 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6/crtatmega2560.o
+                0x000032ce                __vector_22
+                0x000032ce                __vector_28
+                0x000032ce                __vector_1
+                0x000032ce                __vector_32
+                0x000032ce                __vector_34
+                0x000032ce                __vector_24
+                0x000032ce                __vector_12
+                0x000032ce                __vector_55
+                0x000032ce                __vector_46
+                0x000032ce                __bad_interrupt
+                0x000032ce                __vector_6
+                0x000032ce                __vector_31
+                0x000032ce                __vector_35
+                0x000032ce                __vector_39
+                0x000032ce                __vector_3
+                0x000032ce                __vector_30
+                0x000032ce                __vector_45
+                0x000032ce                __vector_11
+                0x000032ce                __vector_54
+                0x000032ce                __vector_13
+                0x000032ce                __vector_19
+                0x000032ce                __vector_56
+                0x000032ce                __vector_7
+                0x000032ce                __vector_49
+                0x000032ce                __vector_41
+                0x000032ce                __vector_43
+                0x000032ce                __vector_27
+                0x000032ce                __vector_5
+                0x000032ce                __vector_33
+                0x000032ce                __vector_47
+                0x000032ce                __vector_52
+                0x000032ce                __vector_37
+                0x000032ce                __vector_4
+                0x000032ce                __vector_44
+                0x000032ce                __vector_51
+                0x000032ce                __vector_9
+                0x000032ce                __vector_2
+                0x000032ce                __vector_21
+                0x000032ce                __vector_15
+                0x000032ce                __vector_29
+                0x000032ce                __vector_40
+                0x000032ce                __vector_8
+                0x000032ce                __vector_48
+                0x000032ce                __vector_14
+                0x000032ce                __vector_53
+                0x000032ce                __vector_10
+                0x000032ce                __vector_50
+                0x000032ce                __vector_16
+                0x000032ce                __vector_18
+                0x000032ce                __vector_20
+                0x000032ce                __vector_42
+                0x000032d2                . = ALIGN (0x2)
  *(.text.*)
- .text.recChar  0x000032a8       0x3c esp8266.o
-                0x000032a8                recChar
+ .text.recChar  0x000032d2       0x3c esp8266.o
+                0x000032d2                recChar
  .text.ESP8266_registerMessageCallback
-                0x000032e4        0xa esp8266.o
-                0x000032e4                ESP8266_registerMessageCallback
+                0x0000330e        0xa esp8266.o
+                0x0000330e                ESP8266_registerMessageCallback
  .text.ESP8266_Init
-                0x000032ee       0x26 esp8266.o
-                0x000032ee                ESP8266_Init
+                0x00003318       0x26 esp8266.o
+                0x00003318                ESP8266_Init
  .text.ESP8266_sendMessage
-                0x00003314       0x82 esp8266.o
-                0x00003314                ESP8266_sendMessage
+                0x0000333e       0x82 esp8266.o
+                0x0000333e                ESP8266_sendMessage
  .text.ESP8266_isConnected
-                0x00003396        0x4 esp8266.o
-                0x00003396                ESP8266_isConnected
+                0x000033c0        0x4 esp8266.o
+                0x000033c0                ESP8266_isConnected
+ .text._ZN11EEPROMClass3getIiEERT_iS2_.isra.0
+                0x000033c4       0x28 Joystick.o
+ .text._ZN8JoystickC2Ei
+                0x000033ec       0xec Joystick.o
+                0x000033ec                _ZN8JoystickC2Ei
+                0x000033ec                _ZN8JoystickC1Ei
+ .text._ZN8JoystickD2Ev
+                0x000034d8        0x2 Joystick.o
+                0x000034d8                _ZN8JoystickD1Ev
+                0x000034d8                _ZN8JoystickD2Ev
+ .text._ZN8Joystick8CalulateEv
+                0x000034da      0x3c6 Joystick.o
+                0x000034da                _ZN8Joystick8CalulateEv
+ .text._ZN8Joystick9CalibrateEb
+                0x000038a0      0x114 Joystick.o
+                0x000038a0                _ZN8Joystick9CalibrateEb
  .text._Z6addLog6String
-                0x0000339a       0x62 Sketch.o
-                0x0000339a                _Z6addLog6String
+                0x000039b4       0x62 Sketch.o
+                0x000039b4                _Z6addLog6String
  .text._Z12BoolCallBackab
-                0x000033fc       0x96 Sketch.o
-                0x000033fc                _Z12BoolCallBackab
+                0x00003a16       0x96 Sketch.o
+                0x00003a16                _Z12BoolCallBackab
  .text._Z8printLogv
-                0x00003492      0x12a Sketch.o
-                0x00003492                _Z8printLogv
+                0x00003aac      0x12a Sketch.o
+                0x00003aac                _Z8printLogv
  .text._Z13DrawMenuEntry6Stringbi
-                0x000035bc      0x184 Sketch.o
-                0x000035bc                _Z13DrawMenuEntry6Stringbi
+                0x00003bd6      0x184 Sketch.o
+                0x00003bd6                _Z13DrawMenuEntry6Stringbi
  .text._Z22DrawMenuEntryIntNumberi6Stringi
-                0x00003740      0x302 Sketch.o
-                0x00003740                _Z22DrawMenuEntryIntNumberi6Stringi
+                0x00003d5a      0x302 Sketch.o
+                0x00003d5a                _Z22DrawMenuEntryIntNumberi6Stringi
  .text._Z12addMenuEntry6StringbPFvabE
-                0x00003a42       0x66 Sketch.o
-                0x00003a42                _Z12addMenuEntry6StringbPFvabE
+                0x0000405c       0x66 Sketch.o
+                0x0000405c                _Z12addMenuEntry6StringbPFvabE
  .text._Z18addMenuEntryIntNum6StringiiPFvaiE
-                0x00003aa8       0x7e Sketch.o
-                0x00003aa8                _Z18addMenuEntryIntNum6StringiiPFvaiE
+                0x000040c2       0x7e Sketch.o
+                0x000040c2                _Z18addMenuEntryIntNum6StringiiPFvaiE
  .text._Z13DrawInterfacev
-                0x00003b26      0x302 Sketch.o
-                0x00003b26                _Z13DrawInterfacev
+                0x00004140      0x33e Sketch.o
+                0x00004140                _Z13DrawInterfacev
  .text._Z7drawLogv
-                0x00003e28       0xd4 Sketch.o
-                0x00003e28                _Z7drawLogv
+                0x0000447e       0xd4 Sketch.o
+                0x0000447e                _Z7drawLogv
  .text._Z12recMessFunc1Pc
-                0x00003efc      0x24a Sketch.o
-                0x00003efc                _Z12recMessFunc1Pc
+                0x00004552      0x24a Sketch.o
+                0x00004552                _Z12recMessFunc1Pc
  .text._Z10drawButtoniiiiPca
-                0x00004146      0x156 Sketch.o
-                0x00004146                _Z10drawButtoniiiiPca
- .text._Z12applyChangesv
-                0x0000429c       0xb4 Sketch.o
-                0x0000429c                _Z12applyChangesv
+                0x0000479c      0x156 Sketch.o
+                0x0000479c                _Z10drawButtoniiiiPca
  .text._Z10drawMsgBoxv
-                0x00004350      0x1cc Sketch.o
-                0x00004350                _Z10drawMsgBoxv
+                0x000048f2       0x7e Sketch.o
+                0x000048f2                _Z10drawMsgBoxv
  .text._Z9waitForItiiii
-                0x0000451c       0x84 Sketch.o
-                0x0000451c                _Z9waitForItiiii
+                0x00004970       0x84 Sketch.o
+                0x00004970                _Z9waitForItiiii
  .text._Z18drawKeyboardScreeni
-                0x000045a0      0x84a Sketch.o
-                0x000045a0                _Z18drawKeyboardScreeni
+                0x000049f4      0x848 Sketch.o
+                0x000049f4                _Z18drawKeyboardScreeni
  .text._Z14EntryTouchCalch
-                0x00004dea      0x28c Sketch.o
-                0x00004dea                _Z14EntryTouchCalch
+                0x0000523c      0x28e Sketch.o
+                0x0000523c                _Z14EntryTouchCalch
  .text._Z12IntToString_jPc
-                0x00005076       0x60 Sketch.o
-                0x00005076                _Z12IntToString_jPc
+                0x000054ca       0x60 Sketch.o
+                0x000054ca                _Z12IntToString_jPc
  .text._Z11IntCallBackai
-                0x000050d6       0xac Sketch.o
-                0x000050d6                _Z11IntCallBackai
+                0x0000552a       0xb0 Sketch.o
+                0x0000552a                _Z11IntCallBackai
+ .text._Z22drawCalibrateInterfacev
+                0x000055da       0xcc Sketch.o
+                0x000055da                _Z22drawCalibrateInterfacev
+ .text._Z17drawTestInterfacev
+                0x000056a6       0xca Sketch.o
+                0x000056a6                _Z17drawTestInterfacev
+ .text._Z11LockDisplayb
+                0x00005770       0x88 Sketch.o
+                0x00005770                _Z11LockDisplayb
  .text._Z20TouchEventManagementv
-                0x00005182      0x396 Sketch.o
-                0x00005182                _Z20TouchEventManagementv
- .text.setup    0x00005518      0x168 Sketch.o
-                0x00005518                setup
- .text.loop     0x00005680        0x2 Sketch.o
-                0x00005680                loop
+                0x000057f8      0x8be Sketch.o
+                0x000057f8                _Z20TouchEventManagementv
+ .text.setup    0x000060b6      0x154 Sketch.o
+                0x000060b6                setup
+ .text._Z13drawLinePolariiii
+                0x0000620a      0x166 Sketch.o
+                0x0000620a                _Z13drawLinePolariiii
+ .text._Z16drawJoystickTestv
+                0x00006370      0x1ca Sketch.o
+                0x00006370                _Z16drawJoystickTestv
+ .text.loop     0x0000653a       0x5c Sketch.o
+                0x0000653a                loop
  .text.__vector_17
-                0x00005682       0xce Sketch.o
-                0x00005682                __vector_17
+                0x00006596       0xd6 Sketch.o
+                0x00006596                __vector_17
  .text.startup._GLOBAL__sub_I_myGLCD
-                0x00005750       0xca Sketch.o
+                0x0000666c       0xee Sketch.o
  .text.exit._GLOBAL__sub_D_myGLCD
-                0x0000581a       0x36 Sketch.o
+                0x0000675a       0x42 Sketch.o
  .text.uart1_init
-                0x00005850       0xc8 uart1.o
-                0x00005850                uart1_init
+                0x0000679c       0xc8 uart1.o
+                0x0000679c                uart1_init
  .text.uart1_init_x
-                0x00005918       0x2c uart1.o
-                0x00005918                uart1_init_x
+                0x00006864       0x2c uart1.o
+                0x00006864                uart1_init_x
  .text.uart1_registerCallBack
-                0x00005944        0xa uart1.o
-                0x00005944                uart1_registerCallBack
+                0x00006890        0xa uart1.o
+                0x00006890                uart1_registerCallBack
  .text.uart1_putc
-                0x0000594e        0xe uart1.o
-                0x0000594e                uart1_putc
+                0x0000689a        0xe uart1.o
+                0x0000689a                uart1_putc
  .text.uart1_newline
-                0x0000595c        0x8 uart1.o
-                0x0000595c                uart1_newline
+                0x000068a8        0x8 uart1.o
+                0x000068a8                uart1_newline
  .text.uart1_puts
-                0x00005964       0x24 uart1.o
-                0x00005964                uart1_puts
+                0x000068b0       0x24 uart1.o
+                0x000068b0                uart1_puts
  .text.__vector_38
-                0x00005988       0x58 uart1.o
-                0x00005988                __vector_38
+                0x000068d4       0x58 uart1.o
+                0x000068d4                __vector_38
  .text.__vector_36
-                0x000059e0       0x6c uart1.o
-                0x000059e0                __vector_36
+                0x0000692c       0x6c uart1.o
+                0x0000692c                __vector_36
  .text.avr-libc.fplib
-                0x00005a4c        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
-                0x00005a4c                __subsf3
-                0x00005a4e                __addsf3
+                0x00006998       0x1c d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(acos.o)
+                0x00006998                acos
  .text.avr-libc.fplib
-                0x00005a56       0xc0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
-                0x00005a70                __addsf3x
+                0x000069b4        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                0x000069b4                __subsf3
+                0x000069b6                __addsf3
  .text.avr-libc.fplib
-                0x00005b16        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
-                0x00005b16                __fixsfsi
+                0x000069be       0xc0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                0x000069d8                __addsf3x
  .text.avr-libc.fplib
-                0x00005b20       0x58 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
-                0x00005b20                __fixunssfsi
+                0x00006a7e        0x8 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+                0x00006a7e                __nesf2
+                0x00006a7e                __eqsf2
+                0x00006a7e                __cmpsf2
+                0x00006a7e                __ltsf2
+                0x00006a7e                __lesf2
  .text.avr-libc.fplib
-                0x00005b78       0x7a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
-                0x00005b78                __floatunsisf
-                0x00005b7c                __floatsisf
+                0x00006a86        0x6 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
+                0x00006a86                cos
  .text.avr-libc.fplib
-                0x00005bf2        0xc d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
-                0x00005bf2                __fp_inf
+                0x00006a8c        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                0x00006a8c                __divsf3
  .text.avr-libc.fplib
-                0x00005bfe        0x6 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
-                0x00005bfe                __fp_nan
+                0x00006a90       0xcc d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                0x00006aa6                __divsf3x
+                0x00006aaa                __divsf3_pse
  .text.avr-libc.fplib
-                0x00005c04        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
-                0x00005c04                __fp_pscA
+                0x00006b5c        0xa d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
+                0x00006b5c                __fixsfsi
  .text.avr-libc.fplib
-                0x00005c12        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
-                0x00005c12                __fp_pscB
+                0x00006b66       0x58 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                0x00006b66                __fixunssfsi
  .text.avr-libc.fplib
-                0x00005c20       0x22 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
-                0x00005c20                __fp_round
+                0x00006bbe       0x7a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                0x00006bbe                __floatunsisf
+                0x00006bc2                __floatsisf
  .text.avr-libc.fplib
-                0x00005c42       0x44 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
-                0x00005c42                __fp_split3
-                0x00005c52                __fp_splitA
+                0x00006c38       0x36 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_arccos.o)
+                0x00006c38                __fp_arccos
  .text.avr-libc.fplib
-                0x00005c86        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
-                0x00005c86                __fp_zero
-                0x00005c88                __fp_szero
+                0x00006c6e       0x48 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+                0x00006c6e                __fp_cmp
  .text.avr-libc.fplib
-                0x00005c94        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
-                0x00005c94                __mulsf3
+                0x00006cb6        0xc d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                0x00006cb6                __fp_inf
  .text.avr-libc.fplib
-                0x00005c98       0xc2 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
-                0x00005cac                __mulsf3x
-                0x00005cb0                __mulsf3_pse
+                0x00006cc2        0x6 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                0x00006cc2                __fp_nan
+ .text.avr-libc.fplib
+                0x00006cc8       0x4a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
+                0x00006cc8                __fp_powser
+ .text.avr-libc.fplib
+                0x00006d12        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                0x00006d12                __fp_pscA
+ .text.avr-libc.fplib
+                0x00006d20        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                0x00006d20                __fp_pscB
+ .text.avr-libc.fplib
+                0x00006d2e       0x50 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
+                0x00006d30                __fp_rempio2
+ .text.avr-libc.fplib
+                0x00006d7e       0x22 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                0x00006d7e                __fp_round
+ .text.avr-libc.fplib
+                0x00006da0       0x22 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
+                0x00006da0                __fp_sinus
+ .text.avr-libc.fplib
+                0x00006dc2       0x44 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                0x00006dc2                __fp_split3
+                0x00006dd2                __fp_splitA
+ .text.avr-libc.fplib
+                0x00006e06        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                0x00006e06                __fp_zero
+                0x00006e08                __fp_szero
+ .text.avr-libc.fplib
+                0x00006e14        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                0x00006e14                __mulsf3
+ .text.avr-libc.fplib
+                0x00006e18       0xc2 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                0x00006e2c                __mulsf3x
+                0x00006e30                __mulsf3_pse
+ .text.avr-libc.fplib
+                0x00006eda        0xc d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
+                0x00006eda                sin
+ .text.avr-libc.fplib
+                0x00006ee6       0x84 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sqrt.o)
+                0x00006eee                sqrtf
+                0x00006eee                sqrt
+ .text.avr-libc.fplib
+                0x00006f6a       0x1c d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
+                0x00006f6a                __fp_mpack
+                0x00006f6e                __fp_mpack_finite
+ .text.avr-libc.fplib
+                0x00006f86        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_norm2.o)
+                0x00006f86                __fp_norm2
+ .text.avr-libc.fplib
+                0x00006f94       0x22 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
+                0x00006f94                __fp_powsodd
+ .text._ZN14HardwareSerial9availableEv
+                0x00006fb6       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00006fb6                _ZN14HardwareSerial9availableEv
+ .text._ZN14HardwareSerial4peekEv
+                0x00006fce       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00006fce                _ZN14HardwareSerial4peekEv
+ .text._ZN14HardwareSerial4readEv
+                0x00006fea       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00006fea                _ZN14HardwareSerial4readEv
+ .text._Z14serialEventRunv
+                0x00007012       0x78 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00007012                _Z14serialEventRunv
+ .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x0000708a       0x42 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x0000708a                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+ .text._ZN14HardwareSerial5flushEv
+                0x000070cc       0x42 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000070cc                _ZN14HardwareSerial5flushEv
+ .text._ZN14HardwareSerial5writeEh
+                0x0000710e       0x8c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x0000710e                _ZN14HardwareSerial5writeEh
+ .text._ZN14HardwareSerial5beginEmh
+                0x0000719a       0xca D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x0000719a                _ZN14HardwareSerial5beginEmh
+ .text.__vector_25
+                0x00007264       0x6c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00007264                __vector_25
+ .text.__vector_26
+                0x000072d0       0x52 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x000072d0                __vector_26
+ .text._Z17Serial0_availablev
+                0x00007322       0x12 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00007322                _Z17Serial0_availablev
+ .text.startup._GLOBAL__sub_I___vector_25
+                0x00007334       0x5a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
  .text.initVariant
-                0x00005d5a        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
-                0x00005d5a                initVariant
+                0x0000738e        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+                0x0000738e                initVariant
  .text.startup.main
-                0x00005d5c       0x16 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
-                0x00005d5c                main
+                0x00007390       0x16 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+                0x00007390                main
+ .text._ZN5Print5writeEPKhj
+                0x000073a6       0x56 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x000073a6                _ZN5Print5writeEPKhj
+ .text._ZN5Print5writeEPKc
+                0x000073fc       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x000073fc                _ZN5Print5writeEPKc
+ .text._ZN5Print5printEPKc
+                0x00007426        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x00007426                _ZN5Print5printEPKc
+ .text._ZN5Print5printEc
+                0x00007428        0xe D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x00007428                _ZN5Print5printEc
+ .text._ZN5Print7printlnEv
+                0x00007436        0x6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x00007436                _ZN5Print7printlnEv
+ .text._ZN5Print11printNumberEmh
+                0x0000743c       0xa6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x0000743c                _ZN5Print11printNumberEmh
+ .text._ZN5Print5printEli
+                0x000074e2       0x8e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x000074e2                _ZN5Print5printEli
+ .text._ZN5Print5printEii
+                0x00007570        0xc D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x00007570                _ZN5Print5printEii
+ .text._ZN5Print7printlnEii
+                0x0000757c       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                0x0000757c                _ZN5Print7printlnEii
  .text.__vector_23
-                0x00005d72       0x94 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00005d72                __vector_23
- .text.micros   0x00005e06       0x4a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00005e06                micros
- .text.delay    0x00005e50       0x74 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00005e50                delay
- .text.init     0x00005ec4       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00005ec4                init
- .text._ZN6StringD2Ev
-                0x00005f88        0xa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00005f88                _ZN6StringD2Ev
-                0x00005f88                _ZN6StringD1Ev
- .text._ZN6String10invalidateEv
-                0x00005f92       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00005f92                _ZN6String10invalidateEv
- .text._ZN6String12changeBufferEj
-                0x00005fb6       0x34 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00005fb6                _ZN6String12changeBufferEj
- .text._ZN6String7reserveEj
-                0x00005fea       0x36 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00005fea                _ZN6String7reserveEj
- .text._ZN6String4copyEPKcj
-                0x00006020       0x3e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006020                _ZN6String4copyEPKcj
- .text._ZN6StringC2EPKc
-                0x0000605e       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x0000605e                _ZN6StringC2EPKc
-                0x0000605e                _ZN6StringC1EPKc
- .text._ZN6StringaSERKS_
-                0x00006086       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006086                _ZN6StringaSERKS_
- .text._ZN6StringC2ERKS_
-                0x000060b0       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x000060b0                _ZN6StringC2ERKS_
-                0x000060b0                _ZN6StringC1ERKS_
- .text._ZN6StringaSEPKc
-                0x000060c0       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x000060c0                _ZN6StringaSEPKc
- .text._ZN6String6concatEPKcj
-                0x000060ea       0x5a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x000060ea                _ZN6String6concatEPKcj
- .text._ZN6String6concatEh
-                0x00006144       0x54 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006144                _ZN6String6concatEh
- .text._ZN6String6concatEi
-                0x00006198       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006198                _ZN6String6concatEi
- .text._ZplRK15StringSumHelperPKc
-                0x000061f6       0x2e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x000061f6                _ZplRK15StringSumHelperPKc
- .text._ZplRK15StringSumHelperh
-                0x00006224       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006224                _ZplRK15StringSumHelperh
- .text._ZplRK15StringSumHelperi
-                0x0000623c       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x0000623c                _ZplRK15StringSumHelperi
- .text._ZNK6StringixEj
-                0x00006254       0x22 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006254                _ZNK6StringixEj
- .text._ZNK6String6charAtEj
-                0x00006276        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006276                _ZNK6String6charAtEj
- .text._ZNK6String8getBytesEPhjj
-                0x00006278       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x00006278                _ZNK6String8getBytesEPhjj
- .text._ZNK6String9substringEjj
-                0x000062d6       0x88 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                0x000062d6                _ZNK6String9substringEjj
- .text._ZN7URTouch15touch_WriteDataEh
-                0x0000635e       0x4a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x0000635e                _ZN7URTouch15touch_WriteDataEh
- .text._ZN7URTouch14touch_ReadDataEv
-                0x000063a8       0x3a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x000063a8                _ZN7URTouch14touch_ReadDataEv
- .text._ZN7URTouchC2Ehhhhh
-                0x000063e2       0x16 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x000063e2                _ZN7URTouchC2Ehhhhh
-                0x000063e2                _ZN7URTouchC1Ehhhhh
- .text._ZN7URTouch9InitTouchEh
-                0x000063f8      0x19a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x000063f8                _ZN7URTouch9InitTouchEh
- .text._ZN7URTouch4readEv
-                0x00006592      0x34a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x00006592                _ZN7URTouch4readEv
- .text._ZN7URTouch13dataAvailableEv
-                0x000068dc       0x32 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x000068dc                _ZN7URTouch13dataAvailableEv
- .text._ZN7URTouch4getXEv
-                0x0000690e      0x190 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x0000690e                _ZN7URTouch4getXEv
- .text._ZN7URTouch4getYEv
-                0x00006a9e      0x18c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x00006a9e                _ZN7URTouch4getYEv
- .text._ZN7URTouch12setPrecisionEh
-                0x00006c2a       0x26 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                0x00006c2a                _ZN7URTouch12setPrecisionEh
- .text._ZN4UTFT12LCD_Writ_BusEcch
-                0x00006c50      0x32e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00006c50                _ZN4UTFT12LCD_Writ_BusEcch
- .text._ZN4UTFT24_set_direction_registersEh
-                0x00006f7e       0x20 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00006f7e                _ZN4UTFT24_set_direction_registersEh
- .text._ZN4UTFT13_fast_fill_16Eiil
-                0x00006f9e      0x264 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00006f9e                _ZN4UTFT13_fast_fill_16Eiil
- .text._ZN4UTFT12_fast_fill_8Eil
-                0x00007202      0x414 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007202                _ZN4UTFT12_fast_fill_8Eil
- .text._ZN4UTFTC2Ehiiiii
-                0x00007616      0x3ae D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007616                _ZN4UTFTC1Ehiiiii
-                0x00007616                _ZN4UTFTC2Ehiiiii
- .text._ZN4UTFT13LCD_Write_COMEc
-                0x000079c4       0x30 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000079c4                _ZN4UTFT13LCD_Write_COMEc
- .text._ZN4UTFT14LCD_Write_DATAEcc
-                0x000079f4       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000079f4                _ZN4UTFT14LCD_Write_DATAEcc
- .text._ZN4UTFT14LCD_Write_DATAEc
-                0x00007a3c       0x30 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007a3c                _ZN4UTFT14LCD_Write_DATAEc
- .text._ZN4UTFT7InitLCDEh
-                0x00007a6c      0x1f6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007a6c                _ZN4UTFT7InitLCDEh
- .text._ZN4UTFT5setXYEjjjj
-                0x00007c62       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007c62                _ZN4UTFT5setXYEjjjj
- .text._ZN4UTFT5clrXYEv
-                0x00007d26       0x2c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007d26                _ZN4UTFT5clrXYEv
- .text._ZN4UTFT6clrScrEv
-                0x00007d52      0x132 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007d52                _ZN4UTFT6clrScrEv
- .text._ZN4UTFT8setColorEhhh
-                0x00007e84       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007e84                _ZN4UTFT8setColorEhhh
- .text._ZN4UTFT12setBackColorEhhh
-                0x00007eac       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007eac                _ZN4UTFT12setBackColorEhhh
- .text._ZN4UTFT8setPixelEj
-                0x00007ed4        0x6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007ed4                _ZN4UTFT8setPixelEj
- .text._ZN4UTFT9drawPixelEii
-                0x00007eda       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007eda                _ZN4UTFT9drawPixelEii
- .text._ZN4UTFT9drawHLineEiii
-                0x00007f22       0xbc D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007f22                _ZN4UTFT9drawHLineEiii
- .text._ZN4UTFT13fillRoundRectEiiii
-                0x00007fde      0x158 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00007fde                _ZN4UTFT13fillRoundRectEiiii
- .text._ZN4UTFT9drawVLineEiii
-                0x00008136       0xbe D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00008136                _ZN4UTFT9drawVLineEiii
- .text._ZN4UTFT8drawRectEiiii
-                0x000081f4       0x88 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000081f4                _ZN4UTFT8drawRectEiiii
- .text._ZN4UTFT13drawRoundRectEiiii
-                0x0000827c      0x164 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x0000827c                _ZN4UTFT13drawRoundRectEiiii
- .text._ZN4UTFT8fillRectEiiii
-                0x000083e0      0x1f6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000083e0                _ZN4UTFT8fillRectEiiii
- .text._ZN4UTFT8drawLineEiiii
-                0x000085d6      0x1d4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000085d6                _ZN4UTFT8drawLineEiiii
- .text._ZN4UTFT9printCharEhii
-                0x000087aa      0x3c8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x000087aa                _ZN4UTFT9printCharEhii
- .text._ZN4UTFT10rotateCharEhiiii
-                0x00008b72      0x344 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00008b72                _ZN4UTFT10rotateCharEhiiii
- .text._ZN4UTFT5printEPciii
-                0x00008eb6      0x14c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00008eb6                _ZN4UTFT5printEPciii
- .text._ZN4UTFT5printE6Stringiii
-                0x00009002       0x8c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x00009002                _ZN4UTFT5printE6Stringiii
- .text._ZN4UTFT9printNumIEliiic
-                0x0000908e      0x1d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x0000908e                _ZN4UTFT9printNumIEliiic
- .text._ZN4UTFT7setFontEPh
-                0x0000925e       0x36 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                0x0000925e                _ZN4UTFT7setFontEPh
- .text.__empty  0x00009294        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
-                0x00009294                yield
+                0x000075a6       0x94 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x000075a6                __vector_23
+ .text.millis   0x0000763a       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x0000763a                millis
+ .text.micros   0x00007652       0x4a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00007652                micros
+ .text.delay    0x0000769c       0x74 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x0000769c                delay
+ .text.init     0x00007710       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00007710                init
+ .text.analogRead
+                0x000077d4       0x4a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+                0x000077d4                analogRead
  .text.turnOffPWM
-                0x00009296       0xaa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .text.pinMode  0x00009340       0x78 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x00009340                pinMode
+                0x0000781e       0xac D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.pinMode  0x000078ca       0x78 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000078ca                pinMode
  .text.digitalWrite
-                0x000093b8       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
-                0x000093b8                digitalWrite
+                0x00007942       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00007942                digitalWrite
  .text._Z3maplllll
-                0x00009416       0x7e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
-                0x00009416                _Z3maplllll
- .text.avr-libc.fplib
-                0x00009494        0x6 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cos.o)
-                0x00009494                cos
- .text.avr-libc.fplib
-                0x0000949a       0x54 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_rempio2.o)
-                0x0000949e                __fp_rempio2
- .text.avr-libc.fplib
-                0x000094ee       0x26 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_sinus.o)
-                0x000094ee                __fp_sinus
- .text.avr-libc.fplib
-                0x00009514        0xc d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(sin.o)
-                0x00009514                sin
- .text.avr-libc.fplib
-                0x00009520       0x1c d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_mpack.o)
-                0x00009520                __fp_mpack
-                0x00009524                __fp_mpack_finite
- .text.avr-libc.fplib
-                0x0000953c       0x26 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powsodd.o)
-                0x0000953c                __fp_powsodd
- .text.avr-libc.fplib
-                0x00009562       0x4e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_powser.o)
-                0x00009562                __fp_powser
+                0x000079a0       0x82 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+                0x000079a0                _Z3maplllll
+ .text._ZN6StringD2Ev
+                0x00007a22        0xa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007a22                _ZN6StringD2Ev
+                0x00007a22                _ZN6StringD1Ev
+ .text._ZN6String10invalidateEv
+                0x00007a2c       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007a2c                _ZN6String10invalidateEv
+ .text._ZN6String12changeBufferEj
+                0x00007a50       0x34 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007a50                _ZN6String12changeBufferEj
+ .text._ZN6String7reserveEj
+                0x00007a84       0x36 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007a84                _ZN6String7reserveEj
+ .text._ZN6String4copyEPKcj
+                0x00007aba       0x3e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007aba                _ZN6String4copyEPKcj
+ .text._ZN6StringC2EPKc
+                0x00007af8       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007af8                _ZN6StringC2EPKc
+                0x00007af8                _ZN6StringC1EPKc
+ .text._ZN6StringaSERKS_
+                0x00007b20       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007b20                _ZN6StringaSERKS_
+ .text._ZN6StringC2ERKS_
+                0x00007b4a       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007b4a                _ZN6StringC2ERKS_
+                0x00007b4a                _ZN6StringC1ERKS_
+ .text._ZN6StringaSEPKc
+                0x00007b5a       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007b5a                _ZN6StringaSEPKc
+ .text._ZN6String6concatEPKcj
+                0x00007b84       0x5a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007b84                _ZN6String6concatEPKcj
+ .text._ZN6String6concatEh
+                0x00007bde       0x54 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007bde                _ZN6String6concatEh
+ .text._ZplRK15StringSumHelperPKc
+                0x00007c32       0x2e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007c32                _ZplRK15StringSumHelperPKc
+ .text._ZplRK15StringSumHelperh
+                0x00007c60       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007c60                _ZplRK15StringSumHelperh
+ .text._ZNK6StringixEj
+                0x00007c78       0x22 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007c78                _ZNK6StringixEj
+ .text._ZNK6String6charAtEj
+                0x00007c9a        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007c9a                _ZNK6String6charAtEj
+ .text._ZNK6String8getBytesEPhjj
+                0x00007c9c       0x5e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007c9c                _ZNK6String8getBytesEPhjj
+ .text._ZNK6String9substringEjj
+                0x00007cfa       0x88 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x00007cfa                _ZNK6String9substringEjj
+ .text._ZN7URTouch15touch_WriteDataEh
+                0x00007d82       0x4a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00007d82                _ZN7URTouch15touch_WriteDataEh
+ .text._ZN7URTouch14touch_ReadDataEv
+                0x00007dcc       0x3a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00007dcc                _ZN7URTouch14touch_ReadDataEv
+ .text._ZN7URTouchC2Ehhhhh
+                0x00007e06       0x16 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00007e06                _ZN7URTouchC2Ehhhhh
+                0x00007e06                _ZN7URTouchC1Ehhhhh
+ .text._ZN7URTouch9InitTouchEh
+                0x00007e1c      0x190 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00007e1c                _ZN7URTouch9InitTouchEh
+ .text._ZN7URTouch4readEv
+                0x00007fac      0x346 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00007fac                _ZN7URTouch4readEv
+ .text._ZN7URTouch13dataAvailableEv
+                0x000082f2       0x2e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x000082f2                _ZN7URTouch13dataAvailableEv
+ .text._ZN7URTouch4getXEv
+                0x00008320      0x18e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00008320                _ZN7URTouch4getXEv
+ .text._ZN7URTouch4getYEv
+                0x000084ae      0x18a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x000084ae                _ZN7URTouch4getYEv
+ .text._ZN7URTouch12setPrecisionEh
+                0x00008638       0x26 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x00008638                _ZN7URTouch12setPrecisionEh
+ .text._ZN4UTFT12LCD_Writ_BusEcch
+                0x0000865e      0x32e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000865e                _ZN4UTFT12LCD_Writ_BusEcch
+ .text._ZN4UTFT24_set_direction_registersEh
+                0x0000898c       0x20 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000898c                _ZN4UTFT24_set_direction_registersEh
+ .text._ZN4UTFT13_fast_fill_16Eiil
+                0x000089ac      0x264 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x000089ac                _ZN4UTFT13_fast_fill_16Eiil
+ .text._ZN4UTFT12_fast_fill_8Eil
+                0x00008c10      0x414 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00008c10                _ZN4UTFT12_fast_fill_8Eil
+ .text._ZN4UTFTC2Ehiiiii
+                0x00009024      0x3ae D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009024                _ZN4UTFTC1Ehiiiii
+                0x00009024                _ZN4UTFTC2Ehiiiii
+ .text._ZN4UTFT13LCD_Write_COMEc
+                0x000093d2       0x30 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x000093d2                _ZN4UTFT13LCD_Write_COMEc
+ .text._ZN4UTFT14LCD_Write_DATAEcc
+                0x00009402       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009402                _ZN4UTFT14LCD_Write_DATAEcc
+ .text._ZN4UTFT14LCD_Write_DATAEc
+                0x0000944a       0x30 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000944a                _ZN4UTFT14LCD_Write_DATAEc
+ .text._ZN4UTFT7InitLCDEh
+                0x0000947a      0x1f6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000947a                _ZN4UTFT7InitLCDEh
+ .text._ZN4UTFT5setXYEjjjj
+                0x00009670       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009670                _ZN4UTFT5setXYEjjjj
+ .text._ZN4UTFT5clrXYEv
+                0x00009734       0x2c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009734                _ZN4UTFT5clrXYEv
+ .text._ZN4UTFT10drawCircleEiii
+                0x00009760      0x29a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009760                _ZN4UTFT10drawCircleEiii
+ .text._ZN4UTFT6clrScrEv
+                0x000099fa      0x134 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x000099fa                _ZN4UTFT6clrScrEv
+ .text._ZN4UTFT8setColorEhhh
+                0x00009b2e       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009b2e                _ZN4UTFT8setColorEhhh
+ .text._ZN4UTFT12setBackColorEhhh
+                0x00009b56       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009b56                _ZN4UTFT12setBackColorEhhh
+ .text._ZN4UTFT8setPixelEj
+                0x00009b7e        0x6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009b7e                _ZN4UTFT8setPixelEj
+ .text._ZN4UTFT9drawPixelEii
+                0x00009b84       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009b84                _ZN4UTFT9drawPixelEii
+ .text._ZN4UTFT9drawHLineEiii
+                0x00009bcc       0xc0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009bcc                _ZN4UTFT9drawHLineEiii
+ .text._ZN4UTFT13fillRoundRectEiiii
+                0x00009c8c      0x158 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009c8c                _ZN4UTFT13fillRoundRectEiiii
+ .text._ZN4UTFT10fillCircleEiii
+                0x00009de4       0xc6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009de4                _ZN4UTFT10fillCircleEiii
+ .text._ZN4UTFT9drawVLineEiii
+                0x00009eaa       0xc0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009eaa                _ZN4UTFT9drawVLineEiii
+ .text._ZN4UTFT8drawRectEiiii
+                0x00009f6a       0x88 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009f6a                _ZN4UTFT8drawRectEiiii
+ .text._ZN4UTFT13drawRoundRectEiiii
+                0x00009ff2      0x164 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00009ff2                _ZN4UTFT13drawRoundRectEiiii
+ .text._ZN4UTFT8fillRectEiiii
+                0x0000a156      0x1f6 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000a156                _ZN4UTFT8fillRectEiiii
+ .text._ZN4UTFT8drawLineEiiii
+                0x0000a34c      0x1d8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000a34c                _ZN4UTFT8drawLineEiiii
+ .text._ZN4UTFT9printCharEhii
+                0x0000a524      0x3cc D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000a524                _ZN4UTFT9printCharEhii
+ .text._ZN4UTFT10rotateCharEhiiii
+                0x0000a8f0      0x34a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000a8f0                _ZN4UTFT10rotateCharEhiiii
+ .text._ZN4UTFT5printEPciii
+                0x0000ac3a      0x14c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000ac3a                _ZN4UTFT5printEPciii
+ .text._ZN4UTFT5printE6Stringiii
+                0x0000ad86       0x8c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000ad86                _ZN4UTFT5printE6Stringiii
+ .text._ZN4UTFT9printNumIEliiic
+                0x0000ae12      0x1d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000ae12                _ZN4UTFT9printNumIEliiic
+ .text._ZN4UTFT7setFontEPh
+                0x0000afe2       0x36 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x0000afe2                _ZN4UTFT7setFontEPh
+ .text._ZN13UTFT_GeometryC2EP4UTFT
+                0x0000b018        0x8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+                0x0000b018                _ZN13UTFT_GeometryC2EP4UTFT
+                0x0000b018                _ZN13UTFT_GeometryC1EP4UTFT
+ .text._ZN13UTFT_Geometry12fillTriangleEiiiiii
+                0x0000b020      0x304 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+                0x0000b020                _ZN13UTFT_Geometry12fillTriangleEiiiiii
+ .text.__empty  0x0000b324        0x2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
+                0x0000b324                yield
  .text.libgcc.mul
-                0x000095b0       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
-                0x000095b0                __mulsi3
+                0x0000b326       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
+                0x0000b326                __mulsi3
  .text.libgcc.div
-                0x000095ce       0x18 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodqi4.o)
-                0x000095ce                __udivmodqi4
+                0x0000b344       0x18 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodqi4.o)
+                0x0000b344                __udivmodqi4
  .text.libgcc.div
-                0x000095e6       0x28 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
-                0x000095e6                __udivmodhi4
+                0x0000b35c       0x28 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
+                0x0000b35c                __udivmodhi4
  .text.libgcc.div
-                0x0000960e       0x26 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
-                0x0000960e                _div
-                0x0000960e                __divmodhi4
+                0x0000b384       0x26 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
+                0x0000b384                _div
+                0x0000b384                __divmodhi4
  .text.libgcc.div
-                0x00009634       0x44 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
-                0x00009634                __udivmodsi4
+                0x0000b3aa       0x44 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
+                0x0000b3aa                __udivmodsi4
  .text.libgcc.div
-                0x00009678       0x28 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o)
-                0x00009678                __divmodsi4
+                0x0000b3ee       0x28 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o)
+                0x0000b3ee                __divmodsi4
  .text.libgcc.div
-                0x000096a0       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_negsi2.o)
-                0x000096a0                __negsi2
- .text.libgcc   0x000096b0       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
-                0x000096b0                __tablejump2__
+                0x0000b416       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_negsi2.o)
+                0x0000b416                __negsi2
+ .text.libgcc   0x0000b426       0x10 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
+                0x0000b426                __tablejump2__
  .text.libgcc.mul
-                0x000096c0       0x14 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_muluhisi3.o)
-                0x000096c0                __muluhisi3
+                0x0000b436       0x14 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_muluhisi3.o)
+                0x0000b436                __muluhisi3
  .text.libgcc.mul
-                0x000096d4       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_umulhisi3.o)
-                0x000096d4                __umulhisi3
+                0x0000b44a       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_umulhisi3.o)
+                0x0000b44a                __umulhisi3
  .text.avr-libc
-                0x000096f2      0x25a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x000096f2                malloc
-                0x0000981c                free
+                0x0000b468      0x25a d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x0000b468                malloc
+                0x0000b592                free
  .text.avr-libc
-                0x0000994c      0x1c8 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
-                0x0000994c                realloc
+                0x0000b6c2      0x1c8 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
+                0x0000b6c2                realloc
  .text.avr-libc
-                0x00009b14       0x12 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
-                0x00009b14                memcpy
+                0x0000b88a       0x12 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
+                0x0000b88a                memcpy
  .text.avr-libc
-                0x00009b26       0x16 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcat.o)
-                0x00009b26                strcat
+                0x0000b89c       0x16 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcat.o)
+                0x0000b89c                strcat
  .text.avr-libc
-                0x00009b3c        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
-                0x00009b3c                strcpy
+                0x0000b8b2        0xe d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
+                0x0000b8b2                strcpy
  .text.avr-libc
-                0x00009b4a       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strncpy.o)
-                0x00009b4a                strncpy
+                0x0000b8c0       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strncpy.o)
+                0x0000b8c0                strncpy
  .text.avr-libc
-                0x00009b68       0x14 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
-                0x00009b68                __itoa_ncheck
+                0x0000b8de       0x14 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
+                0x0000b8de                __itoa_ncheck
  .text.avr-libc
-                0x00009b7c       0x32 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
-                0x00009b7c                __utoa_ncheck
-                0x00009b7e                __utoa_common
+                0x0000b8f2       0x32 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
+                0x0000b8f2                __utoa_ncheck
+                0x0000b8f4                __utoa_common
  .text.avr-libc
-                0x00009bae       0x20 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strrev.o)
-                0x00009bae                strrev
-                0x00009bce                . = ALIGN (0x2)
+                0x0000b924       0x20 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strrev.o)
+                0x0000b924                strrev
+ .text.avr-libc
+                0x0000b944       0x10 D:/Programme/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.106/gcc/dev/atmega2560/avr6\libatmega2560.a(eerd_byte.o)
+                0x0000b944                eeprom_read_byte
+                0x0000b954                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00009bce        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
-                0x00009bce                _exit
-                0x00009bce                exit
+ .fini9         0x0000b954        0x0 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+                0x0000b954                _exit
+                0x0000b954                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x00009bce       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_dtors.o)
-                0x00009bce                __do_global_dtors
+ .fini6         0x0000b954       0x1e d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_dtors.o)
+                0x0000b954                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -1701,11 +2007,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00009bec        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+ .fini0         0x0000b972        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00009bf0                _etext = .
+                0x0000b976                _etext = .
 
-.data           0x00800200      0x2b8 load address 0x00009bf0
+.data           0x00800200      0x300 load address 0x0000b976
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800200        0x6 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
@@ -1713,105 +2019,124 @@ END GROUP
                 0x00800202                __malloc_heap_start
                 0x00800204                __malloc_margin
  *(.data*)
+ .data.analog_reference
+                0x00800206        0x1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+                0x00800206                analog_reference
  *(.rodata)
- .rodata        0x00800206       0x1a Sketch.o
- .rodata        0x00800220       0xa0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .rodata        0x00800207       0x1a Sketch.o
+ .rodata        0x00800221       0xa0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  *(.rodata*)
  .rodata.str1.1
-                0x008002c0      0x1f7 Sketch.o
-                                0x1ff (size before relaxing)
+                0x008002c1      0x220 Sketch.o
+                                0x23a (size before relaxing)
+ .rodata._ZTV14HardwareSerial
+                0x008004e1       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x008004e1                _ZTV14HardwareSerial
  .rodata.str1.1
-                0x008004b7        0x1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x008004f1        0xf D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                                 0x11 (size before relaxing)
+ .rodata.str1.1
+                0x00800500        0x1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  *(.gnu.linkonce.d*)
-                0x008004b8                . = ALIGN (0x2)
- *fill*         0x008004b7        0x1 
-                0x008004b8                _edata = .
-                0x008004b8                PROVIDE (__data_end, .)
+                0x00800502                . = ALIGN (0x2)
+                0x00800502                _edata = .
+                0x00800502                PROVIDE (__data_end, .)
 
-.bss            0x008004b8      0x61e
-                0x008004b8                PROVIDE (__bss_start, .)
+.bss            0x00800500      0x703
+                0x00800500                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.Temp.1685
-                0x008004b8       0x64 esp8266.o
+                0x00800500       0x64 esp8266.o
  .bss.charCounter.1686
-                0x0080051c        0x1 esp8266.o
+                0x00800564        0x1 esp8266.o
  .bss.MCallBack
-                0x0080051d        0x2 esp8266.o
+                0x00800565        0x2 esp8266.o
+ .bss._ZZ16drawJoystickTestvE9oldValues
+                0x00800567       0x10 Sketch.o
+ .bss._ZZ16drawJoystickTestvE6values
+                0x00800577       0x10 Sketch.o
  .bss.waitingForPong
-                0x0080051f        0x1 Sketch.o
-                0x0080051f                waitingForPong
+                0x00800587        0x1 Sketch.o
+                0x00800587                waitingForPong
  .bss.Int_count
-                0x00800520        0x1 Sketch.o
-                0x00800520                Int_count
+                0x00800588        0x1 Sketch.o
+                0x00800588                Int_count
  .bss.timeoutDetectionRunning
-                0x00800521        0x1 Sketch.o
-                0x00800521                timeoutDetectionRunning
+                0x00800589        0x1 Sketch.o
+                0x00800589                timeoutDetectionRunning
  .bss.InitSucsessfull
-                0x00800522        0x1 Sketch.o
-                0x00800522                InitSucsessfull
+                0x0080058a        0x1 Sketch.o
+                0x0080058a                InitSucsessfull
  .bss.DisplayLocked
-                0x00800523        0x1 Sketch.o
-                0x00800523                DisplayLocked
+                0x0080058b        0x1 Sketch.o
+                0x0080058b                DisplayLocked
  .bss.allEntries
-                0x00800524      0x4b0 Sketch.o
-                0x00800524                allEntries
- .bss.y         0x008009d4        0x2 Sketch.o
-                0x008009d4                y
- .bss.x         0x008009d6        0x2 Sketch.o
-                0x008009d6                x
+                0x0080058c      0x4b0 Sketch.o
+                0x0080058c                allEntries
+ .bss.y         0x00800a3c        0x2 Sketch.o
+                0x00800a3c                y
+ .bss.x         0x00800a3e        0x2 Sketch.o
+                0x00800a3e                x
  .bss.ActiveScreen
-                0x008009d8        0x2 Sketch.o
-                0x008009d8                ActiveScreen
+                0x00800a40        0x2 Sketch.o
+                0x00800a40                ActiveScreen
  .bss.ScrollPosition
-                0x008009da        0x2 Sketch.o
-                0x008009da                ScrollPosition
+                0x00800a42        0x2 Sketch.o
+                0x00800a42                ScrollPosition
  .bss.NumberOfMenuEntries
-                0x008009dc        0x2 Sketch.o
-                0x008009dc                NumberOfMenuEntries
+                0x00800a44        0x2 Sketch.o
+                0x00800a44                NumberOfMenuEntries
  .bss.LogLength
-                0x008009de        0x1 Sketch.o
-                0x008009de                LogLength
- .bss.Log       0x008009df       0x5a Sketch.o
-                0x008009df                Log
- .bss.myTouch   0x00800a39       0x3b Sketch.o
-                0x00800a39                myTouch
- .bss.myGLCD    0x00800a74       0x31 Sketch.o
-                0x00800a74                myGLCD
- .bss.callBack  0x00800aa5        0x2 uart1.o
-                0x00800aa5                callBack
+                0x00800a46        0x1 Sketch.o
+                0x00800a46                LogLength
+ .bss.Log       0x00800a47       0x5a Sketch.o
+                0x00800a47                Log
+ .bss.myJoystick
+                0x00800aa1       0x26 Sketch.o
+                0x00800aa1                myJoystick
+ .bss.geo       0x00800ac7        0x2 Sketch.o
+                0x00800ac7                geo
+ .bss.myTouch   0x00800ac9       0x3b Sketch.o
+                0x00800ac9                myTouch
+ .bss.myGLCD    0x00800b04       0x31 Sketch.o
+                0x00800b04                myGLCD
+ .bss.callBack  0x00800b35        0x2 uart1.o
+                0x00800b35                callBack
  .bss.receveReady
-                0x00800aa7        0x1 uart1.o
+                0x00800b37        0x1 uart1.o
  .bss.receveData
-                0x00800aa8        0x1 uart1.o
+                0x00800b38        0x1 uart1.o
  .bss.sendReady
-                0x00800aa9        0x1 uart1.o
+                0x00800b39        0x1 uart1.o
  .bss.sendIndex
-                0x00800aaa        0x1 uart1.o
+                0x00800b3a        0x1 uart1.o
  .bss.sendBuffer
-                0x00800aab       0x1e uart1.o
+                0x00800b3b       0x1e uart1.o
+ .bss.Serial    0x00800b59       0x9d D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00800b59                Serial
  .bss.timer0_fract
-                0x00800ac9        0x1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00800bf6        0x1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
  .bss.timer0_millis
-                0x00800aca        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00800aca                timer0_millis
+                0x00800bf7        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00800bf7                timer0_millis
  .bss.timer0_overflow_count
-                0x00800ace        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
-                0x00800ace                timer0_overflow_count
+                0x00800bfb        0x4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00800bfb                timer0_overflow_count
  *(COMMON)
- COMMON         0x00800ad2        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x00800ad2                __brkval
-                0x00800ad4                __flp
-                0x00800ad6                PROVIDE (__bss_end, .)
-                0x00009bf0                __data_load_start = LOADADDR (.data)
-                0x00009ea8                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800bff        0x4 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x00800bff                __brkval
+                0x00800c01                __flp
+                0x00800c03                PROVIDE (__bss_end, .)
+                0x0000b976                __data_load_start = LOADADDR (.data)
+                0x0000bc76                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800ad6        0x0
+.noinit         0x00800c03        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800ad6                _end = .
-                0x00800ad6                PROVIDE (__heap_start, .)
+                0x00800c03                _end = .
+                0x00800c03                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1854,17 +2179,23 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 esp8266.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 Joystick.o
  .comment       0x00000030       0x31 Sketch.o
  .comment       0x00000030       0x31 uart1.o
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
  .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .comment       0x00000030       0x31 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
  .comment       0x00000030       0x31 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
  .comment       0x00000030       0x31 d:/programme/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
 
@@ -1888,133 +2219,187 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x7e8
+.debug_aranges  0x00000000      0xa68
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x40 esp8266.o
  .debug_aranges
-                0x00000040       0xf0 Sketch.o
+                0x00000040       0x60 Joystick.o
  .debug_aranges
-                0x00000130       0xa0 uart1.o
+                0x000000a0      0x110 Sketch.o
  .debug_aranges
-                0x000001d0       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+                0x000001b0       0xa0 uart1.o
  .debug_aranges
-                0x00000208       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+                0x00000250       0x68 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
  .debug_aranges
-                0x00000250      0x2a8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                0x000002b8       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
  .debug_aranges
-                0x000004f8       0x68 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                0x000002f0       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
  .debug_aranges
-                0x00000560      0x1d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                0x00000328       0xf0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
  .debug_aranges
-                0x00000730       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                0x00000418       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
  .debug_aranges
-                0x00000748       0x20 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
+                0x00000460       0x30 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
  .debug_aranges
-                0x00000768       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000490       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
  .debug_aranges
-                0x000007a0       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+                0x000004c8       0x48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_aranges
+                0x00000510      0x2a8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_aranges
+                0x000007b8       0x68 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_aranges
+                0x00000820      0x1d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_aranges
+                0x000009f0       0x18 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .debug_aranges
+                0x00000a08       0x40 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_aranges
+                0x00000a48       0x20 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x13f78
+.debug_info     0x00000000    0x1f7f7
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x360 esp8266.o
- .debug_info    0x00000360     0x74c9 Sketch.o
- .debug_info    0x00007829      0x5e3 uart1.o
- .debug_info    0x00007e0c      0x28f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
- .debug_info    0x0000809b      0x326 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_info    0x000083c1     0x4469 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_info    0x0000c82a      0xdc3 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_info    0x0000d5ed     0x5fa0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_info    0x0001358d      0x138 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
- .debug_info    0x000136c5       0x3e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .debug_info    0x00013703      0x635 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_info    0x00013d38      0x240 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_info    0x00000360     0x15ce Joystick.o
+ .debug_info    0x0000192e     0x8d18 Sketch.o
+ .debug_info    0x0000a646      0x5e3 uart1.o
+ .debug_info    0x0000ac29     0x1ebf D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_info    0x0000cae8     0x1a28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_info    0x0000e510      0x28f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_info    0x0000e79f     0x29d9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_info    0x00011178      0x326 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_info    0x0001149e      0x2e1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_info    0x0001177f      0x635 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_info    0x00011db4      0x240 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_info    0x00011ff4     0x4469 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_info    0x0001645d      0xdc3 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_info    0x00017220     0x5fa0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_info    0x0001d1c0      0x138 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .debug_info    0x0001d2f8     0x24c1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_info    0x0001f7b9       0x3e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
-.debug_abbrev   0x00000000     0x1cdf
+.debug_abbrev   0x00000000     0x332c
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1e3 esp8266.o
- .debug_abbrev  0x000001e3      0x631 Sketch.o
- .debug_abbrev  0x00000814      0x24f uart1.o
- .debug_abbrev  0x00000a63      0x109 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
- .debug_abbrev  0x00000b6c      0x145 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_abbrev  0x00000cb1      0x4d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_abbrev  0x00001181      0x2a9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_abbrev  0x0000142a      0x578 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_abbrev  0x000019a2       0x6e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
- .debug_abbrev  0x00001a10       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .debug_abbrev  0x00001a3a      0x15a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_abbrev  0x00001b94      0x14b D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_abbrev  0x000001e3      0x3d7 Joystick.o
+ .debug_abbrev  0x000005ba      0x6d7 Sketch.o
+ .debug_abbrev  0x00000c91      0x24f uart1.o
+ .debug_abbrev  0x00000ee0      0x478 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_abbrev  0x00001358      0x3b1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_abbrev  0x00001709      0x109 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_abbrev  0x00001812      0x487 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_abbrev  0x00001c99      0x145 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_abbrev  0x00001dde      0x193 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_abbrev  0x00001f71      0x15a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_abbrev  0x000020cb      0x14b D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_abbrev  0x00002216      0x4d0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_abbrev  0x000026e6      0x2a9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_abbrev  0x0000298f      0x578 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_abbrev  0x00002f07       0x6e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .debug_abbrev  0x00002f75      0x38d D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_abbrev  0x00003302       0x2a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
-.debug_line     0x00000000     0x5243
+.debug_line     0x00000000     0x6eed
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x164 esp8266.o
- .debug_line    0x00000164     0x10c6 Sketch.o
- .debug_line    0x0000122a      0x3eb uart1.o
- .debug_line    0x00001615      0x167 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
- .debug_line    0x0000177c      0x2c1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_line    0x00001a3d     0x128f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_line    0x00002ccc      0x534 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_line    0x00003200     0x1bb9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_line    0x00004db9       0x90 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
- .debug_line    0x00004e49       0x41 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .debug_line    0x00004e8a      0x27a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_line    0x00005104      0x13f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_line    0x00000164      0x5ea Joystick.o
+ .debug_line    0x0000074e     0x140b Sketch.o
+ .debug_line    0x00001b59      0x3eb uart1.o
+ .debug_line    0x00001f44      0x475 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_line    0x000023b9      0x23f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_line    0x000025f8      0x167 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_line    0x0000275f      0x626 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_line    0x00002d85      0x2c1 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_line    0x00003046      0x2ba D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_line    0x00003300      0x27a D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_line    0x0000357a      0x13f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_line    0x000036b9     0x128f D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_line    0x00004948      0x534 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_line    0x00004e7c     0x1bb9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_line    0x00006a35       0x90 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+ .debug_line    0x00006ac5      0x3e7 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_line    0x00006eac       0x41 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
-.debug_frame    0x00000000     0x2200
+.debug_frame    0x00000000     0x2c74
  *(.debug_frame)
  .debug_frame   0x00000000       0x9c esp8266.o
- .debug_frame   0x0000009c      0x57c Sketch.o
- .debug_frame   0x00000618      0x20c uart1.o
- .debug_frame   0x00000824       0x54 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
- .debug_frame   0x00000878       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_frame   0x0000093c      0xa48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_frame   0x00001384      0x200 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_frame   0x00001584      0xaec D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_frame   0x00002070       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .debug_frame   0x00002094       0x7c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_frame   0x00002110       0xf0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_frame   0x0000009c      0x1b4 Joystick.o
+ .debug_frame   0x00000250      0x6a8 Sketch.o
+ .debug_frame   0x000008f8      0x20c uart1.o
+ .debug_frame   0x00000b04      0x110 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_frame   0x00000c14       0xc0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_frame   0x00000cd4       0x54 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_frame   0x00000d28      0x39c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_frame   0x000010c4       0xc4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_frame   0x00001188       0x54 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_frame   0x000011dc       0x7c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_frame   0x00001258       0xf0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_frame   0x00001348      0xa48 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_frame   0x00001d90      0x200 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_frame   0x00001f90      0xaec D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_frame   0x00002a7c      0x1d4 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_frame   0x00002c50       0x24 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
-.debug_str      0x00000000     0x2600
+.debug_str      0x00000000     0x3920
  *(.debug_str)
- .debug_str     0x00000000      0x256 esp8266.o
+ .debug_str     0x00000000      0x24e esp8266.o
                                 0x2a8 (size before relaxing)
- .debug_str     0x00000256     0x1a36 Sketch.o
-                               0x1c76 (size before relaxing)
- .debug_str     0x00001c8c      0x14e uart1.o
+ .debug_str     0x0000024e      0x6f3 Joystick.o
+                                0x7f4 (size before relaxing)
+ .debug_str     0x00000941     0x1ab7 Sketch.o
+                               0x2383 (size before relaxing)
+ .debug_str     0x000023f8      0x14e uart1.o
                                 0x36e (size before relaxing)
- .debug_str     0x00001dda       0xaf D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_str     0x00002546      0x7f5 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+                               0x13bd (size before relaxing)
+ .debug_str     0x00002d3b       0x47 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+                               0x10e5 (size before relaxing)
+ .debug_str     0x00002d82       0x43 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
                                 0x2ba (size before relaxing)
- .debug_str     0x00001e89       0x8b D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_str     0x00002dc5      0x36c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+                                0xf65 (size before relaxing)
+ .debug_str     0x00003131       0x8b D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
                                 0x244 (size before relaxing)
- .debug_str     0x00001f14      0x3a0 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
-                                0xf3e (size before relaxing)
- .debug_str     0x000022b4      0x146 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
-                                0x5ba (size before relaxing)
- .debug_str     0x000023fa       0xb2 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
-                               0x151e (size before relaxing)
- .debug_str     0x000024ac       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
-                                0x1fa (size before relaxing)
- .debug_str     0x000024d4       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
-                                0x139 (size before relaxing)
- .debug_str     0x000024f0       0x69 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_str     0x000031bc       0x74 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+                                0x248 (size before relaxing)
+ .debug_str     0x00003230       0xa9 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
                                 0x2a9 (size before relaxing)
- .debug_str     0x00002559       0xa7 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_str     0x000032d9       0xac D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
                                 0x247 (size before relaxing)
+ .debug_str     0x00003385      0x384 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+                                0xf3e (size before relaxing)
+ .debug_str     0x00003709       0xc7 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+                                0x5ba (size before relaxing)
+ .debug_str     0x000037d0       0xa5 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+                               0x151e (size before relaxing)
+ .debug_str     0x00003875       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(DefaultFonts.o)
+                                0x1fa (size before relaxing)
+ .debug_str     0x0000389d       0x67 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+                               0x14ff (size before relaxing)
+ .debug_str     0x00003904       0x1c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
+                                0x139 (size before relaxing)
 
-.debug_loc      0x00000000     0xedb1
+.debug_loc      0x00000000    0x13147
  *(.debug_loc)
  .debug_loc     0x00000000      0x15b esp8266.o
- .debug_loc     0x0000015b     0x2f06 Sketch.o
- .debug_loc     0x00003061      0x717 uart1.o
- .debug_loc     0x00003778      0x269 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_loc     0x000039e1     0x417e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_loc     0x00007b5f      0xdfa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_loc     0x00008959     0x5b39 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_loc     0x0000e492      0x552 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_loc     0x0000e9e4      0x3cd D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_loc     0x0000015b      0x818 Joystick.o
+ .debug_loc     0x00000973     0x3523 Sketch.o
+ .debug_loc     0x00003e96      0x717 uart1.o
+ .debug_loc     0x000045ad      0x497 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_loc     0x00004a44      0x161 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_loc     0x00004ba5     0x1ef5 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_loc     0x00006a9a      0x269 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_loc     0x00006d03      0x11c D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_loc     0x00006e1f      0x552 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_loc     0x00007371      0x3cd D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_loc     0x0000773e     0x417e D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_loc     0x0000b8bc      0xdfa D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_loc     0x0000c6b6     0x5b39 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_loc     0x000121ef      0xf58 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2034,19 +2419,25 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x9b8
+.debug_ranges   0x00000000      0xcf8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x30 esp8266.o
- .debug_ranges  0x00000030      0x1c0 Sketch.o
- .debug_ranges  0x000001f0       0x90 uart1.o
- .debug_ranges  0x00000280       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
- .debug_ranges  0x000002a8       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
- .debug_ranges  0x000002e0      0x300 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
- .debug_ranges  0x000005e0       0x70 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
- .debug_ranges  0x00000650      0x2f8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
- .debug_ranges  0x00000948       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
- .debug_ranges  0x00000958       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_ranges  0x00000980       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_ranges  0x00000030       0x68 Joystick.o
+ .debug_ranges  0x00000098      0x228 Sketch.o
+ .debug_ranges  0x000002c0       0x90 uart1.o
+ .debug_ranges  0x00000350       0x70 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_ranges  0x000003c0       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_ranges  0x000003e8       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(main.o)
+ .debug_ranges  0x00000410      0x128 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(Print.o)
+ .debug_ranges  0x00000538       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring.o)
+ .debug_ranges  0x00000570       0x20 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_ranges  0x00000590       0x28 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_ranges  0x000005b8       0x38 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WMath.o)
+ .debug_ranges  0x000005f0      0x300 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(WString.o)
+ .debug_ranges  0x000008f0       0x70 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(URTouch.o)
+ .debug_ranges  0x00000960      0x2f8 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT.o)
+ .debug_ranges  0x00000c58       0x90 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(UTFT_Geometry.o)
+ .debug_ranges  0x00000ce8       0x10 D:\Diplomarbeit\Code\Atmel\Fernbedienung_server\fernbedienung\ArduinoCore\Debug\libArduinoCore.a(hooks.o)
 
 .debug_macro
  *(.debug_macro)

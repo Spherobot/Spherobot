@@ -1,5 +1,6 @@
-Sketch.d Sketch.o: .././Sketch.cpp \
- ..\\..\ArduinoCore\include\core/Arduino.h \
+src/core/UTFT_Geometry.d src/core/UTFT_Geometry.o: \
+ ../src/core/UTFT_Geometry.cpp ..\include\core/UTFT_Geometry.h \
+ ..\include\core/UTFT.h ..\include\core/Arduino.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -19,30 +20,24 @@ Sketch.d Sketch.o: .././Sketch.cpp \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ..\\..\ArduinoCore\include\core/binary.h \
- ..\\..\ArduinoCore\include\core/WCharacter.h \
+ ..\include\core/binary.h ..\include\core/WCharacter.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h \
- ..\\..\ArduinoCore\include\core/WString.h \
- ..\\..\ArduinoCore\include\core/HardwareSerial.h \
- ..\\..\ArduinoCore\include\core/Stream.h \
- ..\\..\ArduinoCore\include\core/Print.h \
+ ..\include\core/WString.h ..\include\core/HardwareSerial.h \
+ ..\include\core/Stream.h ..\include\core/Print.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h \
- ..\\..\ArduinoCore\include\core/Printable.h \
- ..\\..\ArduinoCore\include\core/USBAPI.h \
+ ..\include\core/Printable.h ..\include\core/USBAPI.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ..\\..\ArduinoCore\include\core/Arduino.h \
- ..\\..\ArduinoCore\include\variants\mega/pins_arduino.h \
- ..\\..\ArduinoCore\include\core/UTFT.h \
- ..\\..\ArduinoCore\include\core/HW_AVR_TFT_defines.h \
- ..\\..\ArduinoCore\include\core/URTouch.h \
- ..\\..\ArduinoCore\include\core/HW_AVR_touch_defines.h \
- ..\\..\ArduinoCore\include\core/UTFT_Geometry.h .././Joystick.h \
- ..\\..\ArduinoCore\include\core/EEPROM.h .././esp8266.h .././uart1.h
+ ..\include\variants\mega/pins_arduino.h \
+ ..\include\core/HW_AVR_TFT_defines.h
 
-..\\..\ArduinoCore\include\core/Arduino.h:
+..\include\core/UTFT_Geometry.h:
+
+..\include\core/UTFT.h:
+
+..\include\core/Arduino.h:
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -82,27 +77,27 @@ d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-..\\..\ArduinoCore\include\core/binary.h:
+..\include\core/binary.h:
 
-..\\..\ArduinoCore\include\core/WCharacter.h:
+..\include\core/WCharacter.h:
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h:
 
-..\\..\ArduinoCore\include\core/WString.h:
+..\include\core/WString.h:
 
-..\\..\ArduinoCore\include\core/HardwareSerial.h:
+..\include\core/HardwareSerial.h:
 
-..\\..\ArduinoCore\include\core/Stream.h:
+..\include\core/Stream.h:
 
-..\\..\ArduinoCore\include\core/Print.h:
+..\include\core/Print.h:
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdarg.h:
 
-..\\..\ArduinoCore\include\core/Printable.h:
+..\include\core/Printable.h:
 
-..\\..\ArduinoCore\include\core/USBAPI.h:
+..\include\core/USBAPI.h:
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h:
 
@@ -110,24 +105,6 @@ d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util
 
 d:\programme\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
-..\\..\ArduinoCore\include\core/Arduino.h:
+..\include\variants\mega/pins_arduino.h:
 
-..\\..\ArduinoCore\include\variants\mega/pins_arduino.h:
-
-..\\..\ArduinoCore\include\core/UTFT.h:
-
-..\\..\ArduinoCore\include\core/HW_AVR_TFT_defines.h:
-
-..\\..\ArduinoCore\include\core/URTouch.h:
-
-..\\..\ArduinoCore\include\core/HW_AVR_touch_defines.h:
-
-..\\..\ArduinoCore\include\core/UTFT_Geometry.h:
-
-.././Joystick.h:
-
-..\\..\ArduinoCore\include\core/EEPROM.h:
-
-.././esp8266.h:
-
-.././uart1.h:
+..\include\core/HW_AVR_TFT_defines.h:
