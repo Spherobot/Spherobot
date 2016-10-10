@@ -217,6 +217,9 @@ void IIC_RegisterWrite()
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
+			if(errorCallbackFunction != 0)
+			(*errorCallbackFunction)();
+			
 			break;
 	}
 }
@@ -408,6 +411,9 @@ void IIC_RegisterRead()
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
+			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			break;
 	}
