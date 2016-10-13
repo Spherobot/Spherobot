@@ -5,7 +5,6 @@
  *  Author: Michael
  */ 
 
-#define PI			3.141592
 #define WHEELANGLE	60.0/180.0*PI
 
 #include <avr/io.h>
@@ -143,7 +142,7 @@ void motor_drive(uint16_t angle, uint8_t speed)
 		y = speed/2;
 		z = speed/2;
 	}else{
-		anglerad = (float)angle/180.0*PI;
+		anglerad = (float)angle/180.0*M_PI;
 		
 		a=cos(anglerad)*speed;
 		b=sin(anglerad)*speed;
