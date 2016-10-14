@@ -162,10 +162,16 @@ void MPU_AccelGyroReadStart()
 		uart0_putsln("AccelGyroReadStart");
 	#endif
 	
+	
 	if(callback)
+	{
 		IIC_registerCallback(MPU_getAccelGyroData);
-	else
+		IIC_registerErrorCallback(MPU_dataReceived);
+	}else
+	{
 		IIC_registerCallback(MPU_dataReceived);
+		IIC_registerErrorCallback(MPU_dataReceived);
+	}
 	
 	#ifdef DEBUG_MPU9150
 		uart0_putsln("AG Read start");

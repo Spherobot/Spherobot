@@ -153,6 +153,7 @@ uint8_t IIC_busFree();
 ***													***
 ******************************************************/
 void IIC_registerCallback(IIC_callbackFunction callback); 
+void IIC_registerErrorCallback(IIC_callbackFunction callback); 
 
 
 

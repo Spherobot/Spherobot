@@ -9,6 +9,9 @@
 #ifndef UART1_H_
 #define UART1_H_
 
+
+typedef void (*CallBackFunction)(char c);
+
 enum uart1_SEND_PART{uart1_SEND_DISABLED, uart1_SEND_ENABLED};
 enum uart1_RECEVE_PART{uart1_REC_DISABLED, uart1_REC_ENABLED};
 enum uart1_NUM_DATABITS{uart1_5_DATABITS = 5, uart1_6_DATABITS,uart1_7_DATABITS,uart1_8_DATABITS,uart1_9_DATABITS};
@@ -33,5 +36,7 @@ uint8_t uart1_readyToSend_int();
 void uart1_puts_int(char text[]);
 
 void uart1_deactivate();
+
+void uart1_registerCallBack(CallBackFunction callback);
 
 #endif /* UART1_H_ */

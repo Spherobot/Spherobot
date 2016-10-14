@@ -5,9 +5,13 @@
  *  Author: Michael
  */ 
 
+#define WHEELANGLE	60.0/180.0*PI
+
 #include <avr/io.h>
 #include "L6206.h"
 #include "General_644P.h"
+#include <math.h>
+
 
 void motor123_init()
 {
@@ -118,5 +122,72 @@ void motor3_control(uint8_t direction, uint8_t speed)
 		default:
 		PORT_L6206_DIR &= ~(1<<PIN_L6206_M3_DIR1);
 		PORT_L6206_DIR &= ~(1<<PIN_L6206_M3_DIR2);
+	}
+}
+
+void motor_drive(uint16_t angle, uint8_t speed)
+{
+	float anglerad, a, b, xhelp;
+	uint8_t sektor, x, z, y;
+	
+	if(angle >= 360)
+		angle -= 360;
+		
+	sektor = angle / 60;
+	angle -= sektor*60;
+	
+	if(angle == 0)
+	{
+		x = speed/2;
+		y = speed/2;
+		z = speed/2;
+	}else{
+		anglerad = (float)angle/180.0*M_PI;
+		
+		a=cos(anglerad)*speed;
+		b=sin(anglerad)*speed;
+		x=b/sin(WHEELANGLE);
+		xhelp=cos(WHEELANGLE)*x;
+		y = a-xhelp;
+		z=0;
+	}
+	
+	switch(sektor)
+	{
+		case 0:
+			motor1_control('l', y);
+			motor2_control('r', x);
+			motor3_control('r', z);
+			break;
+		case 1:
+			motor1_control('l', z);
+			motor2_control('r', y);
+			motor3_control('l', x);
+			break;
+		case 2:
+			motor1_control('r', x);
+			motor2_control('r', z);
+			motor3_control('l', y);
+			break;
+		case 3:
+			motor1_control('r', y);
+			motor2_control('l', x);
+			motor3_control('l', z);
+			break;
+		case 4:
+			motor1_control('r', z);
+			motor2_control('l', y);
+			motor3_control('r', x);
+			break;
+		case 5:
+			motor1_control('l', x);
+			motor2_control('l', z);
+			motor3_control('r', y);
+			break;
+		default:
+			motor1_control('l', 0);
+			motor2_control('l', 0);
+			motor3_control('r', 0);
+			break;
 	}
 }

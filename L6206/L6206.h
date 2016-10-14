@@ -88,4 +88,6 @@ void motor3_control(uint8_t direction, uint8_t speed);
 ***													***
 ******************************************************/
 
+void motor_drive(uint16_t angle, uint8_t speed);
+
 #endif /* L6206_H_ */
