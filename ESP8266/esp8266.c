@@ -7,6 +7,12 @@
 #include "esp8266.h"
 
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
+
+
 volatile static MessageCallBackFunction MCallBack = NULL;
 volatile static EventCallBackFunction ECallBack = NULL;
 
@@ -28,10 +34,11 @@ volatile char Keywords[4][10]={
 {"+IPD,xx:"},
 {"+IPD,x,x:"},
 {"+IPD,x,xx:"}};
-volatile char Buffer[100]="";
+volatile char Bufferx[100]="";
+volatile char* Buffer=Bufferx;
 volatile char CatchedMessage[100]="";
-volatile int8_t count1=0, catchNextXChars=-1;
-volatile char* pTemp;
+volatile int8_t count=0, catchNextXChars=-1;
+
 
 //uart1 functions for communication:
 void uart1_init_(uint32_t baudRate, uint8_t send, uint8_t receive)
@@ -92,7 +99,7 @@ uint8_t uart1_testAndGetc_(volatile char* pC)
 
 
 
-bool WaitForOkResponse()																															//working!
+bool WaitForOkResponse()
 {
 	volatile char Response[50]="";
 	volatile uint16_t i=0;
@@ -105,7 +112,6 @@ bool WaitForOkResponse()																															//working!
 		if(i-4>=0){
 			if(Response[i-1]=='\n'&&Response[i-2]=='\r'&&Response[i-3]=='K'&&Response[i-4]=='O')
 				return true;
-			//uart0_puts(Response);
 		}
 		Buffer='0';
 		if(uart1_testAndGetc_(&Buffer))
@@ -121,7 +127,7 @@ bool WaitForOkResponse()																															//working!
 	}
 }
 
-bool ESP8266_sendCommand(char Command[])																											//working!
+bool ESP8266_sendCommand(char Command[])
 {
 	char Temp[50];
 	strcpy(Temp,Command);
@@ -131,7 +137,7 @@ bool ESP8266_sendCommand(char Command[])																											//working!
 	
 }
 
-void ESP8266_sendCommand_(char Command[])																											//working!
+void ESP8266_sendCommand_(char Command[])
 {
 	char Temp[50];
 	strcpy(Temp,Command);
@@ -139,7 +145,7 @@ void ESP8266_sendCommand_(char Command[])																											//working!
 	uart1_puts_(Temp);
 }
 
-bool ESP8266_enableReadback(bool setting)																											//working!
+bool ESP8266_enableReadback(bool setting)
 {
 	char Temp[50];
 	strcpy(Temp,"ATE");
@@ -154,7 +160,7 @@ bool ESP8266_enableReadback(bool setting)																											//working!
 	}	
 }
 
-void IntToString(uint16_t number,char String[])																									//working!
+void IntToString(uint16_t number,char String[])
 {
 	uint8_t zt, t, h, z, e, help;
 	zt=number/10000;
@@ -171,9 +177,6 @@ void IntToString(uint16_t number,char String[])																									//workin
 	String[5]='\0';
 }
 
-
-
-
 void ESP8266_registerMessageCallback(MessageCallBackFunction callBack)
 {
 	MCallBack=callBack;
@@ -183,12 +186,13 @@ void ESP8266_registerEventCallback(EventCallBackFunction callBack)
 	ECallBack=callBack;
 }
 
-//work in Progress Functions Below:
-//Not Finished Functions Below are either Buggy or not working!
 uint8_t ESP8266_init(bool Direction,char Nickname[])//1--> server;0-->client
 {
+	
 	modeConfig = Direction;
-	uart1_init_x_(DEBUG_UART0_BAUD_RATE,1,1,0,0);
+	uart1_init_x_(BAUD_RATE,1,1,0,0);
+	ESP8266_enableReadback(0);
+	
 	if(Direction==true)
 	{
 		if(!ESP8266_sendCommand("AT+CWMODE=3"))
@@ -205,13 +209,10 @@ uint8_t ESP8266_init(bool Direction,char Nickname[])//1--> server;0-->client
 		if(!ESP8266_sendCommand("AT+CWJAP=\"BB8\",\"rTXQdqZp\""))		//AT+CWJAP="master","1234test"
 			return 2;
 		ESP8266_sendCommand_("AT+CIPSTART=\"TCP\",\"192.168.4.1\",333"); //if(!) //AT+CIPSTART="TCP","192.168.4.1",333
-		{
-			//uart1_init_x_(DEBUG_UART0_BAUD_RATE,1,1,1,1);
 			//return 3;
-		}
 		
 	}
-	uart1_init_x_(DEBUG_UART0_BAUD_RATE,1,1,1,1);
+	uart1_init_x_(BAUD_RATE,1,1,1,1);
 	return 0;
 }
 
@@ -254,7 +255,8 @@ void ESP8266_sendMessage_(int8_t deviceID, char Message[],uint8_t length)
 
 void ESP8266_sendMessage(int8_t deviceID, char Message[])
 {
-	ESP8266_sendMessage_(deviceID,Message,strlen(Message));
+	if(ESP8266_isConnected())
+		ESP8266_sendMessage_(deviceID,Message,strlen(Message));
 }
 
 bool ESP8266_isConnected(){
@@ -262,11 +264,35 @@ bool ESP8266_isConnected(){
 }
 
 
+char *strstr1(char* string, char* substring)//searches a substring inside of a string, but ignores characters marked with *. except they are the first one
+{
+	for (uint8_t i = 0; i < strlen(string); i++)
+	{
+		if (string[i] == substring[0])
+		{
+			char * pTemp = NULL;
+			bool x = false;
+			pTemp = &string[i];
+			for (uint8_t j = 0; j < strlen(substring); j++)
+			{
+				if (pTemp[j] != substring[j] && substring[j] != '*')
+				{
+					x = true;
+					break;
+				}
+			}
+			if (x == false)
+			return pTemp;
+		}
+	}
+	return NULL;
+}
+
 ISR(USART1_RX_vect)
 {
 	volatile char c = UDR1;
 	volatile static int8_t catchIndex=0, deviceID=-1;
-	
+	volatile char* pTemp;
 	
 	if(c == '>' && MessageToSend == 1)
 	{
@@ -280,13 +306,15 @@ ISR(USART1_RX_vect)
 	{
 		
 	}else{
-		Buffer[count1++]=c;
+		Buffer[count++]=c;
 		pTemp=NULL;
-		if(count1 >= 2 && Buffer[count1-2] == '\r' && Buffer[count1-1] == '\n')
+		
+		if(count >= 2 && Buffer[count-2] == '\r' && Buffer[count-1] == '\n')
 		{
 			pTemp = strstr(Buffer,"CONNECT");
 			if(pTemp!=NULL)
 			{
+				Buffer=pTemp;
 				if(pTemp[-1]==',')
 				{
 					ConnectState=true;
@@ -297,27 +325,29 @@ ISR(USART1_RX_vect)
 					if(ECallBack!=NULL)
 						(*ECallBack)(-1,1);															//return just Connect
 				}
-			}
-			
-			pTemp = strstr(Buffer,"CLOSED");
-			if(pTemp!=NULL)
-			{
-				if(pTemp[-1]==',')
+			}else{
+				pTemp = strstr(Buffer,"CLOSED");
+				if(pTemp!=NULL)
 				{
-					ConnectState=false;
-					if(ECallBack!=NULL)
+					Buffer=pTemp;
+					if(pTemp[-1]==',')
+					{
+						ConnectState=false;
+						if(ECallBack!=NULL)
 						(*ECallBack)(pTemp[-2]-'0',0);												//return closed + adress
-					
-				}else{
-					ConnectState=false;
-					if(ECallBack!=NULL)
+						
+						}else{
+						ConnectState=false;
+						if(ECallBack!=NULL)
 						(*ECallBack)(-1,0);															//return just closed
+					}
 				}
 			}
-			count1=0;
-			Buffer[0]='\0';
+			
+			
+			count=0;
+			Buffer[0]='0';
 		}
-		
 		
 		
 		if(catchNextXChars!=-1)
@@ -326,74 +356,47 @@ ISR(USART1_RX_vect)
 			if(catchNextXChars<=catchIndex)
 			{
 				catchNextXChars=-1;
-				count1=0;
-				Buffer[0]='\0';
+				CatchedMessage[catchIndex]='\0';
 				catchIndex=0;
 				if(MCallBack!=NULL)
 					(*MCallBack)(deviceID,CatchedMessage);
+				count=0;
+				Buffer[0]='0';
 			}
-			
-		/*
-		{"+IPD,x:"},
-		{"+IPD,xx:"},
-		{"+IPD,x,x:"},
-		{"+IPD,x,xx:"}};
-		*/
-		}else if((c == Keywords[0][count1-1]) || (Keywords[0][count1-1] == 'x' && (c >= '0' && c <= '9')))
+		}else if((pTemp=strstr1(Buffer,"+IPD,*:"))!=NULL)
 		{
-			if(Keywords[0][count1]=='\0')
+			if(Keywords[0][count]=='\0')
 			{
-				count1=0;
-				pTemp=strstr(Buffer,"+IPD,");
-				if(pTemp!=NULL)
-				{
-					catchNextXChars = pTemp[5]-'0';
-					deviceID=-1;
-					//uart0_putc(catchNextXChars+'0');
-				}
+				count=0;
+				Buffer = pTemp;
+				catchNextXChars = pTemp[5]-'0';
+				deviceID=-1;
 			}
-		}else if((c == Keywords[1][count1-1]) || (Keywords[1][count1-1] == 'x' && (c >= '0' && c <= '9')))
+		}else if((pTemp=strstr1(Buffer,"+IPD,**:"))!=NULL)
 		{
-			if(Keywords[1][count1]=='\0')
+			if(Keywords[1][count]=='\0')
 			{
-				count1=0;
-				pTemp=strstr(Buffer,"+IPD,");
-				if(pTemp!=NULL)
-				{
-					catchNextXChars =(pTemp[5]-'0')*10 + (pTemp[6]-'0');
-					deviceID=-1;
-					//uart0_putc(catchNextXChars + '0');
-				}
+				count=0;
+				Buffer=pTemp;
+				catchNextXChars =(pTemp[5]-'0')*10 + (pTemp[6]-'0');
+				deviceID=-1;
 			}
-		}else if((c == Keywords[2][count1-1]) || (Keywords[2][count1-1] == 'x' && (c >= '0' && c <= '9')))
+		}else if((pTemp=strstr1(Buffer,"+IPD,*,*:"))!=NULL)
 		{
-			if(Keywords[2][count1]=='\0')
+			if(Keywords[2][count]=='\0')
 			{
-				count1=0;
-				pTemp=strstr(Buffer,"+IPD,");
-				if(pTemp!=NULL)
-				{
-					catchNextXChars = pTemp[7]-'0';
-					deviceID=pTemp[5]-'0';
-					//uart0_putc(catchNextXChars+'0');
-				}
+				count=0;
+				Buffer=pTemp;
+				catchNextXChars = pTemp[7]-'0';
+				deviceID=pTemp[5]-'0';
 			}
-		}else if((c == Keywords[3][count1-1]) || (Keywords[3][count1-1] == 'x' && (c >= '0' && c <= '9')))
+		}else if((pTemp=strstr1(Buffer,"+IPD,*,**:"))!=NULL)
 		{
-			if(Keywords[3][count1]=='\0')
-			{
-				count1=0;
-				pTemp=strstr(Buffer,"+IPD,");
-				if(pTemp!=NULL)
-				{
-					catchNextXChars =(pTemp[7]-'0')*10 + (pTemp[8]-'0');
-					deviceID=pTemp[5]-'0';
-					//uart0_putc(catchNextXChars + '0');
-				}
-			}
+			count=0;
+			Buffer=pTemp;
+			catchNextXChars =(pTemp[7]-'0')*10 + (pTemp[8]-'0');
+			deviceID=pTemp[5]-'0';
 		}
-		
-		
 	}	
 }
 
@@ -415,62 +418,7 @@ ISR(USART1_TX_vect)
 }
 
 
-/*		please Don't use ==> Not tested Yet!
 
 
-uint16_t ESP8266_setupUartConnection_temp(uint16_t desiredBaudRate)
-//changes the properties only temporarily and does not store them as defaults in the flash memory
-{
-	uint16_t StandartBaudRates[12]={300,1200,2400,4800,9600,14400,19200,28800,38400,57600};  // not supported: 115200,230400 because greater than 16 bit Integer
-	uart1_init_x(desiredBaudRate,1,1,0,0);
-	char Temp[50];
-	strcpy(Temp,"AT+UART_CUR=");
-	char BaudRate[6]="";
-	IntToString(desiredBaudRate,BaudRate);
-	strcat(Temp,BaudRate);
-	strcat(Temp,",8,1,0,3");// 8 data bits; 1 stop bit, no parity, flow control--> 3->requires CL+LF at end of Command --> Windows standart
-	uint8_t i=0;
-	while(ESP8266_sendCommand(Temp)==false)
-	{
-		uart1_init_x(StandartBaudRates[i],1,1,0,0);
-		char Temp[50];
-		strcpy(Temp,"AT+UART_CUR=");
-		char BaudRate[6]="";
-		IntToString(StandartBaudRates[i],BaudRate);
-		strcat(Temp,BaudRate);
-		strcat(Temp,",8,1,0,3");// 8 data bits; 1 stop bit, no parity, flow control--> 3->requires CL+LF at end of Command --> Windows standart
-		i++;
-		if(i==12)
-		return 0;
-	}
-	return StandartBaudRates[i];
-}
 
 
-uint16_t ESP8266_setupUartConnection_Perm(uint16_t desiredBaudRate)
-//does save all configurations as defaults and writes them to the flash memory
-{
-	uint16_t StandartBaudRates[12]={300,1200,2400,4800,9600,14400,19200,28800,38400,57600};  // not supported: 115200,230400 because greater than 16 bit Integer
-	uart1_init_x(desiredBaudRate,1,1,0,0);
-	char Temp[50];
-	strcpy(Temp,"AT+UART_DEF=");
-	char BaudRate[6]="";
-	IntToString(desiredBaudRate,BaudRate);
-	strcat(Temp,BaudRate);
-	strcat(Temp,",8,1,0,3");// 8 data bits; 1 stop bit, no parity, flow control--> 3->requires CL+LF at end of Command --> Windows standart
-	uint8_t i=0;
-	while(ESP8266_sendCommand(Temp)==false)
-	{
-		uart1_init_x(StandartBaudRates[i],1,1,0,0);
-		char Temp[50];
-		strcpy(Temp,"AT+UART_DEF=");
-		char BaudRate[6]="";
-		IntToString(StandartBaudRates[i],BaudRate);
-		strcat(Temp,BaudRate);
-		strcat(Temp,",8,1,0,3");// 8 data bits; 1 stop bit, no parity, flow control--> 3->requires CL+LF at end of Command --> Windows standart
-		i++;
-		if(i==12)
-			return 0;
-	}
-	return StandartBaudRates[i];
-}*/
