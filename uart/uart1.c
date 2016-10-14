@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
 #define BUFFER_SIZE_SEND 30
 #include <string.h>
-#include "General_644P.h"
+#include "uart1.h"
 
 volatile static char sendBuffer[BUFFER_SIZE_SEND];
 volatile static uint8_t sendIndex;
@@ -18,6 +18,7 @@ volatile static uint8_t sendReady;
 volatile static char receveData;
 volatile static char receveReady;
 
+volatile static CallBackFunction CallBack = NULL;
 
 void uart1_init(uint32_t baudRate, uint8_t send, uint8_t receive)
 {
@@ -60,7 +61,10 @@ void uart1_deactivate()
 	UCSR1C=0x00;
 }
 
-
+void uart1_registerCallBack(CallBackFunction callback)
+{
+	CallBack=callback;
+}
 
 
 void uart1_putc(char c)
@@ -82,7 +86,7 @@ void uart1_puts(char text[])
 		uart1_putc(text[i]);
 	}
 }
-void uart1_putChar(uint16_t number)
+void uart1_putChar(uint8_t number)
 {
 	number=number-((int)number/1000)*1000;
 	uint8_t h, t, o, help;
@@ -189,4 +193,5 @@ ISR(USART1_RX_vect)
 {
 	receveData = UDR1;
 	receveReady = 1;
+	CallBack(receveData);
 }

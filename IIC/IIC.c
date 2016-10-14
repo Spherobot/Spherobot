@@ -11,13 +11,10 @@
 #include "IIC.h"
 #include "MPU9150.h"
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
-
 volatile static uint8_t busFree;
 
 static volatile IIC_callbackFunction callbackFunction;
+static volatile IIC_callbackFunction errorCallbackFunction;
 static volatile uint8_t read, write;
 static volatile uint8_t IsrSlaveAddress;
 static volatile uint8_t IsrRegisterAddress;
@@ -49,7 +46,7 @@ void IIC_init(uint32_t frequency)
 		TWBR = ((F_OSC/frequency)-16)/32;
 	} else if(frequency >= 613)
 	{
-		TWSR |= (1<<TWPS0) | (1<<TWPS1); //prescaler 64
+		TWSR |= (1<<TWPS0) | (1<<TWPS1);
 		TWBR = ((F_OSC/frequency)-16)/128;
 	} else
 	{
@@ -80,6 +77,11 @@ uint8_t IIC_busFree()
 void IIC_registerCallback(IIC_callbackFunction callback) 
 {
 	callbackFunction = callback;
+}
+
+void IIC_registerErrorCallback(IIC_callbackFunction callback)
+{
+	errorCallbackFunction = callback;
 }
 
 void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_t BytesToTransmitt, uint8_t* Data)
@@ -150,11 +152,14 @@ void IIC_RegisterWrite()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("Register Write SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
+			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			
 			break;
@@ -189,7 +194,7 @@ void IIC_RegisterWrite()
 		//Data byte has been transmitted; NACK has been recieved
 		case 0x30:
 			#ifdef DEBUG_IIC
-				uart0_putsln("Data byte has been transmitted; NACK has been recieved");
+				uart0_putsln("Register Write Data byte has been transmitted; NACK has been recieved");
 			#endif
 			
 			TWCR |= (1 << TWSTO);
@@ -207,6 +212,9 @@ void IIC_RegisterWrite()
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
+			
+			if(errorCallbackFunction != 0)
+			(*errorCallbackFunction)();
 			
 			break;
 	}
@@ -278,12 +286,14 @@ void IIC_RegisterRead()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_puts("SLA+W has been transmitted; NACK has been recieved");
+			uart0_puts("Regtister Read SLA+W has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			break;
 			
@@ -302,13 +312,14 @@ void IIC_RegisterRead()
 			
 		//Data byte has been transmitted; NACK has been recieved
 		case 0x30:
-			uart0_puts("Data byte has been transmitted; NACK has been recieved");
+			uart0_puts("Register Read Data byte has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
-			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			break;
 			
@@ -339,11 +350,14 @@ void IIC_RegisterRead()
 			
 		//SLA+R has been transmitted; NACK has been recieved
 		case 0x48:
-			uart0_puts("SLA+R has been transmitted; NACK has been recieved");
+			uart0_puts("Register Read SLA+R has been transmitted; NACK has been recieved");
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1; //send stopp condition
+			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			break;
 			
@@ -366,7 +380,7 @@ void IIC_RegisterRead()
 		//Data byte has been received; NACK has been returned
 		case 0x58:
 			#ifdef DEBUG_IIC
-				uart0_putsln("Data byte has been received; NACK has been returned");
+				uart0_putsln("Register Read Data byte has been received; NACK has been returned");
 			#endif
 			
 			*(RecieveData + BytesRecieved) = TWDR;
@@ -393,6 +407,9 @@ void IIC_RegisterRead()
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
+			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
 			
 			break;
 	}

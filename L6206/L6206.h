@@ -9,6 +9,10 @@
 #ifndef L6206_H_
 #define L6206_H_
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 void motor123_init();
 /******************************************************
 ***													***
@@ -87,5 +91,7 @@ void motor3_control(uint8_t direction, uint8_t speed);
 ***			values: 0 - 100							***
 ***													***
 ******************************************************/
+
+void motor_drive(uint16_t angle, uint8_t speed);
 
 #endif /* L6206_H_ */

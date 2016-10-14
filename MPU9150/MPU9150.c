@@ -11,10 +11,6 @@
 #include "IIC.h"
 #include "MPU9150.h"
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
-
 static uint8_t accelerometer[6];
 static uint8_t gyroscope[6];
 static uint8_t compass[6];
@@ -162,10 +158,16 @@ void MPU_AccelGyroReadStart()
 		uart0_putsln("AccelGyroReadStart");
 	#endif
 	
+	
 	if(callback)
+	{
 		IIC_registerCallback(MPU_getAccelGyroData);
-	else
+		IIC_registerErrorCallback(MPU_dataReceived);
+	}else
+	{
 		IIC_registerCallback(MPU_dataReceived);
+		IIC_registerErrorCallback(MPU_dataReceived);
+	}
 	
 	#ifdef DEBUG_MPU9150
 		uart0_putsln("AG Read start");

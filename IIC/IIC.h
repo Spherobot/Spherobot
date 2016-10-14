@@ -9,6 +9,10 @@
 #ifndef IIC_H_
 #define IIC_H_
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 typedef void (*IIC_callbackFunction)(void);
 
 
@@ -153,6 +157,7 @@ uint8_t IIC_busFree();
 ***													***
 ******************************************************/
 void IIC_registerCallback(IIC_callbackFunction callback); 
+void IIC_registerErrorCallback(IIC_callbackFunction callback); 
 
 
 

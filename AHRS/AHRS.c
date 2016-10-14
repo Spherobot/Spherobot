@@ -10,10 +10,7 @@
 #include "IIC.h"
 #include "MPU9150.h"
 #include <math.h>
-
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
+#include "AHRS.h"
 
 #define BETADEF 0.1 // 2 * proportional gain
 
@@ -27,6 +24,17 @@ float roll;
 float pitch;
 float yaw;
 uint8_t anglesComputed;
+
+float ax, ay, az;
+float gx, gy, gz;
+float mx, my, mz;
+
+
+int16_t xAccel, yAccel, zAccel;
+int16_t xGyro, yGyro, zGyro;
+int16_t xCompass, yCompass, zCompass;
+uint8_t compass;
+volatile uint8_t compassRead;
 
 float AHRS_invSqrt(float x)
 {
@@ -54,8 +62,11 @@ void AHRS_computeAngles()
 	anglesComputed = 1;
 }
 
-void AHRS_begin(float sampleFrequency)
+void AHRS_init(float sampleFrequency)
 {
+ 	IIC_init(300000);
+ 	MPU_init(&xAccel, &yAccel, &zAccel, &xGyro, &yGyro, &zGyro, &xCompass, &yCompass, &zCompass, 0);
+	
 	invSampleFreq = 1.0 / sampleFrequency;
 	beta = BETADEF;
 	q0 = 1.0f;
@@ -313,4 +324,60 @@ float AHRS_convertRawMagnet(int16_t mRaw)
 {
 	float m = (mRaw*1229.0) / 4096.0;
 	return m;
+}
+
+void AHRS_getFusionData(float* pitch, float* roll, float* yaw)
+{
+	static uint8_t compassDataReady = 0;
+	static uint8_t compassConversionStarted = 0;
+	
+	MPU_AccelGyroReadStart();
+	while(!MPU_dataReady());
+	//MPU_getRawAccelGyroData();
+	MPU_getAccelGyroData();
+			
+	if(!compassConversionStarted)
+	{
+		while(!IIC_busFree());
+		MPU_CompassConversionStart();
+		while(!IIC_busFree());
+		compassConversionStarted = 1;
+	}
+			
+	compassDataReady = MPU_CompassDataReady();
+			
+	if(compassDataReady)
+	{
+		MPU_CompassReadStartFast();
+		while(!MPU_dataReady());
+				
+		MPU_getCompassData();
+		compassDataReady = 0;
+		compassConversionStarted = 0;
+	}
+			
+	ax = AHRS_convertRawAcceleration(xAccel);
+	ay = AHRS_convertRawAcceleration(yAccel);
+	az = AHRS_convertRawAcceleration(zAccel);
+	gx = AHRS_convertRawGyro(xGyro);
+	gy = AHRS_convertRawGyro(yGyro);
+	gz = AHRS_convertRawGyro(zGyro);
+	mx = AHRS_convertRawMagnet(xCompass);
+	my = AHRS_convertRawMagnet(yCompass);
+	mz = AHRS_convertRawMagnet(zCompass);
+			
+	AHRS_update(gx, gy, gz, ax, ay, az, mx, my, mz);
+	//AHRS_updateIMU(gx, gy, gz, ax, ay, az);
+	*roll = AHRS_getRoll();
+	*yaw = AHRS_getYaw();
+	*pitch = AHRS_getPitch();
+			
+	// 			uart0_putFloat(yaw);
+	// 			uart0_putc('\t');
+	// 			uart0_puts("Pitch: ");
+	// 			uart0_putFloat(pitch);
+	// 			uart0_putc('\t');
+	// 			uart0_puts("Roll: ");
+	// 			uart0_putFloat(roll);
+	// 			uart0_newline();	
 }
