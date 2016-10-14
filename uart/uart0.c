@@ -10,10 +10,7 @@
 #include <avr/interrupt.h>
 #define BUFFER_SIZE_SEND 30
 #include <string.h>
-
-//choose correct General-File
 #include "General_644P.h"
-//#include "General_ATMega2560.h"
 
 volatile static char sendBuffer[BUFFER_SIZE_SEND];
 volatile static uint8_t sendIndex;
