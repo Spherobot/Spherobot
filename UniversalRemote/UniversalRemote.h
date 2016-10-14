@@ -9,6 +9,10 @@
 #ifndef UNIVERSALREMOTE_H_
 #define UNIVERSALREMOTE_H_
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 #include "uart1.h"
 #include "uart0.h"
 
