@@ -10,7 +10,7 @@ void setup()
   println(Serial.list()); 
   //String portName = Serial.list()[4]; //change the 0 to a 1 or 2 etc. to match your port
   
-  myPort = new Serial(this, "COM9", 9600);
+  myPort = new Serial(this, "COM9", 57600);
   
   line(0,500-deadZone*5,1000,500-deadZone*5);
   line(0,500+deadZone*5,1000,500+deadZone*5);
@@ -65,6 +65,10 @@ void draw() {
     if(extend>100)
       extend=100;
     textSize(32);
+    if(extend>100)
+    {
+      extend=100;
+    }
     String Data=round(angle)+","+round(extend);
     text(Data, 10, 30); 
     fill(0, 102, 153);
