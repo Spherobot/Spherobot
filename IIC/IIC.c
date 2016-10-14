@@ -11,10 +11,6 @@
 #include "IIC.h"
 #include "MPU9150.h"
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
-
 volatile static uint8_t busFree;
 
 static volatile IIC_callbackFunction callbackFunction;
