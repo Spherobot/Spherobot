@@ -5,33 +5,23 @@
  *  Author: flo
  */ 
 
+#include <avr/io.h>
+#include <string.h>
+#include <stdbool.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
 
-
-
-
+#include "uart0.h"
 
 
 #ifndef ESP8266_H_
 #define ESP8266_H_
 
-#include <avr/interrupt.h>
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
-
-
-#include "uart0.h"
-#include <avr/io.h>
-#include <string.h>
-#include <stdbool.h>
-
-
-#define FOSC 16000000
 
 
 
 #define ENABLE_DEBUG_UART0_PRINTS
-#define DEBUG_UART0_BAUD_RATE				9600
+#define BAUD_RATE							11520  //AT+CIOBAUD=11520
 #define MAX_BUFFER_SIZE						50
 #define MAX_RESPONSE_LOOP					650000
 
@@ -51,20 +41,6 @@ void ESP8266_sendMessage_(int8_t deviceID, char Message[],uint8_t length);
 void ESP8266_sendMessage(int8_t deviceID, char Message[]);
 void ESP8266_registerEventCallback(EventCallBackFunction callBack);
 bool ESP8266_isConnected();
-
-
-
-/*
-//private:			but public for testing
-void ESP8266_InitiateConnection(char Nickname[], bool Direction);
-bool ESP8266_isConnected();
-bool ESP8266_getPossibleSettings(char Command[], char possibilities[]);
-void ESP8266_getSetting(char Command[], char* setting[]);
-uint16_t ESP8266_querryBaudRate();
-bool ESP8266_enableReadback(bool setting);
-bool ESP8266_changeSetting(char Command[], char Setting[]);
-void sendDebugMsg(char String[]);
-*/
 
 
 
