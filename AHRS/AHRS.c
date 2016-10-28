@@ -333,10 +333,10 @@ void AHRS_getFusionData(float* pitch, float* roll, float* yaw)
 	
 	MPU_AccelGyroReadStart();
 	while(!MPU_dataReady());
-	//MPU_getRawAccelGyroData();
-	MPU_getAccelGyroData();
+	MPU_getRawAccelGyroData();
+	//MPU_getAccelGyroData();
 			
-	if(!compassConversionStarted)
+	/*if(!compassConversionStarted)
 	{
 		while(!IIC_busFree());
 		MPU_CompassConversionStart();
@@ -354,7 +354,7 @@ void AHRS_getFusionData(float* pitch, float* roll, float* yaw)
 		MPU_getCompassData();
 		compassDataReady = 0;
 		compassConversionStarted = 0;
-	}
+	}*/
 			
 	ax = AHRS_convertRawAcceleration(xAccel);
 	ay = AHRS_convertRawAcceleration(yAccel);
@@ -362,12 +362,12 @@ void AHRS_getFusionData(float* pitch, float* roll, float* yaw)
 	gx = AHRS_convertRawGyro(xGyro);
 	gy = AHRS_convertRawGyro(yGyro);
 	gz = AHRS_convertRawGyro(zGyro);
-	mx = AHRS_convertRawMagnet(xCompass);
+	/*mx = AHRS_convertRawMagnet(xCompass);
 	my = AHRS_convertRawMagnet(yCompass);
-	mz = AHRS_convertRawMagnet(zCompass);
+	mz = AHRS_convertRawMagnet(zCompass);*/
 			
-	AHRS_update(gx, gy, gz, ax, ay, az, mx, my, mz);
-	//AHRS_updateIMU(gx, gy, gz, ax, ay, az);
+	//AHRS_update(gx, gy, gz, ax, ay, az, mx, my, mz);
+	AHRS_updateIMU(gx, gy, gz, ax, ay, az);
 	*roll = AHRS_getRoll();
 	*yaw = AHRS_getYaw();
 	*pitch = AHRS_getPitch();
