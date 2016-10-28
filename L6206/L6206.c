@@ -5,7 +5,7 @@
  *  Author: Michael
  */ 
 
-#define WHEELANGLE	60.0/180.0*PI
+#define WHEELANGLE	60.0/180.0*M_PI
 
 #include <avr/io.h>
 #include "L6206.h"
@@ -138,9 +138,11 @@ void motor_drive(uint16_t angle, uint8_t speed)
 	
 	if(angle == 0)
 	{
-		x = speed/2;
-		y = speed/2;
-		z = speed/2;
+		speed = speed *0.8;
+		
+		x = speed;
+		y = speed;
+		z = speed;
 	}else{
 		anglerad = (float)angle/180.0*M_PI;
 		

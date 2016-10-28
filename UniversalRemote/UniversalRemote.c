@@ -5,12 +5,11 @@
  *  Author: Florian
  */ 
 
-#include "UniversalRemote.h"
 #include <stdbool.h>
-#include "General_644P.h"
-Joysicks RemoteControl;
+#include "UniversalRemote.h"
+Joysticks RemoteControl;
 
-int Connected=false;
+int Connected=true;
 
 void rec(char c)
 {
@@ -99,10 +98,10 @@ void rec(char c)
 void UniversalRemote_Init()
 {
 	uart1_registerCallBack(rec);
-	uart1_init_x(9600,1,1,1,1);
+	uart1_init_x(57600,1,1,1,1);
 }
 
-Joysicks UniversalRemote_GetValues()
+Joysticks UniversalRemote_GetValues()
 {
 	return RemoteControl;
 }

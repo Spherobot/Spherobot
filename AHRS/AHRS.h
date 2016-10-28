@@ -9,6 +9,10 @@
 #ifndef AHRS_H_
 #define AHRS_H_
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 float AHRS_invSqrt(float x);
 void AHRS_computeAngles();
 void AHRS_init(float sampleFrequency);

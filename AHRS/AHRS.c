@@ -10,10 +10,7 @@
 #include "IIC.h"
 #include "MPU9150.h"
 #include <math.h>
-
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
+#include "AHRS.h"
 
 #define BETADEF 0.1 // 2 * proportional gain
 

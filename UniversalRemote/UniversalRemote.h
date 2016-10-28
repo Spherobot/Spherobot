@@ -9,12 +9,17 @@
 #ifndef UNIVERSALREMOTE_H_
 #define UNIVERSALREMOTE_H_
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 #include "uart1.h"
 #include "uart0.h"
+#include <stdbool.h>
 
 typedef struct {
-	float extend;
-	float angle;
+	uint16_t extend;
+	uint16_t angle;
 	int x;
 	int y;
 }coordinate;
@@ -22,7 +27,7 @@ typedef struct {
 typedef struct {
 	coordinate R;
 	coordinate L;
-}Joysicks;
+}Joysticks;
 
 typedef struct {
 	
@@ -32,7 +37,7 @@ typedef struct {
 
 
 void UniversalRemote_Init();
-Joysicks UniversalRemote_GetValues();
+Joysticks UniversalRemote_GetValues();
 void UniversalRemote_waitForConnection();
 
 

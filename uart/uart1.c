@@ -9,7 +9,6 @@
 #include <avr/interrupt.h>
 #define BUFFER_SIZE_SEND 30
 #include <string.h>
-#include "General_644P.h"
 #include "uart1.h"
 
 volatile static char sendBuffer[BUFFER_SIZE_SEND];
