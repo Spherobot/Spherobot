@@ -15,11 +15,11 @@
 
 //SampleTime in ms
 
-void PID_Initialize(int pidController, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, float Min, float Max, int SampleTime);
-void PID_Compute(int pidController);
-void PID_SetTunings(int pidController, float Kp, float Ki, float Kd);
-void PID_SetSampleTime(int pidController, int NewSampleTime);
-void PID_SetOutputLimits(int pidController, float Min, float Max);
-void PID_SetControllerDirection(int pidController, int Direction);
+void Initialize(int pidController, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, float Min, float Max, int SampleTime);
+void Compute(int pidController);
+void SetTunings(int pidController, float Kp, float Ki, float Kd);
+void SetSampleTime(int pidController, int NewSampleTime);
+void SetOutputLimits(int pidController, float Min, float Max);
+void SetControllerDirection(int pidController, int Direction);
 
 #endif /* PID_H_ */
