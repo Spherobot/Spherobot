@@ -85,12 +85,24 @@ void draw() {
         x=-100;
       if(y < -100)
         y=-100;
-      String Data=(round(x)+100)+","+(round(y)+100);
+      String s_X,s_Y;
+      s_X=""+(round(x)+100);
+      s_Y=""+(round(y)+100);
+      if(s_X.length()==1)
+        s_X="00"+s_X;
+      else if(s_X.length()==2)
+        s_X="0"+s_X;
+        
+      if(s_Y.length()==1)
+        s_Y="00"+s_Y;
+      else if(s_Y.length()==2)
+        s_Y="0"+s_Y;
+      String Data=s_X+","+s_Y;
       text(Data, 10, 30); 
       fill(0, 102, 153);
       if(before+200<millis())
       {
-        myPort.write(Data+"L;\n");
+        myPort.write("L"+Data+"L;\n");
         before=millis();
       }
       //transmit data
@@ -99,9 +111,9 @@ void draw() {
       textSize(32);
       text("100,100", 10, 30); 
       fill(0, 102, 153);
-      if(before+200<millis())
+      if(before+150<millis())
       {
-        myPort.write("100,100L;\n");
+        myPort.write("L100,100;\n");
         before=millis();
       }
       //transmit stop
@@ -114,14 +126,18 @@ void keyPressed() {
   if(key=='m'||key=='M')
   {
     Mode^=1;
-    myPort.write("100,100L;\n");
+    myPort.write("L100,100;\n");
   }
 }
 
 void Submit() {
   String command="c";
   String temp;
-  command+=cp5.get(Textfield.class,"Index").getText();
+  temp=cp5.get(Textfield.class,"Index").getText();
+  if(temp.length()==2)
+    command+=temp;
+  else if(temp.length()==1)
+    command+="0"+temp;
   command+=",";
   temp=cp5.get(Textfield.class,"Value").getText();
   if(temp.length()==3)
