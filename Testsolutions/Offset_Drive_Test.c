@@ -103,24 +103,40 @@ int main(void)
 					
 					if(x < xSetpoint)
 					{
-						x += RampAccel;
+						if((xSetpoint - x) <= 5)
+							x += 1;
+						else
+							x += RampAccel;
+						
 						if(x > 100)
 							x = 100;
 					} else if(x > xSetpoint)
 					{
-						x -= RampDeccel;
+						if((x - xSetpoint) <= 5)
+							x -= 1;
+						else
+							x -= RampDeccel;
+						
 						if(x < -100)
 							x = -100;
 					}
 					
 					if(y < ySetpoint)
 					{
-						y += RampAccel;
+						if((ySetpoint - y) <= 5)
+							y += 1;
+						else
+							y += RampAccel;
+						
 						if(y > 100)
 							y = 100;
 					} else if(y > ySetpoint)
 					{
-						y -= RampDeccel;
+						if((y - ySetpoint) <= 5)
+							y -= 1;
+						else
+							y -= RampDeccel;
+
 						if(y < -100)
 							y = -100;
 					}
