@@ -1,5 +1,5 @@
 /*
- * Compass_Drive_Test.c
+ * Offset_Drive_Test.c
  *
  * Created: 27.10.2016 15:35:05
  *  Author: Admin
@@ -9,6 +9,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
+#include <math.h>
+#include "AHRS.h"
 #include "General_644P.h"
 #include "IIC.h"
 #include "MPU9150.h"
@@ -26,10 +28,13 @@ int main(void)
 	float yaw = 0;
 	float startupYaw = 0;
 	float offsetAngle = 0;
+	float speed, angle;
 	uint8_t i = 0;
-	uint8_t j = 0;
-	uint16_t angle, speed, motorAngle;
-	uint16_t angleOld, speedOld;
+	uint16_t motorAngle;
+	int16_t xSetpoint = 0, ySetpoint = 0;
+	uint16_t RampAccelSetpoint, RampDeccelSetpoint;
+	float x = 0, y = 0;
+	float RampAccel, RampDeccel;
 
 	Joysticks JoystickValues;
 	
@@ -39,6 +44,8 @@ int main(void)
 	motor_drive(0, 0);
 	
 	UniversalRemote_Init();
+	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", 0);
+	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", 0);
 	
 	AHRS_init(100.0);
 	uart1_init(57600, 1, 1);
@@ -58,10 +65,9 @@ int main(void)
 	uart1_puts("Controller Reset!");
 	uart1_newline();
 	
-	angle = 0;
-	speed = 100;
-	angleOld = angle;
-	speedOld = speed;
+	RampAccel = 2;
+	RampDeccel = 5;
+	
 	wdt_reset();
 	
     while(1)
@@ -69,27 +75,13 @@ int main(void)
 		wdt_reset();
 	
 		JoystickValues = UniversalRemote_GetValues();
-		angle = JoystickValues.L.angle;
-		speed = JoystickValues.L.extend;
+		xSetpoint = JoystickValues.L.x;
+		ySetpoint = JoystickValues.L.y;
 
-		
 		
 		if(measure)
 		{
-// 			if(speed == speedOld && angle == angleOld && speed != 0)
-// 			{
-// 				if(j++ < 200)
-// 				{
-// 					wdt_reset();
-// 				}
-// 			}else{
-// 				j = 0;
-// 				speedOld = speed;
-// 				angleOld = angle;
-// 				
-// 				wdt_reset();
-// 			}
-			
+			UniversalRemote_ConnectionCheck(10);
 			switch(state)
 			{
 				case STARTUP:
@@ -105,6 +97,48 @@ int main(void)
 					
 				case RUNNING:
 					AHRS_getFusionData(&pitch, &roll, &yaw);
+					
+					RampAccel = (float)RampAccelSetpoint/10;
+					RampDeccel = (float)RampDeccelSetpoint/10;
+					
+					if(x < xSetpoint)
+					{
+						x += RampAccel;
+						if(x > 100)
+							x = 100;
+					} else if(x > xSetpoint)
+					{
+						x -= RampDeccel;
+						if(x < -100)
+							x = -100;
+					}
+					
+					if(y < ySetpoint)
+					{
+						y += RampAccel;
+						if(y > 100)
+							y = 100;
+					} else if(y > ySetpoint)
+					{
+						y -= RampDeccel;
+						if(y < -100)
+							y = -100;
+					}
+					
+					speed = sqrt(x*x + y*y);
+					if(speed > 100)
+						speed = 100;
+						
+					angle = atan2(y, x);
+					angle *= 180 / M_PI;
+					angle -= 90;
+					
+					if(angle < 0)
+					{
+						angle += 360;
+						if(angle < 0)
+							angle = 0;
+					}
 					
 					offsetAngle = angle - (yaw - startupYaw);
 					if(offsetAngle < 0)
@@ -122,9 +156,8 @@ int main(void)
 					uart1_putc('\t');
 					uart1_putInt(motorAngle);
 					uart1_newline();*/
-					
-								
-					motor_drive(motorAngle, speed);
+							
+					motor_drive(motorAngle, (uint8_t)speed);
 					
 					break;
 			}

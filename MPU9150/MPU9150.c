@@ -286,7 +286,7 @@ void MPU_getRawAccelData()
 
 void MPU_getAccelData()
 {
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;
@@ -385,7 +385,7 @@ void MPU_getRawGyroData()
 
 void MPU_getGyroData()
 {
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;
@@ -466,7 +466,7 @@ void MPU_getGyroData()
 void MPU_getCompassData()
 {
 	
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;

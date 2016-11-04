@@ -138,7 +138,7 @@ void motor_drive(uint16_t angle, uint8_t speed)
 	
 	if(angle == 0)
 	{
-		speed = speed *0.8;
+		speed = speed *0.75;
 		
 		x = speed;
 		y = speed;
