@@ -17,12 +17,30 @@
 #include "uart1.h"
 #include "UniversalRemote.h"
 #include "L6206.h"
+#include "eeprom.h"
 
 enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
+uint16_t RampAccelSetpoint, RampDeccelSetpoint;
+
+void ValueChanged(uint16_t index)
+{
+	switch(index)
+	{
+		case 0:
+			EEPROM_write(0,RampAccelSetpoint);
+			EEPROM_write(1,RampAccelSetpoint>>8);
+		break;
+		case 1:
+			EEPROM_write(2,RampDeccelSetpoint);
+			EEPROM_write(3,RampDeccelSetpoint>>8);
+		break;
+	}
+}
 
 int main(void)
 {
+	
 	float roll = 0;
 	float pitch = 0;
 	float yaw = 0;
@@ -32,10 +50,8 @@ int main(void)
 	uint8_t i = 0;
 	uint16_t motorAngle;
 	int16_t xSetpoint = 0, ySetpoint = 0;
-	uint16_t RampAccelSetpoint=20, RampDeccelSetpoint=60;
 	float x = 0, y = 0;
 	float RampAccel, RampDeccel;
-
 	Joysticks JoystickValues;
 	
 	enum states state = STARTUP;
@@ -43,9 +59,26 @@ int main(void)
 	motor123_init();
 	motor_drive(0, 0);
 	
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", 0);
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", 0);
+	EEPROPM_init();
+	RampAccelSetpoint=EEPROM_read(0) | EEPROM_read(1) << 8;
+	RampDeccelSetpoint=EEPROM_read(2) | EEPROM_read(3) << 8;
+	if(RampAccelSetpoint==65535)
+	{
+		RampAccelSetpoint=20;
+		EEPROM_write(0,RampAccelSetpoint);
+		EEPROM_write(1,RampAccelSetpoint>>8);
+	}
+	if(RampDeccelSetpoint==65535)
+	{
+		RampDeccelSetpoint=60;
+		EEPROM_write(2,RampDeccelSetpoint);
+		EEPROM_write(3,RampDeccelSetpoint>>8);
+	}
+	
 	UniversalRemote_Init();
+	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", 1, RampAccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", 1, RampDeccelSetpoint);
+	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);
 	uart1_init(57600, 1, 1);
@@ -66,7 +99,7 @@ int main(void)
 	uart0_newline();
 	
 	RampAccel = 2;
-	RampDeccel = 5;
+	RampDeccel = 6;
 	
 	wdt_reset();
 	

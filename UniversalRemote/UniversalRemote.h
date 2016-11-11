@@ -23,6 +23,7 @@
 #include <stdbool.h>
 
 typedef void (*TransmissionCallBackFunction)(void);
+typedef void (*ValueCallBackFunction)(uint16_t index);
 
 typedef struct {
 	int16_t extend;
@@ -47,9 +48,10 @@ typedef struct {
 void UniversalRemote_Init();
 Joysticks UniversalRemote_GetValues();
 void UniversalRemote_waitForConnection();
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type);
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue);
 void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
+void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback);
 
 
 
