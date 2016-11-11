@@ -43,7 +43,7 @@ typedef struct {
 	uint8_t index;
 }Entry;
 
-
+enum Type{BOOL=0, INT=1};
 
 void UniversalRemote_Init();
 Joysticks UniversalRemote_GetValues();
