@@ -32,7 +32,7 @@ int main(void)
 	uint8_t i = 0;
 	uint16_t motorAngle;
 	int16_t xSetpoint = 0, ySetpoint = 0;
-	uint16_t RampAccelSetpoint, RampDeccelSetpoint;
+	uint16_t RampAccelSetpoint=20, RampDeccelSetpoint=60;
 	float x = 0, y = 0;
 	float RampAccel, RampDeccel;
 
@@ -43,9 +43,9 @@ int main(void)
 	motor123_init();
 	motor_drive(0, 0);
 	
-	UniversalRemote_Init();
 	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", 0);
 	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", 0);
+	UniversalRemote_Init();
 	
 	AHRS_init(100.0);
 	uart1_init(57600, 1, 1);
@@ -62,8 +62,8 @@ int main(void)
 	
 	sei();
 	
-	uart1_puts("Controller Reset!");
-	uart1_newline();
+	uart0_puts("Controller Reset!");
+	uart0_newline();
 	
 	RampAccel = 2;
 	RampDeccel = 5;
@@ -103,40 +103,24 @@ int main(void)
 					
 					if(x < xSetpoint)
 					{
-						if((xSetpoint - x) <= 5)
-							x += 1;
-						else
-							x += RampAccel;
-						
+						x += RampAccel;
 						if(x > 100)
 							x = 100;
 					} else if(x > xSetpoint)
 					{
-						if((x - xSetpoint) <= 5)
-							x -= 1;
-						else
-							x -= RampDeccel;
-						
+						x -= RampDeccel;
 						if(x < -100)
 							x = -100;
 					}
 					
 					if(y < ySetpoint)
 					{
-						if((ySetpoint - y) <= 5)
-							y += 1;
-						else
-							y += RampAccel;
-						
+						y += RampAccel;
 						if(y > 100)
 							y = 100;
 					} else if(y > ySetpoint)
 					{
-						if((y - ySetpoint) <= 5)
-							y -= 1;
-						else
-							y -= RampDeccel;
-
+						y -= RampDeccel;
 						if(y < -100)
 							y = -100;
 					}
@@ -163,6 +147,11 @@ int main(void)
 						offsetAngle -= 360;
 						
 					motorAngle = (uint16_t)offsetAngle;	
+					
+					/*uart0_putInt(xSetpoint);
+					uart0_putc('\t');
+					uart0_putInt(ySetpoint);
+					uart0_newline();*/
 					
 					/*uart1_putFloat(pitch);
 					uart1_putc('\t');
