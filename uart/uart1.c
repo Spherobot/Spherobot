@@ -86,6 +86,21 @@ void uart1_puts(char text[])
 		uart1_putc(text[i]);
 	}
 }
+
+void uart1_putChar(uint8_t number)
+{
+	uint8_t h, t, o, help;
+	h=number/100;
+	help = number%100;
+	t= help/10;
+	o = help%10;
+	
+	uart1_putc(h+'0');
+	uart1_putc(t+'0');
+	uart1_putc(o+'0');
+}
+
+/*
 void uart1_putChar(uint8_t number)
 {
 	number=number-((int)number/1000)*1000;
@@ -98,7 +113,8 @@ void uart1_putChar(uint8_t number)
 	uart1_putc(h+'0');
 	uart1_putc(t+'0');
 	uart1_putc(o+'0');
-}
+}*/
+
 void uart1_putInt(uint16_t number)
 {
 	uint8_t zt, t, h, z, e, help;
@@ -130,6 +146,12 @@ void uart1_putInt(uint16_t number)
 }
 void uart1_putFloat(float number)
 {
+	if(number < 1)
+	{
+		uart1_putc('-');
+		number = number * (-1);
+	}
+	
 	uart1_putInt(((int)number));
 	uart1_putc('.');
 	uart1_putChar((number-((int)number))*1000);
