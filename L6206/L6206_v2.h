@@ -75,11 +75,11 @@ void motor2_control(uint8_t direction, uint8_t speed);
 void motor3_control(uint8_t direction, uint8_t speed);
 /******************************************************
 ***													***
-*** Function: motor1_control						***
+*** Function: motor3_control						***
 ***	=======================							***
 ***													***
 ***	This function controls direction and speed		***
-***	of Motor 1.										***
+***	of Motor 3.										***
 ***													***
 ***	Pre-condition:									***
 ***		-motor1234_init()							***
@@ -95,11 +95,11 @@ void motor3_control(uint8_t direction, uint8_t speed);
 void motor4_control(uint8_t direction, uint8_t speed);
 /******************************************************
 ***													***
-*** Function: motor1_control						***
+*** Function: motor4_control						***
 ***	=======================							***
 ***													***
 ***	This function controls direction and speed		***
-***	of Motor 1.										***
+***	of Motor 4.										***
 ***													***
 ***	Pre-condition:									***
 ***		-motor1234_init()							***
