@@ -8,7 +8,7 @@
 
 #include "PID.h"
 
-#define NUM_PID_CONTROLLERS 5
+#define NUM_PID_CONTROLLERS 3
 
 #define DIRECT 0
 #define REVERSE 1
