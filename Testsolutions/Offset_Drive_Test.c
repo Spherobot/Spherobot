@@ -77,7 +77,7 @@ int main(void)
 	
 	UniversalRemote_Init();
 	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", INT, RampAccelSetpoint);
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzoegerungsrampe", INT, RampDeccelSetpoint);
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);
