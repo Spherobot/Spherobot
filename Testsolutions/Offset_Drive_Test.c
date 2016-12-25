@@ -15,6 +15,7 @@
 #include "IIC.h"
 #include "MPU9150.h"
 #include "uart1.h"
+#include "uart0.h"
 #include "UniversalRemote.h"
 #include "L6206.h"
 #include "eeprom.h"
@@ -75,7 +76,7 @@ int main(void)
 	}
 	
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", BOOL, RampAccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", INT, RampAccelSetpoint);
 	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
