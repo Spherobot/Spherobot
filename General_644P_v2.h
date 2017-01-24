@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef GENERAL_644P_H_
-#define GENERAL_644P_H_
+#ifndef GENERAL_644P_v2_H_
+#define GENERAL_644P_v2_H_
 
 //constants
 #define F_OSC				20000000
