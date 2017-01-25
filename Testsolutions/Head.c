@@ -18,22 +18,33 @@
 
 enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
-uint16_t RampAccelSetpoint, RampDeccelSetpoint;
 
-/*void ValueChanged(uint16_t index)
+//PID
+float Kp = 12;
+float Ki = 0.45;
+float Kd = 0.35;
+
+void ValueChanged(uint16_t index)
 {
 	switch(index)
 	{
 		case 0:
-			EEPROM_write(0,RampAccelSetpoint);
-			EEPROM_write(1,RampAccelSetpoint>>8);
+		//Kp
+			EEPROM_write(1,Kp);
+			EEPROM_write(2,Kp>>8);
 		break;
 		case 1:
-			EEPROM_write(2,RampDeccelSetpoint);
-			EEPROM_write(3,RampDeccelSetpoint>>8);
+			//Ki
+			EEPROM_write(3,Ki);
+			EEPROM_write(4,Ki>>8);
+		break;
+		case 2:
+			//Kd
+			EEPROM_write(5,Kd);
+			EEPROM_write(6,Kd>>8);
 		break;
 	}
-}*/
+}
 
 int main(void)
 {
@@ -50,9 +61,6 @@ int main(void)
 	
 	
 	//PID
-	float Kp = 12;
-	float Ki = 0.45;
-	float Kd = 0.35;
 	float xSetpoint = 0; //0 Grad??
 	float ySetpoint = 0; //0 Grad??
 	float xOutput = 0;
@@ -67,26 +75,34 @@ int main(void)
 	
 	motor1234_init();
 	
-	/*EEPROPM_init();
-	RampAccelSetpoint=EEPROM_read(0) | EEPROM_read(1) << 8;
-	RampDeccelSetpoint=EEPROM_read(2) | EEPROM_read(3) << 8;
-	if(RampAccelSetpoint==65535)
+	////////////////////////////////////////////////////////
+	
+	EEPROPM_init();
+	if(EEPROM_read(0)==0b10101010)		//Just a random Number
 	{
-		RampAccelSetpoint=20;
-		EEPROM_write(0,RampAccelSetpoint);
-		EEPROM_write(1,RampAccelSetpoint>>8);
-	}
-	if(RampDeccelSetpoint==65535)
-	{
-		RampDeccelSetpoint=60;
-		EEPROM_write(2,RampDeccelSetpoint);
-		EEPROM_write(3,RampDeccelSetpoint>>8);
+		Kp=EEPROM_read(1) | EEPROM_read(2) << 8;
+		Ki=EEPROM_read(3) | EEPROM_read(4) << 8;
+		Kd=EEPROM_read(5) | EEPROM_read(6) << 8;
+	}else{
+		EEPROM_write(0,0b10101010);
+		//Kp
+		EEPROM_write(1,Kp);
+		EEPROM_write(2,Kp>>8);
+		//Ki
+		EEPROM_write(3,Ki);
+		EEPROM_write(4,Ki>>8);
+		//Kd
+		EEPROM_write(5,Kd);
+		EEPROM_write(6,Kd>>8);
 	}
 	
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", INT, RampAccelSetpoint);
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);
-	UniversalRemote_registerValueCangedFunction(ValueChanged);*/
+	UniversalRemote_addMenuEntry(&Kp, "P", FLOAT, Kp);
+	UniversalRemote_addMenuEntry(&Ki, "I", FLOAT, Ki);
+	UniversalRemote_addMenuEntry(&Kd, "D", FLOAT, Kd);
+	UniversalRemote_registerValueCangedFunction(ValueChanged);
+	
+	/////////////////////////////////////////////////////////
 	
 	uart1_init(57600, 1, 1);
 	uart0_init(57600, 1, 1);
