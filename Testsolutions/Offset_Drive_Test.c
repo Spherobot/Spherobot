@@ -15,14 +15,13 @@
 #include "IIC.h"
 #include "MPU9150.h"
 #include "uart1.h"
-#include "uart0.h"
 #include "UniversalRemote.h"
 #include "L6206.h"
 #include "eeprom.h"
 
 enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
-uint16_t RampAccelSetpoint, RampDeccelSetpoint;
+uint16_t RampAccelSetpoint=40, RampDeccelSetpoint=60;
 
 void ValueChanged(uint16_t index)
 {
@@ -60,24 +59,23 @@ int main(void)
 	motor_drive(0, 0);
 	
 	EEPROPM_init();
-	RampAccelSetpoint=EEPROM_read(0) | EEPROM_read(1) << 8;
-	RampDeccelSetpoint=EEPROM_read(2) | EEPROM_read(3) << 8;
-	if(RampAccelSetpoint==65535)
+	if(EEPROM_read(0)==0b10101010)		//Just a random Number
 	{
+		RampAccelSetpoint=EEPROM_read(0) | EEPROM_read(1) << 8;
+		RampDeccelSetpoint=EEPROM_read(2) | EEPROM_read(3) << 8;
+	}else{
 		RampAccelSetpoint=20;
 		EEPROM_write(0,RampAccelSetpoint);
 		EEPROM_write(1,RampAccelSetpoint>>8);
-	}
-	if(RampDeccelSetpoint==65535)
-	{
 		RampDeccelSetpoint=60;
 		EEPROM_write(2,RampDeccelSetpoint);
 		EEPROM_write(3,RampDeccelSetpoint>>8);
 	}
 	
+	// porta &= ~((1<<PINA4)|(1<<PINA5))
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", INT, RampAccelSetpoint);
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzoegerungsrampe", INT, RampDeccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", BOOL, RampAccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);
