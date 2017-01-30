@@ -15,8 +15,13 @@
 #define INTERVALL_TOLERANCE	100
 
 //choose correct General-File
+<<<<<<< HEAD
 //#include "General_644P.h"
 #include "General_ATMega2560.h"
+=======
+#include "General_644P_v2.h"
+//#include "General_ATMega2560.h"
+>>>>>>> refs/remotes/origin/master
 
 #include "uart1.h"
 #include "uart0.h"
@@ -50,7 +55,7 @@ typedef struct {
 =======
 >>>>>>> refs/remotes/origin/master
 
-enum Type{BOOL=0, INT=1};
+enum Type{BOOL=0, INT=1, FLOAT=2};
 
 void UniversalRemote_Init();
 Joysticks UniversalRemote_GetValues();
