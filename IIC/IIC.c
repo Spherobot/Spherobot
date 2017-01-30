@@ -152,8 +152,9 @@ void IIC_RegisterWrite()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_puts("Register Write SLA+W has been transmitted; NACK has been recieved");
-			
+			#ifdef DEBUG_IIC
+				uart0_puts("Register Write SLA+W has been transmitted; NACK has been recieved");
+			#endif
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
@@ -286,8 +287,9 @@ void IIC_RegisterRead()
 			
 		//SLA+W has been transmitted; NACK has been recieved
 		case 0x20:
-			uart0_puts("Regtister Read SLA+W has been transmitted; NACK has been recieved");
-			
+			#ifdef DEBUG_IIC
+				uart0_puts("Regtister Read SLA+W has been transmitted; NACK has been recieved");
+			#endif
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
@@ -312,8 +314,9 @@ void IIC_RegisterRead()
 			
 		//Data byte has been transmitted; NACK has been recieved
 		case 0x30:
-			uart0_puts("Register Read Data byte has been transmitted; NACK has been recieved");
-			
+			#ifdef DEBUG_IIC
+				uart0_puts("Register Read Data byte has been transmitted; NACK has been recieved");
+			#endif
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
@@ -350,8 +353,9 @@ void IIC_RegisterRead()
 			
 		//SLA+R has been transmitted; NACK has been recieved
 		case 0x48:
-			uart0_puts("Register Read SLA+R has been transmitted; NACK has been recieved");
-			
+			#ifdef DEBUG_IIC
+				uart0_puts("Register Read SLA+R has been transmitted; NACK has been recieved");
+			#endif
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1; //send stopp condition

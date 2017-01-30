@@ -11,6 +11,10 @@
 #include "IIC.h"
 #include "MPU9150.h"
 
+//choose correct General-File
+#include "General_644P.h"
+//#include "General_ATMega2560.h"
+
 static uint8_t accelerometer[6];
 static uint8_t gyroscope[6];
 static uint8_t compass[6];
@@ -282,7 +286,7 @@ void MPU_getRawAccelData()
 
 void MPU_getAccelData()
 {
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;
@@ -361,6 +365,15 @@ void MPU_getAccelData()
 	
 }
 
+void MPU_getRawCompassData()
+{
+	*xCompass = (compass[1] << 8) | compass[0];
+	*yCompass = (compass[3] << 8) | compass[2];
+	*zCompass = (compass[5] << 8) | compass[6];
+	
+	dataReady = 0;
+}
+
 void MPU_getRawGyroData()
 {
 	*xGyro = (gyroscope[0]<<8) | gyroscope[1];
@@ -372,7 +385,7 @@ void MPU_getRawGyroData()
 
 void MPU_getGyroData()
 {
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;
@@ -453,7 +466,7 @@ void MPU_getGyroData()
 void MPU_getCompassData()
 {
 	
-	static int16_t DataBuffer[3][7] = {0};
+	static int16_t DataBuffer[3][7] = {{0}};
 	int16_t DataSorted[3][7];
 	int16_t help;
 	int32_t xSum, ySum, zSum;

@@ -321,5 +321,6 @@ void MPU_CompassReadStartFast();
 void MPU_getRawGyroData();
 void MPU_getRawAccelData();
 void MPU_getRawAccelGyroData();
+void MPU_getRawCompassData();
 
 #endif /* MPU9150_H_ */

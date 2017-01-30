@@ -20,10 +20,22 @@ int deadZone=10;
 int Mode=0;
 
 
+<<<<<<< HEAD
 void setup() 
 {
   control = ControlIO.getInstance(this);
   device = control.getDevice("Controller (Xbox One For Windows)");
+=======
+int testing=0;
+
+
+void setup() 
+{
+  control = ControlIO.getInstance(this);
+  device = control.getDevice("Controller (Xbox One For Windows)");    //xbox controller
+  //device = control.getDevice("Controller (XBOX 360 For Windows)");    //ps4 controller
+  
+>>>>>>> refs/remotes/origin/master
   sliderY = device.getSlider("Y-Achse");
   sliderX = device.getSlider("X-Achse");
   
@@ -33,8 +45,13 @@ void setup()
   size(1500,1000); //make our canvas 1000 x 1000 pixels big
   println(Serial.list()); 
   //String portName = Serial.list()[4]; //change the 0 to a 1 or 2 etc. to match your port
+<<<<<<< HEAD
   
   myPort = new Serial(this, "COM6", 57600);
+=======
+  if(testing==0)
+    myPort = new Serial(this, "COM9", 57600);
+>>>>>>> refs/remotes/origin/master
   
   line(0,500-deadZone*5,1000,500-deadZone*5);
   line(0,500+deadZone*5,1000,500+deadZone*5);
@@ -112,8 +129,18 @@ void draw() {
       {
         extend=100;
       }
+<<<<<<< HEAD
       s_X=""+(round(angle));   //chnge to "round(x)+100" for kartesisch
       s_Y=""+(round(extend));  //change to "round(y)+100" for kartesisch
+=======
+      //kartesisch:
+      s_X=""+(round(x)+100);
+      s_Y=""+(round(y)+100);
+      //polar:
+      //s_X=""+(round(angle));
+      //s_Y=""+(round(extend));
+      
+>>>>>>> refs/remotes/origin/master
       if(s_X.length()==1)
         s_X="00"+s_X;
       else if(s_X.length()==2)
@@ -128,7 +155,13 @@ void draw() {
       fill(0, 102, 153);
       if(before+200<millis())
       {
+<<<<<<< HEAD
         myPort.write("L"+Data+"L;\n");
+=======
+        if(testing==0)
+          myPort.write("L"+Data+";\n");
+        println("L"+Data+";\n");
+>>>>>>> refs/remotes/origin/master
         before=millis();
       }
       //transmit data
@@ -139,7 +172,12 @@ void draw() {
       fill(0, 102, 153);
       if(before+150<millis())
       {
+<<<<<<< HEAD
         myPort.write("L100,100;\n");
+=======
+        if(testing==0)
+          myPort.write("L100,100;\n");
+>>>>>>> refs/remotes/origin/master
         before=millis();
       }
       //transmit stop
@@ -152,7 +190,13 @@ void keyPressed() {
   if(key=='m'||key=='M')
   {
     Mode^=1;
+<<<<<<< HEAD
     myPort.write("L100,100;\n");
+=======
+    if(testing==0)
+      myPort.write("L100,100;\n");
+    
+>>>>>>> refs/remotes/origin/master
   }
 }
 
@@ -173,6 +217,11 @@ void Submit() {
   else if(temp.length()==1)
     command+="00"+temp;
   command+=";\n";
+<<<<<<< HEAD
   myPort.write(command);
+=======
+  if(testing==0)
+    myPort.write(command);
+>>>>>>> refs/remotes/origin/master
   print(command);
 }
