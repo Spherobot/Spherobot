@@ -74,8 +74,11 @@ int main(void)
 	
 	// porta &= ~((1<<PINA4)|(1<<PINA5))
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", BOOL, RampAccelSetpoint);
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);
+	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", BOOL, RampAccelSetpoint);		//index: 0
+	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "VerzÃ¶gerungsrampe", INT, RampDeccelSetpoint);	//index: 1 
+	UniversalRemote_addMenuEntry(&Kp, "P", FLOAT, Kp);							//index: 2
+	UniversalRemote_addMenuEntry(&Ki, "I", FLOAT, Ki);							//index: 3
+	UniversalRemote_addMenuEntry(&Kd, "D", FLOAT, Kd);							//index: 4
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);
