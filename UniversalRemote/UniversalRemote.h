@@ -15,23 +15,15 @@
 #define INTERVALL_TOLERANCE	100
 
 //choose correct General-File
-<<<<<<< HEAD
-//#include "General_644P.h"
+//#include "General_644P_v2.h"
 #include "General_ATMega2560.h"
-=======
-#include "General_644P_v2.h"
-//#include "General_ATMega2560.h"
->>>>>>> refs/remotes/origin/master
 
 #include "uart1.h"
 #include "uart0.h"
 #include <stdbool.h>
 
 typedef void (*TransmissionCallBackFunction)(void);
-<<<<<<< HEAD
-=======
 typedef void (*ValueCallBackFunction)(uint16_t index);
->>>>>>> refs/remotes/origin/master
 
 typedef struct {
 	int16_t extend;
@@ -50,26 +42,18 @@ typedef struct {
 	uint16_t* setting;
 	uint8_t index;
 }Entry;
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/master
 
 enum Type{BOOL=0, INT=1, FLOAT=2};
 
 void UniversalRemote_Init();
 Joysticks UniversalRemote_GetValues();
 void UniversalRemote_waitForConnection();
-<<<<<<< HEAD
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type);
-void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
-void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
-=======
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue);
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue);
 void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
 void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback);
->>>>>>> refs/remotes/origin/master
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue,uint8_t index);
+void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue, uint8_t index2);
 
 
 
