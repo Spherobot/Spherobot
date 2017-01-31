@@ -91,6 +91,12 @@ void rec(char c)
 					if(Entrys[index1].setting!=NULL)
 					{
 						*Entrys[index1].setting=(Buffer[4]-'0')*100+(Buffer[5]-'0')*10+(Buffer[6]-'0');
+						if(Entrys[index1].type==FLOAT)
+						{
+							*Entrys[index1].setting=((float)((float)*Entrys[index1].setting)/100.0);
+							//float *test;
+							//test=Entrys[index1].setting;
+						}
 						if(ValueChangedCallBack!=NULL)
 							(*ValueChangedCallBack)(index1);
 					}
@@ -114,13 +120,13 @@ void rec(char c)
 
 void UniversalRemote_Init()
 {
+	//TODO: wait for connection to establish
 	uart1_registerCallBack(rec);
 	uart1_init_x(9600,1,1,1,1);
 	for(uint8_t i=0;i<NUM_MAX_ENTRYS;i++)
 	{
 		Entrys[i].setting=NULL;
 	}
-	//uart1_puts_int("dofile(\"client.lua\");");//dofile("server.lua");
 }
 
 Joysticks UniversalRemote_GetValues()
@@ -128,24 +134,29 @@ Joysticks UniversalRemote_GetValues()
 	return RemoteControl;
 }
 
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
 {
+	
 	//uart1_puts_int("");		//send command to add menu entry on Remote
+
 	static uint8_t index2=0;
-	Entrys[index2].setting=pValue;
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 	index2++;
 	return index2-1;
 }
 
-void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
+void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
 {
 	//uart1_puts_int("");		//send command to add menu entry on Remote
-	Entrys[index2].setting=pValue;
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 }
 
-void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t index2)	//use if 
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, uint8_t index2)	//use if the menu entry was set on another controller and you want to recive the variable changes without having to initialize a new menu entry
 {
-	Entrys[index2].setting=pValue;
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 }
 
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback)

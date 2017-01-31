@@ -41,9 +41,10 @@ typedef struct {
 	
 	uint16_t* setting;
 	uint8_t index;
+	uint8_t type;
 }Entry;
 
-enum Type{BOOL=0, INT=1, FLOAT=2};
+enum Type{BOOL=0, INT=1, FLOAT=2, LABEL=3};
 
 void UniversalRemote_Init();
 Joysticks UniversalRemote_GetValues();
@@ -52,7 +53,7 @@ uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t typ
 void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
 void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback);
-void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue,uint8_t index);
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, uint8_t index);
 void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue, uint8_t index2);
 
 
