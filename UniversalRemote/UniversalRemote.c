@@ -128,13 +128,24 @@ Joysticks UniversalRemote_GetValues()
 	return RemoteControl;
 }
 
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue)
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
 {
 	//uart1_puts_int("");		//send command to add menu entry on Remote
 	static uint8_t index2=0;
 	Entrys[index2].setting=pValue;
 	index2++;
 	return index2-1;
+}
+
+void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
+{
+	//uart1_puts_int("");		//send command to add menu entry on Remote
+	Entrys[index2].setting=pValue;
+}
+
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t index2)	//use if 
+{
+	Entrys[index2].setting=pValue;
 }
 
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback)
@@ -146,7 +157,6 @@ void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback)
 {
 	ValueChangedCallBack = callback;
 }
-
 
 void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms)
 {
