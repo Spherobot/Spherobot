@@ -4,14 +4,15 @@
  * Created: 02.03.2016 14:56:31
  *  Author: Admin
  */ 
-
+#include <avr/io.h>
 
 #ifndef IIC_H_
 #define IIC_H_
 
 //choose correct General-File
-//#include "General_644P.h"
-#include "General_ATMega2560.h"
+#include "General_644P_v2.h"
+//#include "General_ATMega2560.h"
+
 
 typedef void (*IIC_callbackFunction)(void);
 

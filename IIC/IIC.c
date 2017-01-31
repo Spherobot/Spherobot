@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
 #include "uart0.h"
 #include "IIC.h"
-#include "MPU9150.h"
+//#include "MPU9150.h"
 
 volatile static uint8_t busFree;
 

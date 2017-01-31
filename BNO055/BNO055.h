@@ -25,6 +25,10 @@
 #define EUL_Roll_LSB		0x1C
 #define EUL_Heading_MSB		0x1B
 #define EUL_Heading_LSB		0x1A
+#define CONFIG_MODE			0x00
+#define FUSION_MDOE_NDOF	0x0C
+#define EULER_DEGREES		0x00
+#define FUSION_WINDOWS_OUT	0x00
 
 
 

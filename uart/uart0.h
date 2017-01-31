@@ -11,8 +11,8 @@
 #define UART0_H_
 
 //choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
+//#include "General_644P.h"
+#include "General_ATMega2560.h"
 
 enum UART0_SEND_PART{UART0_SEND_DISABLED, UART0_SEND_ENABLED};
 enum UART0_RECEVE_PART{UART0_REC_DISABLED, UART0_REC_ENABLED};
