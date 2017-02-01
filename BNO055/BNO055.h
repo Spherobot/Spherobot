@@ -31,5 +31,6 @@
 #define FUSION_WINDOWS_OUT	0x00
 
 void BNO055_init();
+void BNO055_getDataEuler(float* pitch, float* roll, float* heading);
 
 #endif /* BNO055_H_ */
