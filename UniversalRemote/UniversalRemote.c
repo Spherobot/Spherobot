@@ -121,6 +121,7 @@ void rec(char c)
 void UniversalRemote_Init()
 {
 	//TODO: wait for connection to establish
+	//while(PINA&~(1<<DDR1));
 	uart1_registerCallBack(rec);
 	uart1_init_x(9600,1,1,1,1);
 	for(uint8_t i=0;i<NUM_MAX_ENTRYS;i++)
@@ -134,11 +135,43 @@ Joysticks UniversalRemote_GetValues()
 	return RemoteControl;
 }
 
+char convertTypeToChar(uint8_t type)
+{
+	switch(type)
+	{
+		case INT:
+			return 'I';
+		case FLOAT:
+			return 'F';
+		case LABEL:
+			return 'L';
+		case BOOL:
+			return 'B';
+	}
+}
+
+void transmitMenuEntry(char label[], uint8_t type, uint16_t initValue)
+{
+	char temp[100]="";
+	char temp1[100]="";
+	strcat(temp,convertTypeToChar(type));
+	strcat(temp,label);
+	if(type==LABEL)
+	{
+		strcat(temp,';');
+	}else{
+		strcat(temp,',');
+		itoa(initValue,temp1,10);//because it is an int -->see atmel reference
+		strcat(temp,temp1);
+		strcat(temp,';');
+	}
+	uart1_puts_int(temp);
+}
+
 uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
 {
-	
-	//uart1_puts_int("");		//send command to add menu entry on Remote
-
+	//send command to add menu entry on Remote
+	transmitMenuEntry(Label,type,initValue);
 	static uint8_t index2=0;
 	Entrys[index2].setting = pValue;
 	Entrys[index2].type=type;
@@ -148,7 +181,8 @@ uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t typ
 
 void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
 {
-	//uart1_puts_int("");		//send command to add menu entry on Remote
+	//send command to add menu entry on Remote
+	transmitMenuEntry(Label,type,initValue);
 	Entrys[index2].setting = pValue;
 	Entrys[index2].type=type;
 }
