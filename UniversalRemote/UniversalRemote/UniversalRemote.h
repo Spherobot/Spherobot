@@ -10,7 +10,6 @@
 #define UNIVERSALREMOTE_H_
 
 #define NUM_MAX_ENTRYS		10
-#define NULL 0
 #define SEND_INTERVALL_MS	150
 #define INTERVALL_TOLERANCE	100
 
@@ -21,6 +20,8 @@
 #include "uart1.h"
 #include "uart0.h"
 #include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
 
 typedef void (*TransmissionCallBackFunction)(void);
 typedef void (*ValueCallBackFunction)(uint16_t index);
@@ -233,6 +234,44 @@ void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[], uint8_t 
 ***													***
 ******************************************************/
 
+void UniversalRemote_RefreshLog();
+/******************************************************
+***													***
+***	Function: UniversalRemote_RefreshLog()			***
+***				 ========							***
+***													***
+***	This function refreshes the log screen on the	***
+***	remote. Should be called if something was added	***
+*** to the log.										***
+***													***
+***													***
+***	Pre-condition:									***
+***		-UniversaalRemote_init						***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
 
+void UniversalRemote_InitDone();
+/******************************************************
+***													***
+***	Function: UniversalRemote_InitDone()			***
+***				 ========							***
+***													***
+***	This function refreshes the main screen on the	***
+*** display. Should only be called after all menu	***
+*** entrys have been added!!						***
+***													***
+***													***
+***	Pre-condition:									***
+***		-UniversaalRemote_init						***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
+
+void UniversalRemote_addLog(char logMsg[]);
 
 #endif /* UNIVERSALREMOTE_H_ */

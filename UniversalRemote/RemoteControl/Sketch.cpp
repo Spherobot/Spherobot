@@ -10,9 +10,10 @@
 #include <UTFT_Geometry.h>
 #include <avr/pgmspace.h>
 #include "Joystick.h"
+#include <stdlib.h>
 extern "C"
 {
-	#include "esp8266.h"
+	#include "uart1.h"
 }
 
 
@@ -29,7 +30,7 @@ extern "C"
 
 
 //uncomment for testing, because upload is faster
-#define USE_GRAPHICS
+//#define USE_GRAPHICS
 
 
 // Declare which fonts we will be using
@@ -94,6 +95,7 @@ Entry allEntries[MAXIMUM_MENU_ENTRYS] = {0};
 bool DisplayLocked=false;
 bool InitSucsessfull=false;
 unsigned long before=millis();
+bool recOngoing=false;
 
 
 //prototypes
@@ -113,6 +115,18 @@ void addLog(String Text);
 void LockDisplay(bool State);
 
 //functions
+
+String NumToString(unsigned int num, int spacing)
+{
+	String temp;
+	char tempString[spacing]="";
+	String numString=String(itoa(num,tempString,10));
+	for (int i =0;i<spacing-numString.length();i++)
+	{
+		temp+="0";
+	}
+	return temp+numString;
+}
 
 void addLog(String Text)
 {
@@ -206,7 +220,7 @@ void DrawMenuEntryIntNumber(int InitNumber, String Text, int MenuEntryIndex)
   myGLCD.print("-", 212, 15 + (MenuEntryIndex * 47));
 }
 
-void addMenuEntry(String Text,bool initState, BoolCallBackFunc CB)
+void addMenuEntry(String Text, bool initState, BoolCallBackFunc CB)
 {
   allEntries[NumberOfMenuEntries].Type = 0;
   allEntries[NumberOfMenuEntries].menuEntry.Text = Text;
@@ -362,14 +376,18 @@ void applyChanges()
 					Temp[6]=number+'0';
 				}else if(number<100)
 				{
+					char numTemp[5]="";
+					itoa(number,numTemp,10);
 					Temp[4]='0';
-					Temp[5]=(number/10);
-					Temp[6]=(number+(number/10)*10)+'0';
+					Temp[5]=numTemp[0];
+					Temp[6]=numTemp[1];
 				}else if(number>=100)
 				{
-					Temp[4]=(number/100);
-					Temp[5]=(number-(number/100)*100)/10+'0';
-					Temp[6]=number-((number/100)*100+(number/10)*10)+'0';
+					char numTemp[5]="";
+					itoa(number,numTemp,10);
+					Temp[4]=numTemp[0];
+					Temp[5]=numTemp[1];
+					Temp[6]=numTemp[2];
 				}
 			}else if(allEntries[i].Type==2)
 			{
@@ -393,6 +411,7 @@ void drawMsgBox()
 	drawButton(20,20,300,60,"       Calibrate Joysticks",2);
 	drawButton(20,70,300,110,"          Joystick Test",2);
 	drawButton(20,120,300,160,"        Start Transmission",2);
+	drawButton(20,170,300,210,"          Apply Changes",2);
 	drawButton(1,200,100,240,"    Back",2);
 }
 
@@ -818,6 +837,10 @@ void TouchEventManagement()
 				waitForIt(20,120,300,160);
 				applyChanges();
 				LockDisplay(0);
+			}else if(x >= 20 && x <= 300 && y >= 170 && y <= 210)//Start Transmission button
+			{
+				waitForIt(20,170,300,210);
+				applyChanges();
 			}
 		} else if (ActiveScreen == 4) //Keyboard
 		{
@@ -931,15 +954,15 @@ void LockDisplay(bool State)//1--> Unlocked
 //Transmission Function:
 void recMessFunc1(char c)
 {	
-	
+	recOngoing=true;
 	char static Buffer[100]={0};
 	int static index=0;
 	Buffer[index++]=c;
 	if(Buffer[index-1]==';')
 	{
 		//control Char			arguments		end Char
-		if(Buffer[0]=='L')
-		//L-->Log message		message			;
+		if(Buffer[0]=='l')
+		//l-->Log message		message			;
 		{
 			Buffer[index-1]='\0';
 			addLog(String(&Buffer[1]));//TODO: check if working
@@ -947,79 +970,49 @@ void recMessFunc1(char c)
 		//I-->Int menu entry	Label,initValue	;
 		{
 			String test = String(Buffer);
-			addLog("Added INT menu entry: "+test);
+			int dividerIndex=test.indexOf(',');
+			String MenuEntryText=test.substring(1,dividerIndex);
+			int InitNum = test.substring(dividerIndex+1,test.indexOf(';')).toInt();
+			addMenuEntryIntNum(MenuEntryText,InitNum,1,IntCallBack);
+			addLog("Added INT menu entry: "+MenuEntryText+" Init="+InitNum);
 		}else if(Buffer[0]=='B')
 		//B-->Bool menu entry	Label,initValue	;
 		{
+			Buffer[index-1]='\0';
 			String test = String(Buffer);
 			addLog("Added BOOL menu entry: "+test);
 		}else if(Buffer[0]=='L')
 		//L-->Label menu entry	Label			;
 		{
+			Buffer[index-1]='\0';
 			String test = String(Buffer);
 			addLog("Added LABEL menu entry: "+test);
 		}else if(Buffer[0]=='F')
 		//F-->Float menu entry	Label,initValue	;
 		{
+			Buffer[index-1]='\0';
 			String test = String(Buffer);
 			addLog("Added FLOAT menu entry: "+test);
-		}
-	}
-	/*
-	uint8_t ID=0;
-	if(ID!=-1)
-	{
-		addLog("M");
-		if(Message[0]=='A')
+		}else if(Buffer[0]=='d')
+		//d--> refresh log screen if visible
 		{
-			addLog("A");
-			waitingForPong=false;
-			Int_count=0;
-		}else{
-		
-			String Message1=Message;
-			if(Message1.charAt(0)==1)
-			{
-				addLog("recived control data");
-				//addLog(Message);
-				//control Char;		type 1 --> int entry;		init value max 3 digits ended with ';';		label ending with ';'
-				//control Char;		type 0 --> switch entry;	init value 0 or 1;							label ending with ';'
-				if(Message1.charAt(1)=='1')
-				{
-					//addLog(Message);
-					uint16_t num;
-					num=((Message1.charAt(2)-'0')*100)+((Message1.charAt(3)-'0')*10)+(Message1.charAt(4)-'0');
-					addMenuEntryIntNum(Message1.substring(5),num,1,IntCallBack);
-					addLog("added int control entry");
-					if(ActiveScreen==1)
-						DrawInterface();
-				}else if(Message1.charAt(1)=='0')
-				{
-					addMenuEntry(Message1.substring(3),Message1.charAt(2)-'0',BoolCallBack);
-					addLog("added bool entry");
-					if(ActiveScreen==1)
-						DrawInterface();
-
-				}else{
-					addLog("Tried to add unknown menu type");
-				}
-			}else{
-				String temp="Message from ";
-				addLog(temp + ID + ": " + Message);
-			}
-			
+			if(ActiveScreen==2)
+				drawLog();
+		}else if(Buffer[0]=='D')
+		//D--> init done --> refresh dynamic interfaces if visible
+		{
+			if(ActiveScreen==1)
+				DrawInterface();
+			if(ActiveScreen==2)
+				drawLog();
 		}
-	}else{
-		addLog("Weird Error");
+		index=0;
+		recOngoing=false;
 	}
-	*/
-	if(ActiveScreen==2)
-		drawLog();
 }
 
 void setup()
 {
-	
 	myTouch.InitTouch();
 	myTouch.setPrecision(PREC_MEDIUM);
 	// Setup the LCD
@@ -1040,12 +1033,8 @@ void setup()
 	myGLCD.setColor(BLACK);
 	myGLCD.setFont(SmallFont);
 	myGLCD.print("Universal Remote", CENTER, 0);
-	myGLCD.print("(c)2016-2017 Florian Laschober", CENTER, 227);
-	addLog("LOG:");
-	
-	String test="Anf. Rampe";
-	addMenuEntryIntNum(test, 4, 1,IntCallBack);			//control Char; type; init value max 3 digits ended with ';'; label ending with ';'	test="Abbr. Rampe";
-	addMenuEntryIntNum(test, 6, 1,IntCallBack);			//control Char; type; init value max 3 digits ended with ';'; label ending with ';'	
+	myGLCD.print("(C)2016-2017 Florian Laschober", CENTER, 227);
+	addLog("LOG:");	
 	uart1_init_x(57600,1,1,0,1);
 	uart1_registerCallBack(recMessFunc1);
 }
@@ -1094,34 +1083,41 @@ void drawJoystickTest()
 	}
 }
 
+
 void loop()
 {
-  	TouchEventManagement();
+	if(recOngoing==false)
+	{
+  		TouchEventManagement();
 	  
-	if(ActiveScreen==6)//calibration
-	{
-		myJoystick.Calibrate(false);
-		drawJoystickTest();
-	}else if(ActiveScreen==7)//test
-	{
-		drawJoystickTest();
+		if(ActiveScreen==6)//calibration
+		{
+			myJoystick.Calibrate(false);
+			drawJoystickTest();
+		}else if(ActiveScreen==7)//test
+		{
+			drawJoystickTest();
+		}
 	}
 	  
 	  
-	  
-	RandL joystick;
-	if(before+200<millis())
+	if(DisplayLocked==true)
 	{
-		if(DisplayLocked==true)
+		RandL joystick;
+		if(before+200<millis())
 		{
 			joystick=myJoystick.Calulate();
-			uart1_putc('L');
+			
 			int temp=0;
 			temp=(int)joystick.L.x+100;
 			if(temp>200)
 				temp=200;
 			if(temp<0)
 				temp=0;
+			//String transText;
+			//transText= "L" + NumToString(temp,3)+",";
+			
+			uart1_putc('L');
 			int h,m,l;
 			h=temp/100;
 			m=temp/10-h*10;
@@ -1137,9 +1133,16 @@ void loop()
 				temp=200;
 			if(temp<0)
 				temp=0;
+			/*transText+= NumToString(temp,3)+";\n";
+			char text[transText.length()];
+			transText.toCharArray(text,transText.length());
+			addLog(text);
+			uart1_puts(text);*/
+
 			h=temp/100;
 			m=temp/10-h*10;
 			l=temp-(h*100+m*10);
+
 			uart1_putc(h+'0');
 			uart1_putc(m+'0');
 			uart1_putc(l+'0');
