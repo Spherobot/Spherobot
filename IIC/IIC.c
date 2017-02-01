@@ -101,14 +101,16 @@ void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8
 		read = 0;
 		busFree = 0; //bus not free
 		
+		#ifdef DEBUG_IIC
+		uart0_putsln("Send start condition");
+		#endif
+		
 		//send start condition
 		TWCR &= ~(1 << TWSTO);
 		TWCR |= (1 << TWSTA);
 		TWCR |= (1<<TWINT);
 		
-		#ifdef DEBUG_IIC
-			uart0_putsln("Send start condition");
-		#endif
+		
 	}
 }
 
@@ -206,9 +208,12 @@ void IIC_RegisterWrite()
 			
 		//Other TWSR codes
 		default:
+		
+		#ifdef DEBUG_IIC
 			uart0_puts("Write-ERROR: ");
 			uart0_putChar((TWSR & 0xF8));
 			uart0_newline();
+		#endif
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
