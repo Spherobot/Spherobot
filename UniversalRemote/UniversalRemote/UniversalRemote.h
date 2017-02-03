@@ -12,6 +12,7 @@
 #define NUM_MAX_ENTRYS		10
 #define SEND_INTERVALL_MS	150
 #define INTERVALL_TOLERANCE	100
+#define F_CPU 16000000UL
 
 //choose correct General-File
 //#include "General_644P_v2.h"
@@ -22,6 +23,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
+#include <util/delay.h>
 
 typedef void (*TransmissionCallBackFunction)(void);
 typedef void (*ValueCallBackFunction)(uint16_t index);
@@ -273,5 +275,6 @@ void UniversalRemote_InitDone();
 ******************************************************/
 
 void UniversalRemote_addLog(char logMsg[]);
+void UniversalRemote_resetMenu();
 
 #endif /* UNIVERSALREMOTE_H_ */

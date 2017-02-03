@@ -92,12 +92,6 @@ void rec(char c)
 					if(Entrys[index1].setting!=NULL)
 					{
 						*Entrys[index1].setting=(Buffer[4]-'0')*100+(Buffer[5]-'0')*10+(Buffer[6]-'0');
-						if(Entrys[index1].type==FLOAT)
-						{
-							*Entrys[index1].setting=((float)((float)*Entrys[index1].setting)/100.0);
-							//float *test;
-							//test=Entrys[index1].setting;
-						}
 						if(ValueChangedCallBack!=NULL)
 							(*ValueChangedCallBack)(index1);
 					}
@@ -169,7 +163,7 @@ void transmitMenuEntry(char label[], uint8_t type, uint16_t initValue)
 		strcat(temp,";");
 	}
 	uart1_puts(temp);
-	uart0_puts(temp);
+	_delay_ms(100);
 }
 
 uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
@@ -236,6 +230,12 @@ void UniversalRemote_InitDone()
 	uart1_puts("D;");
 }
 
+void UniversalRemote_resetMenu()
+{
+	uart1_puts("r;");
+	_delay_ms(100);
+}
+
 void UniversalRemote_addLog(char logMsg[])
 {
 	char temp[100]="";
@@ -244,3 +244,4 @@ void UniversalRemote_addLog(char logMsg[])
 	strcat(temp,";");
 	uart1_puts(temp);
 }
+

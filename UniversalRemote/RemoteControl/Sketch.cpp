@@ -76,7 +76,7 @@ struct MenuEntryIntNumber {
 };
 
 struct Entry {
-	int Type;//0-->normal;1-->int number;2-->float number
+	int Type;//0-->normal;1-->int number;2-->Label;3-->float number
 	bool wasChanged;
 	MenuEntry menuEntry;
 	MenuEntryIntNumber menuEntryIntNumber;
@@ -179,6 +179,21 @@ void DrawMenuEntry(String Text, bool state, int MenuEntryIndex)
   myGLCD.fillRect(258, 31 + (MenuEntryIndex * 47),272, 17 + (MenuEntryIndex * 47));
 }
 
+void DrawMenuEntryLabel(String Text, int MenuEntryIndex)
+{
+	myGLCD.setColor(BLUE);
+	myGLCD.drawLine (0, 1 + (MenuEntryIndex * 47), 289, 1 + (MenuEntryIndex * 47));
+	myGLCD.setFont(arial_bold);
+	myGLCD.setColor(GRAY);
+	myGLCD.fillRect(0, 2 + (MenuEntryIndex * 47), 289, 47 + (MenuEntryIndex * 47));
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(GRAY);
+	myGLCD.setFont(arial_bold);
+	myGLCD.print(Text, LEFT, 17 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLUE);
+	myGLCD.drawLine (0, 47 + (MenuEntryIndex * 47), 289, 47 + (MenuEntryIndex * 47));
+}
+
 void DrawMenuEntryIntNumber(int InitNumber, String Text, int MenuEntryIndex)
 {
   myGLCD.setColor(BLUE);
@@ -220,6 +235,47 @@ void DrawMenuEntryIntNumber(int InitNumber, String Text, int MenuEntryIndex)
   myGLCD.print("-", 212, 15 + (MenuEntryIndex * 47));
 }
 
+void DrawMenuEntryFloatNumber(int InitNumber, String Text, int MenuEntryIndex)
+{
+	myGLCD.setColor(BLUE);
+	myGLCD.drawLine (0, 1 + (MenuEntryIndex * 47), 289, 1 + (MenuEntryIndex * 47));
+	myGLCD.setFont(arial_bold);
+	myGLCD.setColor(GRAY);
+	myGLCD.fillRect(0, 2 + (MenuEntryIndex * 47), 289, 47 + (MenuEntryIndex * 47));
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(GRAY);
+	myGLCD.setFont(arial_bold);
+	myGLCD.print(Text, LEFT, 17 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLUE);
+	myGLCD.drawLine (0, 47 + (MenuEntryIndex * 47), 289, 47 + (MenuEntryIndex * 47));
+
+	myGLCD.setColor(BLUE);
+	myGLCD.fillRoundRect(260, 12 + (MenuEntryIndex * 47), 280, 36 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLACK);
+	myGLCD.fillRoundRect(261, 13 + (MenuEntryIndex * 47), 279, 35 + (MenuEntryIndex * 47));
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(BLACK);
+	myGLCD.setFont(arial_bold);
+	myGLCD.print("+", 262, 15 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLUE);
+	myGLCD.fillRoundRect(230, 12 + (MenuEntryIndex * 47), 259, 36 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLACK);
+	myGLCD.fillRoundRect(231, 13 + (MenuEntryIndex * 47), 258, 35 + (MenuEntryIndex * 47));
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(BLACK);
+	myGLCD.setFont(SmallFont);
+	myGLCD.printNumF(InitNumber/100.0, 1, 233, 19 + (MenuEntryIndex * 47), '.', 3);
+	//myGLCD.print("12", 233, 19+(MenuEntryIndex*47));
+	myGLCD.setColor(BLUE);
+	myGLCD.fillRoundRect(210, 12 + (MenuEntryIndex * 47), 229, 36 + (MenuEntryIndex * 47));
+	myGLCD.setColor(BLACK);
+	myGLCD.fillRoundRect(211, 13 + (MenuEntryIndex * 47), 228, 35 + (MenuEntryIndex * 47));
+	myGLCD.setColor(WHITE);
+	myGLCD.setBackColor(BLACK);
+	myGLCD.setFont(arial_bold);
+	myGLCD.print("-", 212, 15 + (MenuEntryIndex * 47));
+}
+
 void addMenuEntry(String Text, bool initState, BoolCallBackFunc CB)
 {
   allEntries[NumberOfMenuEntries].Type = 0;
@@ -230,6 +286,13 @@ void addMenuEntry(String Text, bool initState, BoolCallBackFunc CB)
 
 }
 
+void addMenuEntryLabel(String Text)
+{
+	allEntries[NumberOfMenuEntries].Type = 2;
+	allEntries[NumberOfMenuEntries].menuEntry.Text = Text;
+	NumberOfMenuEntries++;
+}
+
 void addMenuEntryIntNum(String Text, int initNum, int numIncr, IntCallBackFunc CB )
 {
   allEntries[NumberOfMenuEntries].Type = 1;
@@ -238,6 +301,16 @@ void addMenuEntryIntNum(String Text, int initNum, int numIncr, IntCallBackFunc C
   allEntries[NumberOfMenuEntries].menuEntryIntNumber.incrNum = numIncr;
   allEntries[NumberOfMenuEntries].menuEntryIntNumber.CallBack = CB;
   NumberOfMenuEntries++;
+}
+
+void addMenuEntryFloatNum(String Text, int initNum, int numIncr, IntCallBackFunc CB )
+{
+	allEntries[NumberOfMenuEntries].Type = 3;
+	allEntries[NumberOfMenuEntries].menuEntryIntNumber.Text = Text;
+	allEntries[NumberOfMenuEntries].menuEntryIntNumber.InitNum = initNum;
+	allEntries[NumberOfMenuEntries].menuEntryIntNumber.incrNum = numIncr;
+	allEntries[NumberOfMenuEntries].menuEntryIntNumber.CallBack = CB;
+	NumberOfMenuEntries++;
 }
 
 void DrawInterface()
@@ -254,7 +327,13 @@ void DrawInterface()
       } else if (allEntries[i + ScrollPosition].Type == 1)
       {
         DrawMenuEntryIntNumber(allEntries[i + ScrollPosition].menuEntryIntNumber.InitNum, allEntries[i + ScrollPosition].menuEntryIntNumber.Text, i);
-      }
+      } else if (allEntries[i + ScrollPosition].Type == 2)
+	  {
+		DrawMenuEntryLabel(allEntries[i + ScrollPosition].menuEntry.Text, i);
+	  }else if (allEntries[i + ScrollPosition].Type == 3)
+	  {
+		  DrawMenuEntryFloatNumber(allEntries[i + ScrollPosition].menuEntryIntNumber.InitNum, allEntries[i + ScrollPosition].menuEntryIntNumber.Text, i);
+	  }
     }
   }
 	myGLCD.setColor(GREEN);
@@ -394,14 +473,44 @@ void applyChanges()
 				Temp[4]='0';
 				Temp[5]='0';
 				Temp[6]='0';
+			}else if(allEntries[i].Type==3)
+			{
+				int number=allEntries[i].menuEntryIntNumber.InitNum;
+				if(number<10)
+				{
+					Temp[4]='0';
+					Temp[5]='0';
+					Temp[6]=number+'0';
+				}else if(number<100)
+				{
+					char numTemp[5]="";
+					itoa(number,numTemp,10);
+					Temp[4]='0';
+					Temp[5]=numTemp[0];
+					Temp[6]=numTemp[1];
+				}else if(number>=100)
+				{
+					char numTemp[5]="";
+					itoa(number,numTemp,10);
+					Temp[4]=numTemp[0];
+					Temp[5]=numTemp[1];
+					Temp[6]=numTemp[2];
+				}
+				//addLog("Float");
+				//addLog(String(Temp));
 			}
 			Temp[7]=';';
 			Temp[8]='\n';
 			Temp[9]='\0';
 			uart1_puts(Temp);
+			delay(100);
 			allEntries[i].wasChanged=false;
 		}
+		
 	}
+	
+	myGLCD.clrScr();
+	DrawInterface();
 }
 
 void drawMsgBox()
@@ -579,13 +688,13 @@ void EntryTouchCalc(uint8_t no)
 	{
 		if (allEntries[ScrollPosition+no].Type==1)
 		{
-			if(x >= 210 && x <= 229)//-
+			if(x >= 210 && x <= 229 && allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum+allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum>1)//-
 			{
 				waitForIt(210, 12+(47*no), 229, 36+(47*no));
 				allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum-=allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum;
 				DrawMenuEntryIntNumber(allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum, allEntries[ScrollPosition+no].menuEntryIntNumber.Text, 0+no);
 				allEntries[ScrollPosition+no].menuEntryIntNumber.CallBack(ScrollPosition+no, allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum);
-			}else if(x >= 260 && x <= 280)//+
+			}else if(x >= 260 && x <= 280 && allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum+allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum<=999)//+
 			{
 				waitForIt(260, 12+(47*no), 280, 36+(47*no));
 				allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum+=allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum;
@@ -605,6 +714,28 @@ void EntryTouchCalc(uint8_t no)
 			allEntries[ScrollPosition+no].menuEntry.State= !allEntries[ScrollPosition+no].menuEntry.State;
 			DrawMenuEntry(allEntries[ScrollPosition+no].menuEntry.Text,allEntries[ScrollPosition+no].menuEntry.State, 0+no);
 			allEntries[ScrollPosition+no].menuEntry.CallBack(ScrollPosition+no, allEntries[ScrollPosition+no].menuEntry.State);
+		}else if (allEntries[ScrollPosition+no].Type==3)
+		{
+			if(x >= 210 && x <= 229 && allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum-allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum>=0)//-
+			{
+				waitForIt(210, 12+(47*no), 229, 36+(47*no));
+				allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum-=allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum;
+				DrawMenuEntryFloatNumber(allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum, allEntries[ScrollPosition+no].menuEntryIntNumber.Text, 0+no);
+				allEntries[ScrollPosition+no].menuEntryIntNumber.CallBack(ScrollPosition+no, allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum);
+			}else if(x >= 260 && x <= 280 && allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum+allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum<999)//+
+			{
+				waitForIt(260, 12+(47*no), 280, 36+(47*no));
+				allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum+=allEntries[ScrollPosition+no].menuEntryIntNumber.incrNum;
+				DrawMenuEntryFloatNumber(allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum, allEntries[ScrollPosition+no].menuEntryIntNumber.Text, 0+no);
+				allEntries[ScrollPosition+no].menuEntryIntNumber.CallBack(ScrollPosition+no, allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum);
+			}else if(x >= 230 && x <= 259)//num
+			{
+				waitForIt(230, 12+(47*no), 259, 36+(47*no));
+				myGLCD.clrScr();
+				allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum=drawKeyboardScreen(allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum);
+				DrawMenuEntryFloatNumber(allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum, allEntries[ScrollPosition+no].menuEntryIntNumber.Text, 0+no);
+				allEntries[ScrollPosition+no].menuEntryIntNumber.CallBack(ScrollPosition+no, allEntries[ScrollPosition+no].menuEntryIntNumber.InitNum);
+			}
 		}
 	}
 }
@@ -969,30 +1100,38 @@ void recMessFunc1(char c)
 		}else if(Buffer[0]=='I')
 		//I-->Int menu entry	Label,initValue	;
 		{
-			String test = String(Buffer);
-			int dividerIndex=test.indexOf(',');
-			String MenuEntryText=test.substring(1,dividerIndex);
-			int InitNum = test.substring(dividerIndex+1,test.indexOf(';')).toInt();
+			String label = String(Buffer);
+			int dividerIndex=label.indexOf(',');
+			String MenuEntryText=label.substring(1,dividerIndex);
+			int InitNum = label.substring(dividerIndex+1,label.indexOf(';')).toInt();
 			addMenuEntryIntNum(MenuEntryText,InitNum,1,IntCallBack);
 			addLog("Added INT menu entry: "+MenuEntryText+" Init="+InitNum);
 		}else if(Buffer[0]=='B')
 		//B-->Bool menu entry	Label,initValue	;
 		{
-			Buffer[index-1]='\0';
 			String test = String(Buffer);
-			addLog("Added BOOL menu entry: "+test);
+			int dividerIndex=test.indexOf(',');
+			String MenuEntryText=test.substring(1,dividerIndex);
+			int InitNum = test.substring(dividerIndex+1,test.indexOf(';')).toInt();
+			addMenuEntry(MenuEntryText,InitNum, BoolCallBack);
+			addLog("Added BOOL menu entry: "+MenuEntryText+" Init="+InitNum);
 		}else if(Buffer[0]=='L')
 		//L-->Label menu entry	Label			;
 		{
 			Buffer[index-1]='\0';
-			String test = String(Buffer);
-			addLog("Added LABEL menu entry: "+test);
+			String label = String(&Buffer[1]);
+			addMenuEntryLabel(label);
+			addLog("Added LABEL menu entry: "+label);
 		}else if(Buffer[0]=='F')
 		//F-->Float menu entry	Label,initValue	;
 		{
 			Buffer[index-1]='\0';
 			String test = String(Buffer);
-			addLog("Added FLOAT menu entry: "+test);
+			int dividerIndex=test.indexOf(',');
+			String MenuEntryText=test.substring(1,dividerIndex);
+			int InitNum = test.substring(dividerIndex+1,test.indexOf(';')).toInt();
+			addMenuEntryFloatNum(MenuEntryText,InitNum,10,IntCallBack);
+			addLog("Added FLOAT menu entry: "+MenuEntryText+" Init="+InitNum);
 		}else if(Buffer[0]=='d')
 		//d--> refresh log screen if visible
 		{
@@ -1005,6 +1144,23 @@ void recMessFunc1(char c)
 				DrawInterface();
 			if(ActiveScreen==2)
 				drawLog();
+		}else if(Buffer[0]=='r')
+		//r--> reset all menu entrys
+		{
+			addLog("Reseted all menu entrys");
+			NumberOfMenuEntries=0;
+			for (int i=0;i<MAXIMUM_MENU_ENTRYS;i++)
+			{
+				allEntries[i].Type=NULL;
+				allEntries[i].wasChanged=NULL;
+				allEntries[i].menuEntry.State=NULL;
+				allEntries[i].menuEntry.Text="";
+				allEntries[i].menuEntry.CallBack=NULL;
+				allEntries[i].menuEntryIntNumber.incrNum=NULL;
+				allEntries[i].menuEntryIntNumber.CallBack=NULL;
+				allEntries[i].menuEntryIntNumber.InitNum=NULL;
+				allEntries[i].menuEntryIntNumber.Text="";
+			}
 		}
 		index=0;
 		recOngoing=false;
@@ -1014,7 +1170,7 @@ void recMessFunc1(char c)
 void setup()
 {
 	myTouch.InitTouch();
-	myTouch.setPrecision(PREC_MEDIUM);
+	myTouch.setPrecision(PREC_HI);
 	// Setup the LCD
 	myGLCD.InitLCD();
 	
