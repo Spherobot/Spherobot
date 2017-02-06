@@ -29,6 +29,7 @@ void IIC_init(uint32_t frequency)
 	read = 0;
 	write = 0;
 	callbackFunction = 0;
+	errorCallbackFunction = 0;
 	
 	if(frequency >= 38020)
 	{
@@ -204,6 +205,9 @@ void IIC_RegisterWrite()
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
+			
 			break;
 			
 		//Other TWSR codes
@@ -220,7 +224,7 @@ void IIC_RegisterWrite()
 			busFree = 1;	 //send stopp condition
 			
 			if(errorCallbackFunction != 0)
-			(*errorCallbackFunction)();
+				(*errorCallbackFunction)();
 			
 			break;
 	}
