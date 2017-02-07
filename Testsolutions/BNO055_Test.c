@@ -59,22 +59,6 @@ int main(void)
 		#endif
 	}
 	BNO055_init(calibrationNeeded);
-/*
-	//Calibration
-	while(sys != 3 || gyro != 3 || accel != 3 || mag != 3)
-	{
-		BNO055_getCalibration(&sys, &gyro, &accel, &mag);
-		uart0_putInt(sys);
-		uart0_putc('\t');
-		uart0_putInt(gyro);
-		uart0_putc('\t');
-		uart0_putInt(accel);
-		uart0_putc('\t');
-		uart0_putInt(mag);
-		uart0_newline();
-		_delay_ms(500);
-	}*/
-
 
 	
 	timer = gpt_requestTimer(10, operationModeCallback);

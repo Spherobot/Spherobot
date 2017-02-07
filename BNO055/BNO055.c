@@ -203,6 +203,15 @@ void BNO055_init(uint8_t calibrationNeeded)
 		//read calibration data from EEPROM
 		for(int i=0; i<22; i++)
 			calibrationData[i] = EEPROM_read(i+2);
+			
+		#ifdef DEBUG_BNO055
+			for(int i=0; i<22; i++)
+			{
+				uart0_putChar(calibrationData[i]);
+				uart0_putc('\t');
+			}
+			uart0_newline();
+		#endif
 		
 		//switch to config mode
 		BNO055_setMode(CONFIG_MODE);
