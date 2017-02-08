@@ -40,7 +40,13 @@
 #define PIN_L6206_M3_EN		PB4
 #define PIN_L6206_M4_EN		PB3
 
+//EEPROM Storage-Addresses
+#define CALIB_DATA_START		2		//22 bytes Needed
+#define CALIB_DATA_END			24		//Storage reserved from byte 2-24
+
 //Debugs
-//#define DEBUG_IIC			1
+//#define DEBUG_IIC				1
+//#define DEBUG_REMOTECONTROL	1
+//#define DEBUG_BNO055			1
 
 #endif /* GENERAL_644P_v2_H_ */

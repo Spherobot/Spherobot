@@ -22,10 +22,15 @@
 #define PIN_IIC_SCL		PIN0
 #define PIN_IIC_SDA		PIN1
 
+//EEPROM Storage-Addresses
+#define CALIB_DATA_START		2		//22 bytes Needed
+#define CALIB_DATA_END			23		//Storage reserved from byte 2-23
+
 //Debugs
 //#define DEBUG_IIC		        1
-//#define DEBUG_MPU9150	      1
+//#define DEBUG_MPU9150			1
 //#define DEBUG_MADGWICK	    1
-//#define DEBUG_REMOTECONTROL 1
+//#define DEBUG_REMOTECONTROL	1
+//#define DEBUG_BNO055			1
 
 #endif /* GENERAL_ATMEGA2560_H_ */

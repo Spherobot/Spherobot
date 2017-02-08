@@ -40,14 +40,182 @@
 #define SYS_ERR_ADDR		0x3A
 #define ACC_OFFSET_X_LSB	0x55
 
-void BNO055_init(uint8_t calibrationNeeded);
+
+/******************************************************
+***													***
+***				Function: BNO055_init()				***
+***					========						***
+***													***
+***													***
+***	This function initializes the BNO055 and		***
+***	does calibration if needed.						***
+***	It returns 1 when initialization is				***
+***	successfull and 0 when unsuccessfull			***
+***													***
+***													***
+***	Pre-condition:									***
+***		-IIC_init()									***
+***													***
+***	Paramteter:										***
+***		-calibrationNeeded							***
+***													***
+***													***
+******************************************************/
+uint8_t BNO055_init(uint8_t calibrationNeeded);
+
+
+/******************************************************
+***													***
+***		Function: BNO055_getDataEuler()				***
+***					========						***
+***													***
+***													***
+***	This function reads the Euler data from the		***
+***	sensor and writes the values for heading,		***
+***	pitch and roll in the commited variables		***
+***													***
+***													***
+***	Pre-condition:									***
+***		-IIC_init()									***
+***		-BNO055_init()								***
+***													***
+***	Paramteter:										***
+***		-&heading									***
+***		-&pitch										***
+***		-&roll										***
+***													***
+***													***
+******************************************************/
 void BNO055_getDataEuler(float* pitch, float* roll, float* heading);
+
+
+/******************************************************
+***													***
+***			Function: BNO055_Success()				***
+***					========						***
+***													***
+***													***
+***			Do not call this function!!				***
+***													***
+***	This function sets "transimissionSuccess"		***
+***	to 1 if it gets called by the IIC				***
+***													***
+***													***
+***	Pre-condition:									***
+***		-none										***
+***													***
+***	Paramteter:										***
+***		-none										***
+***													***
+***													***
+******************************************************/
 void BNO055_Success();
+
+
+/******************************************************
+***													***
+***			Function: BNO055_Failure()				***
+***					========						***
+***													***
+***													***
+***			Do not call this function!!				***
+***													***
+***	This function sets "transimissionSuccess"		***
+***	to 0 if it gets called by the IIC				***
+***													***
+***													***
+***	Pre-condition:									***
+***		-none										***
+***													***
+***	Paramteter:										***
+***		-none										***
+***													***
+***													***
+******************************************************/
 void BNO055_Failure();
-void BNO055_getTemp();
-void BNO055_setExtCrystalUse(uint8_t usextal);
+
+
+/******************************************************
+***													***
+***				Function: getTemp()					***
+***					========						***
+***													***
+***	This function reads the temperature value		***
+***	and returns it.									***
+***													***
+***													***
+***	Pre-condition:									***
+***		-BNO055_init()								***
+***													***
+***	Paramteter:										***
+***		-none										***
+***													***
+***													***
+******************************************************/
+int8_t BNO055_getTemp();
+
+
+/******************************************************
+***													***
+***			Function: BNO055_getCalibratoin()		***
+***					========						***
+***													***
+***	This function reads the calibration status		***
+***	and writes to data into the commited variables.	***				
+***													***
+***													***
+***	Pre-condition:									***
+***		-BNO055_init()								***
+***													***
+***	Paramteter:										***
+***		-&sys										***
+***		-&gyro										***
+***		-&accel										***
+***		-&mag										***
+***													***
+***													***
+******************************************************/
 void BNO055_getCalibration(uint8_t* sys, uint8_t* gyro, uint8_t* accel, uint8_t* mag);
+
+
+/******************************************************
+***													***
+***			Function: BNO055_calibrate()			***
+***					========						***
+***													***
+***	This function waits until the sensor is			***
+***	fully calibrated								***
+***													***
+***													***
+***	Pre-condition:									***
+***		-BNO055_init()								***
+***													***
+***	Paramteter:										***
+***		-none										***
+***													***
+***													***
+******************************************************/
 void BNO055_calibrate();
+
+
+/******************************************************
+***													***
+***			Function: BNO055_setMdoe()				***
+***					========						***
+***													***
+***	This function sets the committed operation		***
+***	mode. Use predefined constants for the			***
+*** operation modes only!							***
+***													***
+***													***
+***	Pre-condition:									***
+***		-BNO055_init()								***
+***													***
+***	Paramteter:										***
+***		-none										***
+***													***
+***													***
+******************************************************/
 void BNO055_setMode(uint8_t mode);
 
 #endif /* BNO055_H_ */

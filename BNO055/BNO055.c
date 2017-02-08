@@ -15,7 +15,7 @@
 volatile uint8_t transmissionSuccess;
 static uint8_t mode;
 
-void BNO055_init(uint8_t calibrationNeeded)
+uint8_t BNO055_init(uint8_t calibrationNeeded)
 {
 	uint8_t unit = EULER_DEGREES | FUSION_WINDOWS_OUT;
 	uint8_t data;
@@ -30,7 +30,7 @@ void BNO055_init(uint8_t calibrationNeeded)
 	IIC_registerCallback(BNO055_Success);
 	
 	//Check for right device
-	IIC_RegisterReadStart(BNO055_LOW_ADDRESS, CHIP_ID_ADDR, 1, &id);
+	IIC_RegisterReadStart(BNO055_LOW_ADDRESS, CHIP_ID_ADDR, 1, &id); //Read Chip-id
 	while(!IIC_busFree());
 	
 	#ifdef DEBUG_BNO055
@@ -41,7 +41,7 @@ void BNO055_init(uint8_t calibrationNeeded)
 		}
 	#endif
 	
-	if(id != BNO055_ID)
+	if(id != BNO055_ID) //ID is false
 	{
 		_delay_ms(1000);	//hold on for boot
 		IIC_RegisterReadStart(BNO055_LOW_ADDRESS, CHIP_ID_ADDR, 1, &id);
@@ -54,13 +54,14 @@ void BNO055_init(uint8_t calibrationNeeded)
 		}
 		#endif
 		
+		//Still wrong id
 		if(id != BNO055_ID)
 		{
 			#ifdef DEBUG_BNO055
 				uart0_putsln("Wrong Device!");
 			#endif
 		
-			return;
+			return 0;	//Stop init if wrong device is connected
 		}
 	}
 	
@@ -84,7 +85,7 @@ void BNO055_init(uint8_t calibrationNeeded)
 	
 	//Reset
 	data = RESET;
-	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data);
+	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data); //Set Reset-Bit
 	while(!IIC_busFree());
 	
 	#ifdef DEBUG_BNO055
@@ -95,6 +96,8 @@ void BNO055_init(uint8_t calibrationNeeded)
 	}
 	#endif
 	
+	//Wait until Sensor is rebooted
+	//When Chip-Id is correct, reboot has finished
 	id = 0;
 	while(id != BNO055_ID)
 	{
@@ -166,6 +169,7 @@ void BNO055_init(uint8_t calibrationNeeded)
 	uart0_putsln("Output-units set");
 	#endif
 	
+	//Set to internal clock
 	data = 0;
 	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data);
 	while(!IIC_busFree());
@@ -193,16 +197,14 @@ void BNO055_init(uint8_t calibrationNeeded)
 		while(!IIC_busFree());
 		
 		//write Data to EEPROM
-		for(int i=2; i<24; i++)
-			EEPROM_write(i, calibrationData[i-2]);
+		for(int i=0; i<=(CALIB_DATA_END-CALIB_DATA_START); i++)
+			EEPROM_write(CALIB_DATA_START+i, calibrationData[i]);
 			
-		//write to EEPROM, that BNO055 is calibrated
-		EEPROM_write(1, 1);
 		
 	}else{
 		//read calibration data from EEPROM
-		for(int i=0; i<22; i++)
-			calibrationData[i] = EEPROM_read(i+2);
+		for(int i=0; i<=(CALIB_DATA_END-CALIB_DATA_START); i++)
+			calibrationData[i] = EEPROM_read(CALIB_DATA_START+i);
 			
 		#ifdef DEBUG_BNO055
 			for(int i=0; i<22; i++)
@@ -221,7 +223,7 @@ void BNO055_init(uint8_t calibrationNeeded)
 		while(!IIC_busFree());
 	}
 	
-	//Set Operation Mode to NDOF
+	//Set Operation Mode to NDOF (nine degrees of freedom)
 	mode = FUSION_MODE_NDOF;
 	BNO055_setMode(FUSION_MODE_NDOF);
 	#ifdef DEBUG_BNO055
@@ -236,6 +238,9 @@ void BNO055_init(uint8_t calibrationNeeded)
 	#ifdef DEBUG_BNO055
 		uart0_putsln("Operation Mode NDOF");
 	#endif
+	
+	//Initialization finished
+	return 1;	
 }
 
 void BNO055_getDataEuler(float* pitch, float* roll, float* heading)
@@ -246,95 +251,37 @@ void BNO055_getDataEuler(float* pitch, float* roll, float* heading)
 	int16_t mHeading = 0;
 	float mPitchF, mRollF, mHeadingF;
 	
-
+	//read Euler data from Sensor and write it to the Sensor Data field
 	IIC_RegisterReadStart(BNO055_LOW_ADDRESS, EUL_Heading_LSB, 6, sensorData);
 	while(!IIC_busFree());
 	
-	
+	//Convert the uint8_t datasets to int16_t
 	mHeading += (sensorData[1] << 8) + sensorData[0];
 	mRoll += (sensorData[3] << 8) + sensorData[2];
 	mPitch += (sensorData[5] << 8) + sensorData[4];
 		
+	//Convert to Degrees
+	//1 Degree = 16 LSB	
 	*heading = (float) mHeading / 16.0;
 	*roll = (float) mRoll / 16.0;
 	*pitch = (float) mPitch / 16.0;
 }
 
-void BNO055_getTemp()
+int8_t BNO055_getTemp()
 {
-	uint8_t temp;
+	int8_t temp;
 	IIC_RegisterReadStart(BNO055_LOW_ADDRESS, TEMP_ADDR, 1, &temp);
 	while(!IIC_busFree());
 	
-	uart0_putChar(temp);
-	uart0_newline();
+	return temp;
 }
 
-void BNO055_setExtCrystalUse(uint8_t usextal)
-{
-	uint8_t modeback = mode;
-	uint8_t data = 0;
-	
-	//Switch to config mode
-	mode = CONFIG_MODE;
-	
-	#ifdef DEBUG_BNO055
-		uart0_putChar(mode);
-	#endif
-	
-	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, OPR_MODE, 1, &mode);
-	while(!IIC_busFree());
-	#ifdef DEBUG_BNO055
-	if(!transmissionSuccess)
-	{
-		uart0_putsln("Transmission Failure!");
-		transmissionSuccess = 1;
-	}
-	#endif
-	_delay_ms(25);
-	
-	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, PAGE_ID_ADDR, 1, &data);
-	while(!IIC_busFree());
-	
-	if(usextal)
-	{
-		data = 0x80;
-		IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data);
-		while(!IIC_busFree());
-		#ifdef DEBUG_BNO055
-		uart0_putsln("Use external crystal");
-		#endif
-	}else{
-		data = 0x00;
-		IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data);
-		while(!IIC_busFree());
-	}	
-	_delay_ms(10);
-	
-	//Set the requested operating mode
-	mode = modeback;
-	
-	#ifdef DEBUG_BNO055
-	uart0_putChar(mode);
-	#endif
-	
-	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, OPR_MODE, 1, &mode);
-	while(!IIC_busFree());
-	#ifdef DEBUG_BNO055
-	if(!transmissionSuccess)
-	{
-		uart0_putsln("Transmission Failure!");
-		transmissionSuccess = 1;
-	}
-	#endif
-	_delay_ms(20);
-	
-	
-}
 
 void BNO055_getCalibration(uint8_t* sys, uint8_t* gyro, uint8_t* accel, uint8_t* mag)
 {
 	uint8_t calData;
+	
+	//Read Calibration Data from Sensor
 	IIC_RegisterReadStart(BNO055_LOW_ADDRESS, CALIB_STAT_ADDR, 1, &calData);
 	while(!IIC_busFree());
 	#ifdef DEBUG_BNO055
@@ -345,6 +292,7 @@ void BNO055_getCalibration(uint8_t* sys, uint8_t* gyro, uint8_t* accel, uint8_t*
 	}
 	#endif
 	
+	//Write the data to the proper variables
 	*sys = (calData >> 6) & 0x03;
 	*gyro = (calData >> 4) & 0x03;
 	*accel = (calData >> 2) & 0x03;
@@ -356,6 +304,14 @@ void BNO055_calibrate()
 	uint8_t sys, gyro, accel, mag;
 	sys = gyro = accel = mag = 0;
 	
+	//Wait until sensor is fully calibrated
+	//sys	=> calibration of the whole system
+	//gyro	=> calibration of the gyroscope
+	//accel	=> calibration of the accelerometer
+	//mag	=> calibration of the magnetometer
+	
+	//0		=> not calibrated
+	//3		=> fully calibrated
 	while(sys != 3 || gyro != 3 || accel != 3 || mag != 3)
 	{
 		BNO055_getCalibration(&sys, &gyro, &accel, &mag);
@@ -375,6 +331,7 @@ void BNO055_calibrate()
 
 void BNO055_setMode(uint8_t mode)
 {
+	//Set the committed Operation Mode
 	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, OPR_MODE, 1, &mode);
 	while(!IIC_busFree());
 	_delay_ms(20);
