@@ -79,6 +79,8 @@ int main(void)
 	UniversalRemote_addMenuEntry(&Kp, "P", FLOAT, Kp);							//index: 2
 	UniversalRemote_addMenuEntry(&Ki, "I", FLOAT, Ki);							//index: 3
 	UniversalRemote_addMenuEntry(&Kd, "D", FLOAT, Kd);							//index: 4
+	UniversalRemote_addLog("Init Done!");
+	UniversalRemote_InitDone();
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);

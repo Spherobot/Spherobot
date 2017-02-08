@@ -5,12 +5,12 @@
  *  Author: Florian
  */ 
 
-#include <stdbool.h>
+
 #include "UniversalRemote.h"
 Joysticks RemoteControl;
 
 Entry Entrys[NUM_MAX_ENTRYS]={};
-	
+
 uint16_t ToleranceCounter=0;
 
 bool TransmissionState=false;
@@ -29,13 +29,14 @@ void rec(char c)
 	//uart0_putc(c);
 	if(Buffer[index-1]=='\n'&&Buffer[index-2]==';')
 	{
+	
 		switch(Buffer[0])
 		{
 			case 'L':
 				if(Buffer[1] >= '0' && Buffer[1] <= '9' && Buffer[2] >= '0' && Buffer[2] <= '9' && Buffer[3] >= '0' && Buffer[3] <= '9' &&
 					Buffer[4]==',' && Buffer[5] >= '0' && Buffer[5] <= '9' && Buffer[6] >= '0' && Buffer[6] <= '9' && Buffer[7] >= '0' && Buffer[7] <= '9')
 				{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 						uart0_puts("Rec. L\n\r");
 					#endif
 					if(TransmissionState==false)
@@ -50,7 +51,7 @@ void rec(char c)
 				
 					index=0;
 				} else{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Frame Error 1\n\r");
 					#endif
 					index=0;
@@ -60,7 +61,7 @@ void rec(char c)
 				if(Buffer[1] >= '0' && Buffer[1] <= '9' && Buffer[2] >= '0' && Buffer[2] <= '9' && Buffer[3] >= '0' && Buffer[3] <= '9' &&
 					Buffer[4]==',' && Buffer[5] >= '0' && Buffer[5] <= '9' && Buffer[6] >= '0' && Buffer[6] <= '9' && Buffer[7] >= '0' && Buffer[7] <= '9')
 				{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 						uart0_puts("Rec. R\n\r");
 					#endif
 					if(TransmissionState==false)
@@ -74,7 +75,7 @@ void rec(char c)
 					RemoteControl.R.y=y-100;
 					index=0;
 				} else{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Frame Error 2\n\r");
 					#endif
 					index=0;
@@ -84,7 +85,7 @@ void rec(char c)
 				if(Buffer[1] >= '0' && Buffer[1] <= '9' && Buffer[2] >= '0' && Buffer[2] <= '9' && Buffer[3]==',' && Buffer[4] >= '0' && 
 					Buffer[4] <= '9' && Buffer[5] >= '0' && Buffer[5] <= '9' && Buffer[6] >= '0' && Buffer[6] <= '9')
 				{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Rec. contr.\n\r");
 					#endif
 					index1=(Buffer[1]-'0')*10+(Buffer[2]-'0');
@@ -97,14 +98,14 @@ void rec(char c)
 					index=0;
 				} else
 				{
-					#ifdef DEBUG_REMOTECONTROL
+					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Frame Error 3\n\r");
 					#endif
 					index=0;
 				}
 			break;
 			default:
-				#ifdef DEBUG_REMOTECONTROL
+				#ifdef DEBUG_UNIVERSALREMOTE
 				uart0_puts("Frame Error 0\n\r");
 				#endif
 			break;
@@ -114,13 +115,14 @@ void rec(char c)
 
 void UniversalRemote_Init()
 {
+	//TODO: wait for connection to establish
+	//while(PINA&~(1<<DDR1));
 	uart1_registerCallBack(rec);
-	uart1_init_x(9600,1,1,1,1);
+	uart1_init_x(57600,1,1,1,1);
 	for(uint8_t i=0;i<NUM_MAX_ENTRYS;i++)
 	{
 		Entrys[i].setting=NULL;
 	}
-	//uart1_puts_int("dofile(\"client.lua\");");//dofile("server.lua");
 }
 
 Joysticks UniversalRemote_GetValues()
@@ -128,24 +130,65 @@ Joysticks UniversalRemote_GetValues()
 	return RemoteControl;
 }
 
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
+char* convertTypeToChar(uint8_t type)
 {
-	//uart1_puts_int("");		//send command to add menu entry on Remote
+	switch(type)
+	{
+		case INT:
+			return "I";
+		case FLOAT:
+			return "F";
+		case LABEL:
+			return "L";
+		case BOOL:
+			return "B";
+		default:
+			return "0";
+	}
+}
+
+void transmitMenuEntry(char label[], uint8_t type, uint16_t initValue)
+{
+	char temp[100]="";
+	char temp1[100]="";
+	strcat(temp,convertTypeToChar(type));
+	strcat(temp,label);
+	if(type==LABEL)
+	{
+		strcat(temp,";");
+	}else{
+		strcat(temp,",");
+		itoa(initValue,temp1,10);//because it is an int -->see atmel reference
+		strcat(temp,temp1);
+		strcat(temp,";");
+	}
+	uart1_puts(temp);
+	_delay_ms(100);
+}
+
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue)	//use automatic index definition	ATTENTION: do not mix and match with addMenuEntryByIndex Function!!
+{
+	//send command to add menu entry on Remote
+	transmitMenuEntry(Label,type,initValue);
 	static uint8_t index2=0;
-	Entrys[index2].setting=pValue;
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 	index2++;
 	return index2-1;
 }
 
-void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[],uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
+void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue, uint8_t index2) //for use with explicit index definition		ATTENTION: do not mix and match with addMenuEntry Function!!
 {
-	//uart1_puts_int("");		//send command to add menu entry on Remote
-	Entrys[index2].setting=pValue;
+	//send command to add menu entry on Remote
+	transmitMenuEntry(Label,type,initValue);
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 }
 
-void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t index2)	//use if 
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, uint8_t index2)	//use if the menu entry was set on another controller and you want to recive the variable changes without having to initialize a new menu entry
 {
-	Entrys[index2].setting=pValue;
+	Entrys[index2].setting = pValue;
+	Entrys[index2].type=type;
 }
 
 void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback)
@@ -176,3 +219,29 @@ void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms)
 			(*CallBack)();
 	}
 }
+
+void UniversalRemote_RefreshLog()
+{
+	uart1_puts("d;");
+}
+
+void UniversalRemote_InitDone()
+{
+	uart1_puts("D;");
+}
+
+void UniversalRemote_resetMenu()
+{
+	uart1_puts("r;");
+	_delay_ms(100);
+}
+
+void UniversalRemote_addLog(char logMsg[])
+{
+	char temp[100]="";
+	strcat(temp,"l");
+	strcat(temp,logMsg);
+	strcat(temp,";");
+	uart1_puts(temp);
+}
+
