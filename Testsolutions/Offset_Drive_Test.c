@@ -38,6 +38,22 @@ void ValueChanged(uint16_t index)
 	}
 }
 
+void buildMenu()
+{
+	UniversalRemote_resetMenu();
+	UniversalRemote_addMenuEntryByIndex(0,"Kugel:",LABEL,0,0);												//Index: 0
+	UniversalRemote_addMenuEntryByIndex(&RampAccelSetpoint,"Anf. Ramp.",INT,RampAccelSetpoint,1);		//Index: 1
+	UniversalRemote_addMenuEntryByIndex(&RampDeccelSetpoint,"Verz. Ramp.",INT,RampDeccelSetpoint,2);	//Index: 2
+	UniversalRemote_addMenuEntryByIndex(0,"Kopf:",LABEL,0,3);												//Index: 3
+	UniversalRemote_addMenuEntryByIndex(0,"P",FLOAT,900,4);													//Index: 4
+	UniversalRemote_addMenuEntryByIndex(0,"I",FLOAT,0,5);													//Index: 5
+	UniversalRemote_addMenuEntryByIndex(0,"D",FLOAT,200,6);													//Index: 6
+	UniversalRemote_addMenuEntryByIndex(0,"Debug:",LABEL,0,7);												//Index: 7
+	UniversalRemote_addMenuEntryByIndex(0,"Kugel Debug",BOOL,0,8);											//Index: 8
+	UniversalRemote_addLog("Init Done!");
+	UniversalRemote_InitDone();
+}
+
 int main(void)
 {
 	
@@ -57,7 +73,6 @@ int main(void)
 	
 	motor123_init();
 	motor_drive(0, 0);
-	
 	EEPROPM_init();
 	if(EEPROM_read(0)==0b10101010)		//Just a random Number
 	{
@@ -74,13 +89,7 @@ int main(void)
 	
 	// porta &= ~((1<<PINA4)|(1<<PINA5))
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&RampAccelSetpoint, "Anfahrtsrampe", BOOL, RampAccelSetpoint);		//index: 0
-	UniversalRemote_addMenuEntry(&RampDeccelSetpoint, "Verzögerungsrampe", INT, RampDeccelSetpoint);	//index: 1 
-	UniversalRemote_addMenuEntry(&Kp, "P", FLOAT, Kp);							//index: 2
-	UniversalRemote_addMenuEntry(&Ki, "I", FLOAT, Ki);							//index: 3
-	UniversalRemote_addMenuEntry(&Kd, "D", FLOAT, Kd);							//index: 4
-	UniversalRemote_addLog("Init Done!");
-	UniversalRemote_InitDone();
+	buildMenu();
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	AHRS_init(100.0);
