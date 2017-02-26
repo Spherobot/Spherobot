@@ -9,6 +9,23 @@
 #ifndef GENERAL_H_
 #define GENERAL_H_
 
+
+
+//Debugs
+//#define DEBUG_IIC			    1
+//#define DEBUG_MPU9150		    1
+//#define DEBUG_MADGWICK	    1
+//#define DEBUG_UNIVERSALREMOTE	1
+
+
+
+
+
+
+
+
+
+
 #if defined (__AVR_ATmega644P__)
 	#include "General_644P.h"
 	#pragma message ( "INFO: Using 644P general File" )
@@ -35,7 +52,7 @@ else
 	#define DEBUGGING_ACTIVE
 #endif
 
-#ifdef DEBUG_REMOTECONTROL
+#ifdef DEBUG_UNIVERSALREMOTE
 	#pragma message ( "WARNING: REMOTECONTROL Debug activated" )
 	#define DEBUGGING_ACTIVE
 #endif

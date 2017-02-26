@@ -14,8 +14,7 @@
 #define INTERVALL_TOLERANCE	100
 #define F_CPU 16000000UL
 
-//choose correct General-File
-//#include "General_644P_v2.h"
+
 #include "General.h"
 
 #include "uart1.h"

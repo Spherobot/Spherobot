@@ -53,6 +53,9 @@ void rec(char c)
 				} else{
 					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Frame Error 1\n\r");
+					//uart0_puts(Buffer);
+					//uart0_newline();
+					//uart0_newline();
 					#endif
 					index=0;
 				}
@@ -254,12 +257,11 @@ void UniversalRemote_addLog(char logMsg[])
 
 void UniversalRemote_waitForBTConnections()
 {
-	
 	#ifdef DEBUGGING_ACTIVE
 		#pragma message ("Ignoring BT Moule connection check")
 	#else
 		int pinBT=PIN_BT;
-		while((pinBT&(1<<PIN_BT_STATE1)) != 1 || (pinBT&(1<<PIN_BT_STATE2)) != 1)
+		while((pinBT&(1<<PIN_BT_STATE1)) != 1  || (pinBT&(1<<PIN_BT_STATE2)) != 1)
 		{
 			#ifdef DEBUG_UNIVERSALREMOTE
 			if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )

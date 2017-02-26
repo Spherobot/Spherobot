@@ -28,12 +28,12 @@ void ValueChanged(uint16_t index)
 	switch(index)
 	{
 		case 0:
-			EEPROM_write(0,RampAccelSetpoint);
-			EEPROM_write(1,RampAccelSetpoint>>8);
+			EEPROM_write(1,RampAccelSetpoint);
+			EEPROM_write(2,RampAccelSetpoint>>8);
 		break;
 		case 1:
-			EEPROM_write(2,RampDeccelSetpoint);
-			EEPROM_write(3,RampDeccelSetpoint>>8);
+			EEPROM_write(3,RampDeccelSetpoint);
+			EEPROM_write(4,RampDeccelSetpoint>>8);
 		break;
 	}
 }
@@ -56,7 +56,8 @@ void buildMenu()
 
 int main(void)
 {
-	
+	bool EepromOK = false;
+
 	float roll = 0;
 	float pitch = 0;
 	float yaw = 0;
@@ -76,27 +77,34 @@ int main(void)
 	EEPROPM_init();
 	if(EEPROM_read(0)==0b10101010)		//Just a random Number
 	{
-		RampAccelSetpoint=EEPROM_read(0) | EEPROM_read(1) << 8;
-		RampDeccelSetpoint=EEPROM_read(2) | EEPROM_read(3) << 8;
+		EepromOK=true;
+		RampAccelSetpoint=EEPROM_read(1) | EEPROM_read(2) << 8;
+		RampDeccelSetpoint=EEPROM_read(3) | EEPROM_read(4) << 8;
 	}else{
 		RampAccelSetpoint=20;
-		EEPROM_write(0,RampAccelSetpoint);
-		EEPROM_write(1,RampAccelSetpoint>>8);
+		EEPROM_write(1,RampAccelSetpoint);
+		EEPROM_write(2,RampAccelSetpoint>>8);
 		RampDeccelSetpoint=60;
-		EEPROM_write(2,RampDeccelSetpoint);
-		EEPROM_write(3,RampDeccelSetpoint>>8);
+		EEPROM_write(3,RampDeccelSetpoint);
+		EEPROM_write(4,RampDeccelSetpoint>>8);
 	}
-	
-	// porta &= ~((1<<PINA4)|(1<<PINA5))
-	UniversalRemote_Init();
-	buildMenu();
-	UniversalRemote_registerValueCangedFunction(ValueChanged);
-	
-	AHRS_init(100.0);
+
 	uart1_init(57600, 1, 1);
 	#ifdef DEBUGGING_ACTIVE
 		uart0_init(57600, 1, 1);
 	#endif
+
+	UniversalRemote_Init();
+	//UniversalRemote_waitForBTConnections();
+	if(EepromOK!=true)
+		UniversalRemote_addLog("EEPROM Reset");
+	_delay_ms(100);
+	buildMenu();
+	UniversalRemote_registerValueCangedFunction(ValueChanged);
+	
+	AHRS_init(100.0);
+	
+	
 		
 	
 	
@@ -110,9 +118,11 @@ int main(void)
 	OCR1A = 3124;	//15ms
 	
 	sei();
+	#ifdef DEBUGGING_ACTIVE
+		uart0_puts("Controller Reset!");
+		uart0_newline();
+	#endif
 	
-	uart0_puts("Controller Reset!");
-	uart0_newline();
 	
 	RampAccel = 2;
 	RampDeccel = 6;
