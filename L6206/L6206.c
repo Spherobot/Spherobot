@@ -9,7 +9,6 @@
 
 #include <avr/io.h>
 #include "L6206.h"
-#include "General_644P.h"
 #include <math.h>
 
 

@@ -17,12 +17,15 @@
 #define DDR_L6206_DIR		DDRA
 #define DDR_L6206_EN12		DDRB
 #define DDR_L6206_EN3		DDRD
+#define DDR_BT_STATE		DDRD
 
 //PORTx
 #define PORT_IIC			PORTC
 #define PORT_L6206_DIR		PORTA
+#define PORT_BT_STATE		PORTD
 
 //PINx
+#define PIN_BT				PIND
 
 //Pins
 #define PIN_IIC_SCL			PC0
@@ -36,11 +39,13 @@
 #define PIN_L6206_M1_EN		PB3
 #define PIN_L6206_M2_EN		PB4
 #define PIN_L6206_M3_EN		PD7
+#define PIN_BT_STATE1		DD0
+#define PIN_BT_STATE2		DD1
 
 //Debugs
-//#define DEBUG_IIC			      1
+//#define DEBUG_IIC			    1
 //#define DEBUG_MPU9150		    1
 //#define DEBUG_MADGWICK	    1
-//#define DEBUG_REMOTECONTROL 1
+//#define DEBUG_REMOTECONTROL	1
 
 #endif /* GENERAL_644P_H_ */

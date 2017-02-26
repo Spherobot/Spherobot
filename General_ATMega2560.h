@@ -12,15 +12,15 @@
 //constants
 #define F_OSC			16000000
 
-//DDR
+//DDRx
 #define DDR_IIC			DDRD
 #define DDR_BT_STATE	DDRA
 
-//Ports out
+//PORTx
 #define PORT_IIC		PORTD
 #define PORT_BT_STATE	PORTA
 
-//Port in
+//PINx
 #define PIN_BT			PINA
 
 //Pins
@@ -33,6 +33,6 @@
 //#define DEBUG_IIC					1
 //#define DEBUG_MPU9150				1
 //#define DEBUG_MADGWICK			1
-#define DEBUG_UNIVERSALREMOTE		1
+//#define DEBUG_UNIVERSALREMOTE		1
 
 #endif /* GENERAL_ATMEGA2560_H_ */

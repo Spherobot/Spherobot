@@ -9,9 +9,7 @@
 #ifndef UART1_H_
 #define UART1_H_
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
+#include "General.h"
 
 typedef void (*CallBackFunction)(char c);
 

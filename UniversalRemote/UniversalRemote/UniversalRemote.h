@@ -16,7 +16,7 @@
 
 //choose correct General-File
 //#include "General_644P_v2.h"
-#include "General_ATMega2560.h"
+#include "General.h"
 
 #include "uart1.h"
 #include "uart0.h"
@@ -275,6 +275,67 @@ void UniversalRemote_InitDone();
 ******************************************************/
 
 void UniversalRemote_addLog(char logMsg[]);
+/******************************************************
+***													***
+***	Function: UniversalRemote_addLog()				***
+***				 ========							***
+***													***
+***	This function adds a log entry into the log of	***
+***	the remote control, but does not refresh the	***
+***	screen due to performance optimisation! That	***
+***	means that if the user is in the log window he	***
+***	can't see the changes!							***
+***													***
+***													***
+***	Pre-condition:									***
+***		-UniversaalRemote_init						***
+***													***
+***	Paramteter:										***
+***		-Message that gets logged					***
+***													***
+******************************************************/
+
 void UniversalRemote_resetMenu();
+/******************************************************
+***													***
+***	Function: UniversalRemote_resetMenu()			***
+***				 ========							***
+***													***
+***	This function deletes all menu entrys on the	***
+***	remote screen. It should be called after a reset***
+***	of the programm, and before the menu entrys are	***
+***	created to prevent double entrys.				***
+***													***
+***													***
+***	Pre-condition:									***
+***		-UniversaalRemote_init						***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
+
+void UniversalRemote_waitForBTConnections();
+/******************************************************
+***													***
+***	Function: UniversalRemote_waitForBTConnections()***
+***				 ========							***
+***													***
+***	This function should be called immedatly after	***
+***	the init function, to make sure that the		***
+***	bluetooth module is connected, if more than one	***
+***	BT module is used, the function should be		***
+***	changed to wait for all of them. All Pins and	***
+***	ports should be defined in the according		***
+***	general file.									***
+***													***
+***													***
+***	Pre-condition:									***
+***		-UniversaalRemote_init						***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
 
 #endif /* UNIVERSALREMOTE_H_ */

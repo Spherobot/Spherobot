@@ -1,4 +1,4 @@
 # Spherobot
-In the main application you have to choose whether to use the file "General_ATMega2560.h" or "General_644P.h" depending on the used microcontroller.
-Moreover you have to uncomment the chosen header-file in each *.c file of the modules!
+Only include the General.h file in the modules! It will do the selection of the right general file automatically
+based on the microcontroller you selected in atmel studio.
 Files with *_v2.c or *_v2.h at the end should only used on the head.
