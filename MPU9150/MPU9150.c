@@ -11,9 +11,6 @@
 #include "IIC.h"
 #include "MPU9150.h"
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
 
 static uint8_t accelerometer[6];
 static uint8_t gyroscope[6];

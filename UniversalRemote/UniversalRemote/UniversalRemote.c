@@ -21,13 +21,13 @@ volatile static ValueCallBackFunction ValueChangedCallBack = NULL;
 
 void rec(char c)
 {
-	static char Buffer[12]={0};
+	static char Buffer[20]={0};
 	static uint8_t index=0;
 	static uint16_t x=0,y=0;
 	uint8_t index1=0;
 	Buffer[index++]=c;
 	//uart0_putc(c);
-	if(Buffer[index-1]=='\n'&&Buffer[index-2]==';')
+	if(Buffer[index-1] == '\n' && Buffer[index-2] == ';')
 	{
 	
 		switch(Buffer[0])
@@ -53,6 +53,9 @@ void rec(char c)
 				} else{
 					#ifdef DEBUG_UNIVERSALREMOTE
 					uart0_puts("Frame Error 1\n\r");
+					//uart0_puts(Buffer);
+					//uart0_newline();
+					//uart0_newline();
 					#endif
 					index=0;
 				}
@@ -110,6 +113,9 @@ void rec(char c)
 				#endif
 			break;
 		}
+	} else if(index >= 19)
+	{
+		index=0;
 	}
 }
 
@@ -123,6 +129,10 @@ void UniversalRemote_Init()
 	{
 		Entrys[i].setting=NULL;
 	}
+	#ifndef DEBUGGING_ACTIVE
+		DDR_BT_STATE  &= ~((1<<PIN_BT_STATE1)&(1<<PIN_BT_STATE2));
+		PORT_BT_STATE  |=  (1<<PIN_BT_STATE1)|(1<<PIN_BT_STATE2);
+	#endif
 }
 
 Joysticks UniversalRemote_GetValues()
@@ -245,3 +255,25 @@ void UniversalRemote_addLog(char logMsg[])
 	uart1_puts(temp);
 }
 
+void UniversalRemote_waitForBTConnections()
+{
+	#ifdef DEBUGGING_ACTIVE
+		#pragma message ("Ignoring BT Moule connection check")
+	#else
+		int pinBT=PIN_BT;
+		while((pinBT&(1<<PIN_BT_STATE1)) != 1  || (pinBT&(1<<PIN_BT_STATE2)) != 1)
+		{
+			#ifdef DEBUG_UNIVERSALREMOTE
+			if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
+			uart0_puts("Waiting for 2. BT Connection \n\r");
+			else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
+			uart0_puts("Waiting for 1. BT Connection \n\r");
+			else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
+			uart0_puts("Waiting for both BT Connections \n\r");
+			else if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
+			uart0_puts("Both BT Connections established \n\r");
+			#endif
+			pinBT=PIN_BT;
+		}
+	#endif
+}

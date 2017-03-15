@@ -9,9 +9,14 @@
 #ifndef IIC_H_
 #define IIC_H_
 
+<<<<<<< HEAD
 //choose correct General-File
 #include "General_644P_v2.h"
 //#include "General_ATMega2560.h"
+=======
+
+#include "General.h"
+>>>>>>> refs/remotes/origin/master
 
 
 typedef void (*IIC_callbackFunction)(void);

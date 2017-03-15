@@ -9,9 +9,7 @@
 #ifndef MPU9150_H_
 #define MPU9150_H_
 
-//choose correct General-File
-#include "General_644P.h"
-//#include "General_ATMega2560.h"
+#include "General.h"
 
 //MPU_Registers
 #define SLAVE_ADDRESS_1		0x68	//use if pin AD0 is connected to GND
