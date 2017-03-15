@@ -22,7 +22,7 @@
 #define PORT_IIC			PORTC
 #define PORT_L6206_DIR		PORTA
 
-//PINx
+//Pins
 #define PIN_IIC_SCL			PC0
 #define PIN_IIC_SDA			PC1
 
@@ -44,9 +44,5 @@
 #define CALIB_DATA_START		2		//22 bytes Needed
 #define CALIB_DATA_END			24		//Storage reserved from byte 2-24
 
-//Debugs
-//#define DEBUG_IIC				1
-//#define DEBUG_REMOTECONTROL	1
-//#define DEBUG_BNO055			1
 
 #endif /* GENERAL_644P_v2_H_ */

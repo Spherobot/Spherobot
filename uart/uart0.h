@@ -10,13 +10,7 @@
 #ifndef UART0_H_
 #define UART0_H_
 
-<<<<<<< HEAD
-//choose correct General-File
-//#include "General_644P.h"
-#include "General_ATMega2560.h"
-=======
 #include "General.h"
->>>>>>> refs/remotes/origin/master
 
 enum UART0_SEND_PART{UART0_SEND_DISABLED, UART0_SEND_ENABLED};
 enum UART0_RECEVE_PART{UART0_REC_DISABLED, UART0_REC_ENABLED};

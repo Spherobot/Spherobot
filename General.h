@@ -9,6 +9,8 @@
 #ifndef GENERAL_H_
 #define GENERAL_H_
 
+//Choose correct 644P-File
+//#define VERSION2				1
 
 
 //Debugs
@@ -16,8 +18,7 @@
 //#define DEBUG_MPU9150		    1
 //#define DEBUG_MADGWICK	    1
 //#define DEBUG_UNIVERSALREMOTE	1
-
-
+//#define DEBUG_BNO055			1
 
 
 
@@ -27,8 +28,13 @@
 
 
 #if defined (__AVR_ATmega644P__)
-	#include "General_644P.h"
-	#pragma message ( "INFO: Using 644P general File" )
+	#ifdef VERSION2
+		#include "General_644P_v2.h"
+		#pragma message ( "INFO: Using 644P_v2 general File" )
+	#else
+		#include "General_644P.h"
+		#pragma message ( "INFO: Using 644P general File" )
+	#endif
 #elif defined (__AVR_ATmega2560__)
 	#include "General_ATMega2560.h"
 	#pragma message ( "INFO: Using 2560 general File" )
@@ -54,6 +60,11 @@ else
 
 #ifdef DEBUG_UNIVERSALREMOTE
 	#pragma message ( "WARNING: REMOTECONTROL Debug activated" )
+	#define DEBUGGING_ACTIVE
+#endif
+
+#ifdef DEBUG_BNO055
+	#pragma message("WARNING: ´BNO055 Debug activated")
 	#define DEBUGGING_ACTIVE
 #endif
 

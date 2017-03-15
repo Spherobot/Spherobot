@@ -29,18 +29,9 @@
 #define PIN_BT_STATE1	DD0
 #define PIN_BT_STATE2	DD1
 
-<<<<<<< HEAD
+
 //EEPROM Storage-Addresses
 #define CALIB_DATA_START		2		//22 bytes Needed
 #define CALIB_DATA_END			23		//Storage reserved from byte 2-23
-
-//Debugs
-//#define DEBUG_IIC		        1
-//#define DEBUG_MPU9150			1
-//#define DEBUG_MADGWICK	    1
-//#define DEBUG_REMOTECONTROL	1
-//#define DEBUG_BNO055			1
-=======
->>>>>>> refs/remotes/origin/master
 
 #endif /* GENERAL_ATMEGA2560_H_ */
