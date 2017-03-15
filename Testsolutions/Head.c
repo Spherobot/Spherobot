@@ -97,9 +97,11 @@ int main(void)
 	}
 	
 	UniversalRemote_Init();
-	UniversalRemote_addMenuEntry(&Kp, "P", FLOAT, Kp);
-	UniversalRemote_addMenuEntry(&Ki, "I", FLOAT, Ki);
-	UniversalRemote_addMenuEntry(&Kd, "D", FLOAT, Kd);
+	
+	
+	UniversalRemote_MenuEntryIndexToVariable(&Kp, 2);		//P value
+	UniversalRemote_MenuEntryIndexToVariable(&Ki, 3);		//I value
+	UniversalRemote_MenuEntryIndexToVariable(&Kd, 4);		//D value
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	/////////////////////////////////////////////////////////

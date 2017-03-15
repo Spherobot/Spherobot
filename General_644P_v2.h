@@ -22,7 +22,7 @@
 #define PORT_IIC			PORTC
 #define PORT_L6206_DIR		PORTA
 
-//PINx
+//Pins
 #define PIN_IIC_SCL			PC0
 #define PIN_IIC_SDA			PC1
 
@@ -40,7 +40,9 @@
 #define PIN_L6206_M3_EN		PB4
 #define PIN_L6206_M4_EN		PB3
 
-//Debugs
-//#define DEBUG_IIC			1
+//EEPROM Storage-Addresses
+#define CALIB_DATA_START		2		//22 bytes Needed
+#define CALIB_DATA_END			24		//Storage reserved from byte 2-24
+
 
 #endif /* GENERAL_644P_v2_H_ */

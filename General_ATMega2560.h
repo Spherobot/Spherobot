@@ -30,4 +30,8 @@
 #define PIN_BT_STATE2	DD1
 
 
+//EEPROM Storage-Addresses
+#define CALIB_DATA_START		2		//22 bytes Needed
+#define CALIB_DATA_END			23		//Storage reserved from byte 2-23
+
 #endif /* GENERAL_ATMEGA2560_H_ */

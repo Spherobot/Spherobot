@@ -4,7 +4,7 @@
  * Created: 02.03.2016 14:56:31
  *  Author: Admin
  */ 
-
+#include <avr/io.h>
 
 #ifndef IIC_H_
 #define IIC_H_
@@ -12,10 +12,9 @@
 
 #include "General.h"
 
+
+
 typedef void (*IIC_callbackFunction)(void);
-
-
-void IIC_init(uint32_t frequency);
 
 /******************************************************
 ***													***
@@ -34,9 +33,10 @@ void IIC_init(uint32_t frequency);
 ***		-frequenzy									***
 ***													***
 ******************************************************/
+void IIC_init(uint32_t frequency);
 
 
-void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_t BytesToTransmitt, uint8_t* Data);
+
 /******************************************************
 ***													***
 ***			Function: IIC_RegisterWriteStart		***
@@ -60,9 +60,9 @@ void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8
 ***			Start address of a field with Data		***
 ***													***
 ******************************************************/
+void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_t BytesToTransmitt, uint8_t* Data);
 
 
-void IIC_RegisterWrite();
 /******************************************************
 ***													***
 ***			Function: IIC_RegisterWrite				***
@@ -82,9 +82,9 @@ void IIC_RegisterWrite();
 ***													***
 ***													***
 ******************************************************/
+void IIC_RegisterWrite();
 
 
-void IIC_RegisterReadStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_t BytesToRecieve, uint8_t* Data);
 /******************************************************
 ***													***
 ***			Function: IIC_RegisterReadStart			***
@@ -109,9 +109,9 @@ void IIC_RegisterReadStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_
 ***			Data gets stored						***
 ***													***
 ******************************************************/
+void IIC_RegisterReadStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8_t BytesToRecieve, uint8_t* Data);
 
 
-void IIC_RegisterRead();
 /******************************************************
 ***													***
 ***			Function: IIC_RegisterRead				***
@@ -133,9 +133,9 @@ void IIC_RegisterRead();
 ***													***
 ***													***
 ******************************************************/
+void IIC_RegisterRead();
 
 
-uint8_t IIC_busFree();
 /******************************************************
 ***													***
 ***			Function: IIC_busFree()					***
@@ -155,7 +155,50 @@ uint8_t IIC_busFree();
 ***													***
 ***													***
 ******************************************************/
+uint8_t IIC_busFree();
+
+
+/******************************************************
+***													***
+***		Function: IIC_registerCallback()			***
+***				 ========							***
+***													***
+***													***
+***	This function registers a callback-function		***
+*** The callback-function gets called when			***
+***	data is sucessfully received					***
+***													***
+***													***
+***	Pre-condition:									***
+***		-none										***
+***													***
+***	Paramteter:										***
+***		-IIC_callbackFunction						***
+***													***
+***													***
+******************************************************/
 void IIC_registerCallback(IIC_callbackFunction callback); 
+
+
+/******************************************************
+***													***
+***		Function: IIC_registerErrorCallback()		***
+***				 ========							***
+***													***
+***													***
+***	This function registers a callback-function		***
+*** The callback-function gets called when			***
+***	an error occours while communication			***
+***													***
+***													***
+***	Pre-condition:									***
+***		-none										***
+***													***
+***	Paramteter:										***
+***		-IIC_callbackFunction						***
+***													***
+***													***
+******************************************************/
 void IIC_registerErrorCallback(IIC_callbackFunction callback); 
 
 

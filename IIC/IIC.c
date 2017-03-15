@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
 #include "uart0.h"
 #include "IIC.h"
-#include "MPU9150.h"
+//#include "MPU9150.h"
 
 volatile static uint8_t busFree;
 
@@ -29,6 +29,7 @@ void IIC_init(uint32_t frequency)
 	read = 0;
 	write = 0;
 	callbackFunction = 0;
+	errorCallbackFunction = 0;
 	
 	if(frequency >= 38020)
 	{
@@ -101,14 +102,16 @@ void IIC_RegisterWriteStart(uint8_t SlaveAddress, uint8_t RegisterAddress, uint8
 		read = 0;
 		busFree = 0; //bus not free
 		
+		#ifdef DEBUG_IIC
+		uart0_putsln("Send start condition");
+		#endif
+		
 		//send start condition
 		TWCR &= ~(1 << TWSTO);
 		TWCR |= (1 << TWSTA);
 		TWCR |= (1<<TWINT);
 		
-		#ifdef DEBUG_IIC
-			uart0_putsln("Send start condition");
-		#endif
+		
 	}
 }
 
@@ -202,20 +205,26 @@ void IIC_RegisterWrite()
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
+			if(errorCallbackFunction != 0)
+				(*errorCallbackFunction)();
+			
 			break;
 			
 		//Other TWSR codes
 		default:
+		
+		#ifdef DEBUG_IIC
 			uart0_puts("Write-ERROR: ");
 			uart0_putChar((TWSR & 0xF8));
 			uart0_newline();
+		#endif
 			
 			TWCR |= (1 << TWSTO);
 			TWCR &= ~(1 << TWSTA);
 			busFree = 1;	 //send stopp condition
 			
 			if(errorCallbackFunction != 0)
-			(*errorCallbackFunction)();
+				(*errorCallbackFunction)();
 			
 			break;
 	}
