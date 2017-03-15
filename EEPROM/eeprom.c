@@ -7,7 +7,7 @@
 
 #include <avr/io.h>
 
-void EEPROPM_init()
+void EEPROM_init()
 {
 	//Erase and Write in one operation
 	EECR &= ~((1<<EEPM1) | (1<<EEPM0));

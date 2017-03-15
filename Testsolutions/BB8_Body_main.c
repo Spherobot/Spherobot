@@ -74,7 +74,7 @@ int main(void)
 	
 	motor123_init();
 	motor_drive(0, 0);
-	EEPROPM_init();
+	EEPROM_init();
 	if(EEPROM_read(0)==0b10101010)		//Just a random Number
 	{
 		EepromOK=true;
