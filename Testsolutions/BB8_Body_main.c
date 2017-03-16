@@ -21,7 +21,7 @@
 
 enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
-uint16_t RampAccelSetpoint=40, RampDeccelSetpoint=60;
+uint16_t RampAccelSetpoint=20, RampDeccelSetpoint=60;
 
 void ValueChanged(uint16_t index)
 {
@@ -84,7 +84,7 @@ int main(void)
 		RampAccelSetpoint=20;
 		EEPROM_write(1,RampAccelSetpoint);
 		EEPROM_write(2,RampAccelSetpoint>>8);
-		RampDeccelSetpoint=60;
+		RampDeccelSetpoint=40;
 		EEPROM_write(3,RampDeccelSetpoint);
 		EEPROM_write(4,RampDeccelSetpoint>>8);
 	}
