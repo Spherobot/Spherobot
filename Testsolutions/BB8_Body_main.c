@@ -63,11 +63,11 @@ int main(void)
 	float yaw = 0;
 	float startupYaw = 0;
 	float offsetAngle = 0;
-	float speed, angle;
+	float speedSetpoint, angle;
+	float speed = 0;
 	uint8_t i = 0;
 	uint16_t motorAngle;
 	int16_t xSetpoint = 0, ySetpoint = 0;
-	float x = 0, y = 0;
 	float RampAccel, RampDeccel;
 	Joysticks JoystickValues;
 	enum states state = STARTUP;
@@ -159,52 +159,26 @@ int main(void)
 					
 					RampAccel = (float)RampAccelSetpoint/10;
 					RampDeccel = (float)RampDeccelSetpoint/10;
-					
-					if(x < xSetpoint)
-					{
-						if((xSetpoint - x) <= 5)
-							x += 1;
-						else
-							x += RampAccel;
+										
+					speedSetpoint = sqrt(xSetpoint*xSetpoint + ySetpoint*ySetpoint);
+					if(speedSetpoint > 100)
+						speedSetpoint = 100;
 						
-						if(x > 100)
-							x = 100;
-					} else if(x > xSetpoint)
+					if(speed < speedSetpoint)
 					{
-						if((x - xSetpoint) <= 5)
-							x -= 1;
+						if((speedSetpoint-speed) <= 5)
+							speed++;
 						else
-							x -= RampDeccel;
-						
-						if(x < -100)
-							x = -100;
+							speed += RampAccel;
+					}else if(speed > speedSetpoint)
+					{
+						if((speed-speedSetpoint) <= 5)
+							speed--;
+						else
+							speed -= RampDeccel;
 					}
-					
-					if(y < ySetpoint)
-					{
-						if((ySetpoint - y) <= 5)
-							y += 1;
-						else
-							y += RampAccel;
 						
-						if(y > 100)
-							y = 100;
-					} else if(y > ySetpoint)
-					{
-						if((y - ySetpoint) <= 5)
-							y -= 1;
-						else
-							y -= RampDeccel;
-						
-						if(y < -100)
-							y = -100;
-					}
-					
-					speed = sqrt(x*x + y*y);
-					if(speed > 100)
-						speed = 100;
-						
-					angle = atan2(y, x);
+					angle = atan2(ySetpoint, xSetpoint);
 					angle *= 180 / M_PI;
 					angle -= 90;
 					
@@ -237,7 +211,7 @@ int main(void)
 					uart1_putInt(motorAngle);
 					uart1_newline();*/
 							
-					motor_drive(motorAngle, (uint8_t)speed);
+					motor_drive(motorAngle, (uint8_t)speedSetpoint);
 					
 					break;
 			}
