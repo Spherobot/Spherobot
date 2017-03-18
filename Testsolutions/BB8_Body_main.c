@@ -206,7 +206,7 @@ int main(void)
 					}
 						
 						
-					motor_drive(motorAngle, (uint8_t)speedSetpoint);
+					motor_drive(motorAngle, (uint8_t)speed);
 					
 					break;
 			}
