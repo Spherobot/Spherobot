@@ -99,9 +99,9 @@ int main(void)
 	UniversalRemote_Init();
 	
 	
-	UniversalRemote_MenuEntryIndexToVariable(&Kp, 2);		//P value
-	UniversalRemote_MenuEntryIndexToVariable(&Ki, 3);		//I value
-	UniversalRemote_MenuEntryIndexToVariable(&Kd, 4);		//D value
+	UniversalRemote_MenuEntryIndexToVariable(&Kp, 4);		//P value
+	UniversalRemote_MenuEntryIndexToVariable(&Ki, 5);		//I value
+	UniversalRemote_MenuEntryIndexToVariable(&Kd, 6);		//D value
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
 	
 	/////////////////////////////////////////////////////////
