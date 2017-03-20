@@ -11,6 +11,7 @@
 
 //constants
 #define F_OSC				20000000
+#define F_CPU				F_OSC
 
 //DDRx
 #define DDR_IIC				DDRC
@@ -41,8 +42,11 @@
 #define PIN_L6206_M4_EN		PB3
 
 //EEPROM Storage-Addresses
+#define EEPROM_CHECKSUM			0		//Address of the identifier bit
 #define CALIB_DATA_START		2		//22 bytes Needed
 #define CALIB_DATA_END			24		//Storage reserved from byte 2-24
+#define PID_DATA_START			28		//6 bytes needed
+#define PID_DATA_END			34		//Storage reserved form byte 28-34
 
 
 #endif /* GENERAL_644P_v2_H_ */

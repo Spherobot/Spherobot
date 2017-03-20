@@ -129,9 +129,11 @@ void UniversalRemote_Init()
 	{
 		Entrys[i].setting=NULL;
 	}
-	#ifndef DEBUGGING_ACTIVE
-		DDR_BT_STATE  &= ~((1<<PIN_BT_STATE1)&(1<<PIN_BT_STATE2));
-		PORT_BT_STATE  |=  (1<<PIN_BT_STATE1)|(1<<PIN_BT_STATE2);
+	#ifndef VERSION2
+		#ifndef DEBUGGING_ACTIVE
+			DDR_BT_STATE  &= ~((1<<PIN_BT_STATE1)&(1<<PIN_BT_STATE2));
+			PORT_BT_STATE  |=  (1<<PIN_BT_STATE1)|(1<<PIN_BT_STATE2);
+		#endif
 	#endif
 }
 
@@ -257,23 +259,25 @@ void UniversalRemote_addLog(char logMsg[])
 
 void UniversalRemote_waitForBTConnections()
 {
-	#ifdef DEBUGGING_ACTIVE
-		#pragma message ("Ignoring BT Moule connection check")
-	#else
-		int pinBT=PIN_BT;
-		while((pinBT&(1<<PIN_BT_STATE1)) != 1  || (pinBT&(1<<PIN_BT_STATE2)) != 1)
-		{
-			#ifdef DEBUG_UNIVERSALREMOTE
-			if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
-			uart0_puts("Waiting for 2. BT Connection \n\r");
-			else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
-			uart0_puts("Waiting for 1. BT Connection \n\r");
-			else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
-			uart0_puts("Waiting for both BT Connections \n\r");
-			else if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
-			uart0_puts("Both BT Connections established \n\r");
-			#endif
-			pinBT=PIN_BT;
-		}
+	#ifndef VERSION2
+		#ifdef DEBUGGING_ACTIVE
+			#pragma message ("Ignoring BT Moule connection check")
+		#else
+			int pinBT=PIN_BT;
+			while((pinBT&(1<<PIN_BT_STATE1)) != 1  || (pinBT&(1<<PIN_BT_STATE2)) != 1)
+			{
+				#ifdef DEBUG_UNIVERSALREMOTE
+				if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
+				uart0_puts("Waiting for 2. BT Connection \n\r");
+				else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
+				uart0_puts("Waiting for 1. BT Connection \n\r");
+				else if((pinBT&(1<<PIN_BT_STATE1)) != 1 && (pinBT&(1<<PIN_BT_STATE2)) != 1 )
+				uart0_puts("Waiting for both BT Connections \n\r");
+				else if((pinBT&(1<<PIN_BT_STATE1)) == 1 && (pinBT&(1<<PIN_BT_STATE2)) == 1 )
+				uart0_puts("Both BT Connections established \n\r");
+				#endif
+				pinBT=PIN_BT;
+			}
+		#endif
 	#endif
 }

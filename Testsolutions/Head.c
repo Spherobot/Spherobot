@@ -8,15 +8,16 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
-#include "General_644P_v2.h"
+#include "General.h"
 #include "uart0.h"
 #include "uart1.h"
 #include "UniversalRemote.h"
 #include "L6206_v2.h"
 #include "eeprom.h"
 #include "PID.h"
+#include "BNO055.h"
 
-enum states{STARTUP, RUNNING};
+//enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
 
 //PID
@@ -24,89 +25,100 @@ float Kp = 12;
 float Ki = 0.45;
 float Kd = 0.35;
 
+	////////////////////////////////////////////////////////
 void ValueChanged(uint16_t index)
 {
+	uint16_t KpI,KiI,KdI;
+	KpI = (uint16_t) Kp*100;
+	KiI = (uint16_t) Ki*100;
+	KdI = (uint16_t) Kd*100;
 	switch(index)
 	{
 		case 0:
 		//Kp
-			EEPROM_write(1,Kp);
-			EEPROM_write(2,Kp>>8);
+			EEPROM_write(PID_DATA_START, KpI);
+			EEPROM_write(PID_DATA_START + 1, KpI>>8);
 		break;
 		case 1:
-			//Ki
-			EEPROM_write(3,Ki);
-			EEPROM_write(4,Ki>>8);
+		//Ki
+			EEPROM_write(PID_DATA_START + 2, KiI);
+			EEPROM_write(PID_DATA_START + 3, KiI>>8);
 		break;
 		case 2:
-			//Kd
-			EEPROM_write(5,Kd);
-			EEPROM_write(6,Kd>>8);
+		//Kd
+			EEPROM_write(PID_DATA_START + 4, KdI);
+			EEPROM_write(PID_DATA_START + 5, KdI>>8);
 		break;
 	}
 }
+	////////////////////////////////////////////////////////
 
 int main(void)
 {
 	//MPU
-	float rawRoll = 0;
+	/*float rawRoll = 0;
 	float rawPitch = 0;
 	float rawYaw = 0;
 	float startupRoll = 0;
 	float startupPitch = 0;
-	float startupYaw = 0;
+	float startupYaw = 0;*/
 	float Roll = 0;
 	float Pitch = 0;
 	float Yaw = 0;
 	
-	
 	//PID
-	float xSetpoint = 0; //0 Grad??
-	float ySetpoint = 0; //0 Grad??
+	float xSetpoint = 0;
+	float ySetpoint = 0;
 	float xOutput = 0;
 	float yOutput = 0;
 	
 	PID_Initialize(0, &Pitch, &xOutput ,&xSetpoint, Kp, Ki, Kd, -100, 100, 15);
 	PID_Initialize(1, &Roll, &yOutput ,&ySetpoint, Kp, Ki, Kd, -100, 100, 15);
 	
-	uint8_t i = 0;
+	//uint8_t i = 0;
 	
-	enum states state = STARTUP;
+	//enum states state = STARTUP;
 	
 	motor1234_init();
 	
-	////////////////////////////////////////////////////////
+	BNO055_init(0); //no calibration
 	
-	EEPROPM_init();
-	if(EEPROM_read(0)==0b10101010)		//Just a random Number
+	////////////////////////////////////////////////////////
+	uint16_t KpI,KiI,KdI;
+	
+	EEPROM_init();
+	if(EEPROM_read(EEPROM_CHECKSUM)==0b10101010)		//Just a random Number
 	{
-		Kp=EEPROM_read(1) | EEPROM_read(2) << 8;
-		Ki=EEPROM_read(3) | EEPROM_read(4) << 8;
-		Kd=EEPROM_read(5) | EEPROM_read(6) << 8;
+		KpI=EEPROM_read(PID_DATA_START) | EEPROM_read(PID_DATA_START + 1) << 8;
+		KiI=EEPROM_read(PID_DATA_START + 2) | EEPROM_read(PID_DATA_START + 3) << 8;
+		KdI=EEPROM_read(PID_DATA_START + 4) | EEPROM_read(PID_DATA_START + 5) << 8;
+		Kp=KpI/100.0;
+		Ki=KiI/100.0;
+		Kd=KdI/100.0;
 	}else{
-		EEPROM_write(0,0b10101010);
+		KpI = (uint8_t)Kp * 100;
+		KiI = (uint8_t)Ki * 100;
+		KdI = (uint8_t)Kd * 100;
+		EEPROM_write(EEPROM_CHECKSUM, 0b10101010);
 		//Kp
-		EEPROM_write(1,Kp);
-		EEPROM_write(2,Kp>>8);
+		EEPROM_write(PID_DATA_START, KpI);
+		EEPROM_write(PID_DATA_START + 1, KpI>>8);
 		//Ki
-		EEPROM_write(3,Ki);
-		EEPROM_write(4,Ki>>8);
+		EEPROM_write(PID_DATA_START + 2, KiI);
+		EEPROM_write(PID_DATA_START + 3, KiI>>8);
 		//Kd
-		EEPROM_write(5,Kd);
-		EEPROM_write(6,Kd>>8);
+		EEPROM_write(PID_DATA_START + 4, KdI);
+		EEPROM_write(PID_DATA_START + 5, KdI>>8);
 	}
 	
 	UniversalRemote_Init();
 	
-	
-	UniversalRemote_MenuEntryIndexToVariable(&Kp, 4);		//P value
-	UniversalRemote_MenuEntryIndexToVariable(&Ki, 5);		//I value
-	UniversalRemote_MenuEntryIndexToVariable(&Kd, 6);		//D value
+	UniversalRemote_MenuEntryIndexToVariable(&Kp, FLOAT, 4);		//P value
+	UniversalRemote_MenuEntryIndexToVariable(&Ki, FLOAT, 5);		//I value
+	UniversalRemote_MenuEntryIndexToVariable(&Kd, FLOAT, 6);		//D value
 	UniversalRemote_registerValueCangedFunction(ValueChanged);
-	
 	/////////////////////////////////////////////////////////
 	
-	uart1_init(57600, 1, 1);
 	uart0_init(57600, 1, 1);
 	
 	//timer 1
@@ -130,10 +142,11 @@ int main(void)
 	
 		if(measure)
 		{
-			UniversalRemote_ConnectionCheck(10);
-			//____AHRS_getFusionData(&pitch, &roll, &yaw);
+			//UniversalRemote_ConnectionCheck(15);
 			
-			switch(state)
+			BNO055_getDataEuler(&Pitch, &Roll, &Yaw);
+			
+			/*switch(state)
 			{
 				case STARTUP:
 					startupRoll = Roll + startupRoll;
@@ -155,36 +168,33 @@ int main(void)
 				case RUNNING:
 					Roll = rawRoll - startupRoll;
 					Pitch = rawPitch - startupPitch;
-					Yaw = rawYaw - startupYaw;
+					Yaw = rawYaw - startupYaw;*/
 					
-					PID_Compute(0);
-					PID_Compute(1);
+			PID_Compute(0);
+			PID_Compute(1);
 					
-					if(xOutput > 0)
-					{
-						motor2_control('r', xOutput);
-						motor4_control('r', xOutput);
-					}
-					else
-					{
-						motor2_control('l', xOutput * -1);
-						motor4_control('l', xOutput * -1);
-					}
-					
-					if(yOutput > 0)
-					{
-						motor1_control('r', yOutput);
-						motor3_control('r', yOutput);
-					}
-					else
-					{
-						motor1_control('l', yOutput * -1);
-						motor3_control('l', yOutput * -1);
-					}
-					
-					break;
+			if(xOutput > 0)
+			{
+				motor2_control('r', xOutput);
+				motor4_control('r', xOutput);
 			}
-			
+			else
+			{
+				motor2_control('l', xOutput * -1);
+				motor4_control('l', xOutput * -1);
+			}
+					
+			if(yOutput > 0)
+			{
+				motor1_control('r', yOutput);
+				motor3_control('r', yOutput);
+			}
+			else
+			{
+				motor1_control('l', yOutput * -1);
+				motor3_control('l', yOutput * -1);
+			}
+					
 			measure = 0;
 		}
     }

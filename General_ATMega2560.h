@@ -11,6 +11,7 @@
 
 //constants
 #define F_OSC			16000000
+#define F_CPU			F_OSC
 
 //DDRx
 #define DDR_IIC			DDRD

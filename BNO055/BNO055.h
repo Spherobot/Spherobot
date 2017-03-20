@@ -10,7 +10,12 @@
 #ifndef BNO055_H_
 #define BNO055_H_
 
-#include "General_ATMega2560.h"
+#include "General.h"
+#include "IIC.h"
+#include "eeprom.h"
+
+
+#include <util/delay.h>
 
 #define BNO055_LOW_ADDRESS	0x28
 #define BNO055_HIHG_ADDRESS	0x29

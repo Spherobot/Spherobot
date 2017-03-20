@@ -12,7 +12,7 @@
 #define NUM_MAX_ENTRYS		10
 #define SEND_INTERVALL_MS	150
 #define INTERVALL_TOLERANCE	100
-#define F_CPU 16000000UL
+
 
 
 #include "General.h"

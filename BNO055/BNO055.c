@@ -6,11 +6,7 @@
  */ 
 
 #include "BNO055.h"
-#include "General_ATMega2560.h"
-#include "IIC.h"
 
-#define F_CPU F_OSC
-#include <util/delay.h>
 
 volatile uint8_t transmissionSuccess;
 static uint8_t mode;
