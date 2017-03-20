@@ -7,7 +7,7 @@
 
 #include <avr/io.h>
 #include "L6206_v2.h"
-#include "General_644P_v2.h"
+
 
 void motor1234_init()
 {
