@@ -10,7 +10,7 @@
 #define GENERAL_H_
 
 //Choose correct 644P-File
-#define VERSION2				1
+//#define VERSION2				1
 
 
 //Debugs
@@ -22,22 +22,23 @@
 
 
 
-
-
-
-
-
 #if defined (__AVR_ATmega644P__)
 	#ifdef VERSION2
+		#ifndef GENERAL_644P_v2_H_
+			#pragma message ( "INFO: Using 644P_v2 general File" )
+		#endif
 		#include "General_644P_v2.h"
-		#pragma message ( "INFO: Using 644P_v2 general File" )
 	#else
+		#ifndef GENERAL_644P_H_
+			#pragma message ( "INFO: Using 644P general File" )
+		#endif
 		#include "General_644P.h"
-		#pragma message ( "INFO: Using 644P general File" )
 	#endif
 #elif defined (__AVR_ATmega2560__)
+	#ifndef GENERAL_ATMEGA2560_H_
+		#pragma message ( "INFO: Using 2560 general File" )
+	#endif
 	#include "General_ATMega2560.h"
-	#pragma message ( "INFO: Using 2560 general File" )
 else 
 	#error "EEROR: No general file for selected chip"
 #endif
@@ -67,8 +68,6 @@ else
 	#pragma message("WARNING: ´BNO055 Debug activated")
 	#define DEBUGGING_ACTIVE
 #endif
-
-
 
 
 #endif /* GENERAL_H_ */
