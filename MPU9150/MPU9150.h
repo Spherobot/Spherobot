@@ -48,9 +48,6 @@
 #define HZH					0x08
 #define CNTL				0x0A
 
-
-void MPU_init(int16_t* xMainAccel, int16_t* yMainAccel, int16_t* zMainAccel, int16_t* xMainGyro, int16_t* yMainGyro, int16_t* zMainGyro,
-int16_t* xMainComp, int16_t* yMainComp, int16_t* zMainComp, uint8_t callbackMain);
 /******************************************************
 ***													***
 ***			Function: MPU_init()					***
@@ -63,7 +60,6 @@ int16_t* xMainComp, int16_t* yMainComp, int16_t* zMainComp, uint8_t callbackMain
 ***	overwritten when the data is recieved from the	***
 ***	sensor.											***
 ***													***
-***	It also calls the function MPU_Callibrate().	***
 ***													***
 ***													***
 ***	Pre-condition:									***
@@ -74,94 +70,9 @@ int16_t* xMainComp, int16_t* yMainComp, int16_t* zMainComp, uint8_t callbackMain
 ***		-callback									***
 ***													***
 ******************************************************/
+void MPU_init(int16_t* xMainAccel, int16_t* yMainAccel, int16_t* zMainAccel, int16_t* xMainGyro, int16_t* yMainGyro, int16_t* zMainGyro,
+				int16_t* xMainComp, int16_t* yMainComp, int16_t* zMainComp, uint8_t callbackMain);
 
-void MPU_AccelReadStart();
-/******************************************************
-***													***
-***			Function: MPU_AccelReadStart()			***
-***				 ========							***
-***													***
-***	This function starts to receive data			***
-***	from the acclerometer.					 		***
-***													***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_GyroReadStart();
-/******************************************************
-***													***
-***			Function: MPU_GyroReadStart()			***
-***				 ========							***
-***													***
-***	This function starts to receive data			***
-***	from the gyroscope.						 		***
-***													***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_getAccelData();
-/******************************************************
-***													***
-***			Function: MPU_getAccelData()			***
-***				 ========							***
-***													***
-***	This function filters and stores the data		***
-*** from the accelerometer into the variables		***
-***	which are defined in MPU_init().				***
-*** If callback is set to one, the function gets	***
-*** called automatically. Otherwise the user has	***
-*** to call it in the main program.					***
-***													***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***		-MPU_AccelReadStart()						***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_getGyroData();
-/******************************************************
-***													***
-***			Function: MPU_getGyroData()				***
-***				 ========							***
-***													***
-***	This function filters and stores the data		***
-*** from the gyroscope into the variables			***
-***	which are defined in MPU_init().				***
-*** If callback is set to one, the function gets	***
-*** called automatically. Otherwise the user has	***
-*** to call it in the main program.					***
-***													***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***		-MPU_GyroReadStart()						***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_dataReceived();
 /******************************************************
 ***													***
 ***			Function: MPU_dataReceived()			***
@@ -182,11 +93,11 @@ void MPU_dataReceived();
 ***		None										***
 ***													***
 ******************************************************/
+void MPU_dataReceived();
 
-uint8_t MPU_dataReady();
 /******************************************************
 ***													***
-***			Function: MPU_dataReady()			***
+***			Function: MPU_dataReady()				***
 ***				 ========							***
 ***													***	
 ***													***
@@ -201,80 +112,12 @@ uint8_t MPU_dataReady();
 ***		None										***
 ***													***
 ******************************************************/
+uint8_t MPU_dataReady();
 
-void MPU_Calibrate();
-/******************************************************
-***													***
-***			Function: MPU_Calibrate()				***
-***				 ========							***
-***													***
-***													***
-***	This function makes 1000 samples of the			***
-***	accelerometer and the gyroscope and saves		***
-***	the average as offset.							***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***													***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_CompassReadStart();
-/******************************************************
-***													***
-***			Function: MPU_CompassReadStart()		***
-***				 ========							***
-***													***
-***													***
-***	This function sets the compass into single		***
-***	sample mode and waits until  data is ready.		***
-***	When data is ready the data gets read from		***
-***	the compass.									***
-***	Don't call this function during an ISR!			***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***													***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_getCompassData();
-/******************************************************
-***													***
-***			Function: MPU_getCompassData()			***
-***				 ========							***
-***													***
-***	This function filters and stores the data		***
-*** from the compass into the variables				***
-***	which are defined in MPU_init().				***
-*** If callback is set to one, the function gets	***
-*** called automatically. Otherwise the user has	***
-*** to call it in the main program.					***
-***													***
-***													***
-***	Pre-condition:									***
-***		-IIC_init()									***
-***		-MPU_init()									***
-***		-MPU_CompassReadStart()						***
-***													***
-***	Paramteter:										***
-***		None										***
-***													***
-******************************************************/
-
-void MPU_AccelGyroReadStart();
 /******************************************************
 ***													***
 ***			Function: MPU_AccelGyroReadStart()		***
-***				 ========							***
+***					 ========						***
 ***													***
 ***	This function starts to receive data			***
 ***	from the accelerometer and gyroscope.			***
@@ -288,15 +131,15 @@ void MPU_AccelGyroReadStart();
 ***		None										***
 ***													***
 ******************************************************/
+void MPU_AccelGyroReadStart();
 
-void MPU_getAccelGyroData();
 /******************************************************
 ***													***
-***			Function: MPU_getAccelGyroData()		***
+***		Function: MPU_getRawAccelGyroData()			***
 ***				 ========							***
 ***													***
-***	This function filters and stores the data		***
-*** from the accelerometer and gyroscope into the	***
+***	This function writes the data from the			***
+***	accelerometer and gyroscope into the			***
 ***	variables which are defined in MPU_init().		***
 *** If callback is set to one, the function gets	***
 *** called automatically. Otherwise the user has	***
@@ -312,13 +155,55 @@ void MPU_getAccelGyroData();
 ***		None										***
 ***													***
 ******************************************************/
-
-void MPU_CompassConversionStart();
-uint8_t MPU_CompassDataReady();
-void MPU_CompassReadStartFast();
-void MPU_getRawGyroData();
-void MPU_getRawAccelData();
 void MPU_getRawAccelGyroData();
-void MPU_getRawCompassData();
+
+/******************************************************
+***													***
+***		Function: MPU_getRawGyroData()				***
+***				 ========							***
+***													***
+***	This function writes the data from the			***
+***	gyroscope into the variables which are defined	***
+***	in MPU_init().									***
+*** If callback is set to one, the function gets	***
+*** called automatically. Otherwise the user has	***
+*** to call it in the main program.					***
+***													***
+***													***
+***	Pre-condition:									***
+***		-IIC_init()									***
+***		-MPU_init()									***
+***		-MPU_AccellGyroReadStart()					***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
+void MPU_getRawGyroData();
+
+/******************************************************
+***													***
+***		Function: MPU_getRawAccelData()				***
+***				 ========							***
+***													***
+***	This function writes the data from the			***
+***	accelerometer into the variables which are		***
+**	defined in MPU_init().							***
+*** If callback is set to one, the function gets	***
+*** called automatically. Otherwise the user has	***
+*** to call it in the main program.					***
+***													***
+***													***
+***	Pre-condition:									***
+***		-IIC_init()									***
+***		-MPU_init()									***
+***		-MPU_AccelGyroReadStart()					***
+***													***
+***	Paramteter:										***
+***		None										***
+***													***
+******************************************************/
+void MPU_getRawAccelData();
+
 
 #endif /* MPU9150_H_ */
