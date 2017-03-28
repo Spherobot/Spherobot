@@ -9,9 +9,9 @@
 #ifndef L6206_v2_H_
 #define L6206_v2_H_
 
-//choose correct General-File
-#include "General_644P_v2.h"
-//#include "General_ATMega2560.h"
+
+#include "General.h"
+
 
 void motor1234_init();
 /******************************************************
