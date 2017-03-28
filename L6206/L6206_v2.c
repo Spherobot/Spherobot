@@ -7,10 +7,6 @@
 
 #include <avr/io.h>
 #include "L6206_v2.h"
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/master
 
 void motor1234_init()
 {
