@@ -6,6 +6,7 @@
  */ 
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 void EEPROM_init()
 {
@@ -15,6 +16,9 @@ void EEPROM_init()
 
 void EEPROM_write(uint16_t uiAddress, uint8_t ucData)
 {
+	//disable interrupts
+	cli();
+	
 	//Wait for completion of previous write 
 	while(EECR & (1<<EEPE));
 	
@@ -27,10 +31,16 @@ void EEPROM_write(uint16_t uiAddress, uint8_t ucData)
 	
 	//Start eeprom write by setting EEPE
 	EECR |= (1<<EEPE);
+	
+	//enable interrupts
+	sei();
 }
 
 uint8_t EEPROM_read(unsigned int uiAddress)
 {
+	//disable interrupts
+	cli();
+	
 	//Wait for completion of previous write
 	while(EECR & (1<<EEPE));
 	
@@ -38,8 +48,10 @@ uint8_t EEPROM_read(unsigned int uiAddress)
 	EEAR = uiAddress;
 	
 	//Start eeprom read by writing EERE 
-	
 	EECR |= (1<<EERE);
+	
+	//enable interrupts
+	sei();
 	
 	//Return data from Data Register
 	return EEDR;

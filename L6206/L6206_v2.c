@@ -7,7 +7,10 @@
 
 #include <avr/io.h>
 #include "L6206_v2.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
 
 void motor1234_init()
 {
@@ -50,8 +53,8 @@ void motor1234_init()
 	TCCR0A |= (1<<COM0A1); //Output Compare A
 	TCCR0A |= (1<<COM0B1); //Output Compare B
 	
-	OCR0A = 100; //Compare Value A
-	OCR0B = 100; //Compare Value B
+	OCR0A = 0; //Compare Value A
+	OCR0B = 0; //Compare Value B
 	
 	TCCR0B |= (1<<CS01) | (1<<CS00); //prescaler = 64, => 1,2 kHz, timer started
 	
@@ -60,8 +63,10 @@ void motor1234_init()
 	TCCR2A |= (1<<WGM21) | (1<<WGM20);
 	
 	TCCR2A |= (1<<COM2A1); //Output Compare A
+	TCCR2A |= (1<<COM2B1); //Output Compare B
 	
-	OCR2A = 100; //Compare Value A
+	OCR2A = 0; //Compare Value A
+	OCR2B = 0; //Compare Value B
 	
 	TCCR2B |= (1<<CS22); //prescaler = 64, => 1,2 kHz, timer started
 }
@@ -69,7 +74,7 @@ void motor1234_init()
 void motor1_control(uint8_t direction, uint8_t speed)
 {
 	if(speed >= 0 && speed <= 100)
-	OCR2A = (255/100)*speed;
+	OCR2B = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -90,7 +95,7 @@ void motor1_control(uint8_t direction, uint8_t speed)
 void motor2_control(uint8_t direction, uint8_t speed)
 {
 	if(speed >= 0 && speed <= 100)
-	OCR2B = (255/100)*speed;
+	OCR2A = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -111,7 +116,7 @@ void motor2_control(uint8_t direction, uint8_t speed)
 void motor3_control(uint8_t direction, uint8_t speed)
 {
 	if(speed >= 0 && speed <= 100)
-	OCR0B = (255/100)*speed;
+	OCR0A = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -132,7 +137,7 @@ void motor3_control(uint8_t direction, uint8_t speed)
 void motor4_control(uint8_t direction, uint8_t speed)
 {
 	if(speed >= 0 && speed <= 100)
-	OCR0A = (255/100)*speed;
+	OCR0B = (255/100)*speed;
 	
 	switch (direction)
 	{

@@ -27,17 +27,25 @@
 #define PIN_IIC_SCL			PC0
 #define PIN_IIC_SDA			PC1
 
-#define PIN_L6206_M1_DIR1	PA4
-#define PIN_L6206_M1_DIR2	PA5
-#define PIN_L6206_M2_DIR1	PA7
-#define PIN_L6206_M2_DIR2	PA6
-#define PIN_L6206_M3_DIR1	PA3
-#define PIN_L6206_M3_DIR2	PA2
-#define PIN_L6206_M4_DIR1	PA1
-#define PIN_L6206_M4_DIR2	PA0
+//Motor 1 direction
+#define PIN_L6206_M1_DIR1	PA7
+#define PIN_L6206_M1_DIR2	PA6
 
-#define PIN_L6206_M1_EN		PD7
-#define PIN_L6206_M2_EN		PD6
+//Motor 2 direction
+#define PIN_L6206_M2_DIR1	PA4
+#define PIN_L6206_M2_DIR2	PA5
+
+//Motor 3 direction
+#define PIN_L6206_M3_DIR1	PA1
+#define PIN_L6206_M3_DIR2	PA0
+
+//Motor 4 direction
+#define PIN_L6206_M4_DIR1	PA3
+#define PIN_L6206_M4_DIR2	PA2
+
+//Motors pwm
+#define PIN_L6206_M1_EN		PD6
+#define PIN_L6206_M2_EN		PD7
 #define PIN_L6206_M3_EN		PB4
 #define PIN_L6206_M4_EN		PB3
 
