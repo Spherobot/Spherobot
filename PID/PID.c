@@ -8,7 +8,7 @@
 
 #include "PID.h"
 
-#define NUM_PID_CONTROLLERS 3
+#define NUM_PID_CONTROLLERS 5
 
 #define DIRECT 0
 #define REVERSE 1
@@ -23,25 +23,25 @@ struct pidData
 	int controllerDirection;
 };
 
-struct pidData Data[NUM_PID_CONTROLLERS];
+struct pidData myPidData[NUM_PID_CONTROLLERS];
 
 void PID_Initialize(int pidController, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, float Min, float Max, int SampleTime)
 {
-	Data[pidController].Input = Input;
-	Data[pidController].Output = Output;
-	Data[pidController].Setpoint = Setpoint;
+	myPidData[pidController].Input = Input;
+	myPidData[pidController].Output = Output;
+	myPidData[pidController].Setpoint = Setpoint;
 	
-	Data[pidController].lastInput = *(Data[pidController].Input);
-	Data[pidController].ITerm = *(Data[pidController].Output);
+	myPidData[pidController].lastInput = *(myPidData[pidController].Input);
+	myPidData[pidController].ITerm = *(myPidData[pidController].Output);
 	
 	PID_SetOutputLimits(pidController, Min, Max);
 	
-	if(Data[pidController].ITerm > Data[pidController].outMax)
-		Data[pidController].ITerm = Data[pidController].outMax;
-	else if(Data[pidController].ITerm < Data[pidController].outMin)
-		Data[pidController].ITerm = Data[pidController].outMin;
+	if(myPidData[pidController].ITerm > myPidData[pidController].outMax)
+		myPidData[pidController].ITerm = myPidData[pidController].outMax;
+	else if(myPidData[pidController].ITerm < myPidData[pidController].outMin)
+		myPidData[pidController].ITerm = myPidData[pidController].outMin;
 	
-	Data[pidController].SampleTime = SampleTime;
+	myPidData[pidController].SampleTime = SampleTime;
 	
 	PID_SetTunings(pidController, Kp, Ki, Kd);
 	
@@ -51,30 +51,30 @@ void PID_Initialize(int pidController, float *Input, float *Output, float *Setpo
 void PID_Compute(int pidController)
 {
 	/*Compute all the working error variables*/
-	float input = *(Data[pidController].Input);
-	float error = (*(Data[pidController].Setpoint) - input);
+	float input = *(myPidData[pidController].Input);
+	float error = (*(myPidData[pidController].Setpoint) - input);
 		
-	Data[pidController].ITerm += (Data[pidController].ki * error);
+	myPidData[pidController].ITerm += (myPidData[pidController].ki * error);
 		
-	if(Data[pidController].ITerm > Data[pidController].outMax)
-		Data[pidController].ITerm = Data[pidController].outMax;
-	else if(Data[pidController].ITerm < Data[pidController].outMin)
-		Data[pidController].ITerm = Data[pidController].outMin;
+	if(myPidData[pidController].ITerm > myPidData[pidController].outMax)
+		myPidData[pidController].ITerm = myPidData[pidController].outMax;
+	else if(myPidData[pidController].ITerm < myPidData[pidController].outMin)
+		myPidData[pidController].ITerm = myPidData[pidController].outMin;
 		
-	float dInput = (input - Data[pidController].lastInput);
+	float dInput = (input - myPidData[pidController].lastInput);
 		
 	/*Compute PID Output*/
-	float output = Data[pidController].kp * error + Data[pidController].ITerm - Data[pidController].kd * dInput;
+	float output = myPidData[pidController].kp * error + myPidData[pidController].ITerm - myPidData[pidController].kd * dInput;
 	
-	if(output > Data[pidController].outMax)
-		output = Data[pidController].outMax;
-	else if(output < Data[pidController].outMin)
-		output = Data[pidController].outMin;
+	if(output > myPidData[pidController].outMax)
+		output = myPidData[pidController].outMax;
+	else if(output < myPidData[pidController].outMin)
+		output = myPidData[pidController].outMin;
 	
-	*(Data[pidController].Output) = output;
+	*(myPidData[pidController].Output) = output;
 		
 	/*Remember some variables for next time*/
-	Data[pidController].lastInput = input;
+	myPidData[pidController].lastInput = input;
 }
 
 void PID_SetTunings(int pidController, float Kp, float Ki, float Kd)
@@ -82,16 +82,16 @@ void PID_SetTunings(int pidController, float Kp, float Ki, float Kd)
 	if (Kp < 0 || Ki < 0 || Kd < 0)
 		return;
 	
-	float SampleTimeInSec = (float)(Data[pidController].SampleTime) / 1000;
-	Data[pidController].kp = Kp;
-	Data[pidController].ki = Ki * SampleTimeInSec;
-	Data[pidController].kd = Kd / SampleTimeInSec;
+	float SampleTimeInSec = (float)(myPidData[pidController].SampleTime) / 1000;
+	myPidData[pidController].kp = Kp;
+	myPidData[pidController].ki = Ki * SampleTimeInSec;
+	myPidData[pidController].kd = Kd / SampleTimeInSec;
 	
-	if(Data[pidController].controllerDirection == REVERSE)
+	if(myPidData[pidController].controllerDirection == REVERSE)
 	{
-		Data[pidController].kp = (0 - Kp);
-		Data[pidController].ki = (0 - Ki);
-		Data[pidController].kd = (0 - Kd);
+		myPidData[pidController].kp = (0 - Kp);
+		myPidData[pidController].ki = (0 - Ki);
+		myPidData[pidController].kd = (0 - Kd);
 	}
 }
 
@@ -99,11 +99,11 @@ void PID_SetSampleTime(int pidController, int NewSampleTime)
 {
 	if (NewSampleTime > 0)
 	{
-		float ratio  = (float)NewSampleTime / (float)(Data[pidController].SampleTime);
+		float ratio  = (float)NewSampleTime / (float)(myPidData[pidController].SampleTime);
 		
-		Data[pidController].ki *= ratio;
-		Data[pidController].kd /= ratio;
-		Data[pidController].SampleTime = (unsigned long)NewSampleTime;
+		myPidData[pidController].ki *= ratio;
+		myPidData[pidController].kd /= ratio;
+		myPidData[pidController].SampleTime = (unsigned long)NewSampleTime;
 	}
 }
 
@@ -111,28 +111,28 @@ void PID_SetOutputLimits(int pidController, float Min, float Max)
 {
 	if(Min > Max) return;
 	
-	Data[pidController].outMin = Min;
-	Data[pidController].outMax = Max;
+	myPidData[pidController].outMin = Min;
+	myPidData[pidController].outMax = Max;
 	
-	if(*(Data[pidController].Output) > Data[pidController].outMax)
-		*(Data[pidController].Output) = Data[pidController].outMax;
-	else if(*(Data[pidController].Output) < Data[pidController].outMin)
-		*(Data[pidController].Output) = Data[pidController].outMin;
+	if(*(myPidData[pidController].Output) > myPidData[pidController].outMax)
+		*(myPidData[pidController].Output) = myPidData[pidController].outMax;
+	else if(*(myPidData[pidController].Output) < myPidData[pidController].outMin)
+		*(myPidData[pidController].Output) = myPidData[pidController].outMin;
 	
-	if(Data[pidController].ITerm > Data[pidController].outMax)
-		Data[pidController].ITerm = Data[pidController].outMax;
-	else if(Data[pidController].ITerm < Data[pidController].outMin)
-		Data[pidController].ITerm = Data[pidController].outMin;
+	if(myPidData[pidController].ITerm > myPidData[pidController].outMax)
+		myPidData[pidController].ITerm = myPidData[pidController].outMax;
+	else if(myPidData[pidController].ITerm < myPidData[pidController].outMin)
+		myPidData[pidController].ITerm = myPidData[pidController].outMin;
 }
 
 void PID_SetControllerDirection(int pidController, int Direction)
 {
-	 if(Direction != Data[pidController].controllerDirection)
+	 if(Direction != myPidData[pidController].controllerDirection)
 	 {
-		 Data[pidController].kp = (0 - Data[pidController].kp);
-		 Data[pidController].ki = (0 - Data[pidController].ki);
-		 Data[pidController].kd = (0 - Data[pidController].kd);
+		 myPidData[pidController].kp = (0 - myPidData[pidController].kp);
+		 myPidData[pidController].ki = (0 - myPidData[pidController].ki);
+		 myPidData[pidController].kd = (0 - myPidData[pidController].kd);
 	 }
 	
-	Data[pidController].controllerDirection = Direction;
+	myPidData[pidController].controllerDirection = Direction;
 }

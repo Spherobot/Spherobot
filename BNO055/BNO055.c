@@ -103,7 +103,7 @@ uint8_t BNO055_init(uint8_t calibrationNeeded)
 		#ifdef DEBUG_BNO055
 		if(!transmissionSuccess)
 		{
-			uart0_putsln("Transmission Failure!");
+			uart0_putsln("Transmission failure during startup!");
 			transmissionSuccess = 1;
 		}
 		#endif
@@ -170,7 +170,7 @@ uint8_t BNO055_init(uint8_t calibrationNeeded)
 	IIC_RegisterWriteStart(BNO055_LOW_ADDRESS, SYS_TRIGGER, 1, &data);
 	while(!IIC_busFree());
 	_delay_ms(10);
-	
+
 	if(calibrationNeeded)
 	{
 		//Switch to Fusion Mode
@@ -200,7 +200,9 @@ uint8_t BNO055_init(uint8_t calibrationNeeded)
 	}else{
 		//read calibration data from EEPROM
 		for(int i=0; i<=(CALIB_DATA_END-CALIB_DATA_START); i++)
+		{
 			calibrationData[i] = EEPROM_read(CALIB_DATA_START+i);
+		}
 			
 		#ifdef DEBUG_BNO055
 			for(int i=0; i<22; i++)
@@ -210,7 +212,7 @@ uint8_t BNO055_init(uint8_t calibrationNeeded)
 			}
 			uart0_newline();
 		#endif
-		
+	
 		//switch to config mode
 		BNO055_setMode(CONFIG_MODE);
 		

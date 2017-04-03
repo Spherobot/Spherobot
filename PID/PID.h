@@ -9,7 +9,9 @@
 #ifndef PID_H_
 #define PID_H_
 
-#include "General.h"
+//choose correct General-File
+//#include "General_644P.h"
+//#include "General_ATMega2560.h"
 
 //SampleTime in ms
 

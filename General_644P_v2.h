@@ -52,7 +52,7 @@
 //EEPROM Storage-Addresses
 #define EEPROM_CHECKSUM			0		//Address of the identifier bit
 #define CALIB_DATA_START		2		//22 bytes Needed
-#define CALIB_DATA_END			24		//Storage reserved from byte 2-24
+#define CALIB_DATA_END			23		//Storage reserved from byte 2-24
 #define PID_DATA_START			28		//6 bytes needed
 #define PID_DATA_END			34		//Storage reserved form byte 28-34
 
