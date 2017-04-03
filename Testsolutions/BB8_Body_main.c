@@ -133,6 +133,7 @@ int main(void)
     {
 		wdt_reset();
 	
+		//Get Joystick-values
 		JoystickValues = UniversalRemote_GetValues();
 		xSetpoint = JoystickValues.L.x;
 		ySetpoint = JoystickValues.L.y;
@@ -140,9 +141,11 @@ int main(void)
 		
 		if(measure)
 		{
+			//Check connection
 			UniversalRemote_ConnectionCheck(10);
 			switch(state)
 			{
+				//Initial cycle, getting reference data of orientation
 				case STARTUP:
 					AHRS_getFusionData(&pitch, &roll, &yaw);
 					
@@ -155,15 +158,39 @@ int main(void)
 					break;
 					
 				case RUNNING:
+					//Get orientation data
 					AHRS_getFusionData(&pitch, &roll, &yaw);
 					
 					RampAccel = (float)RampAccelSetpoint/10;
 					RampDeccel = (float)RampDeccelSetpoint/10;
-										
+					
+					//Converting Cartesian coordinates into polar coordinates					
 					speedSetpoint = sqrt(xSetpoint*xSetpoint + ySetpoint*ySetpoint);
 					if(speedSetpoint > 100)
 						speedSetpoint = 100;
 						
+					angle = atan2(ySetpoint, xSetpoint);
+					angle *= 180 / M_PI;
+					angle -= 90;
+					
+					if(angle < 0)
+					{
+						angle += 360;
+						if(angle < 0)
+						angle = 0;
+					}
+					
+					//calculate offset angel with the reference orientation
+					offsetAngle = angle - (yaw - startupYaw);
+					if(offsetAngle < 0)
+					offsetAngle += 360;
+					else if(offsetAngle >= 360)
+					offsetAngle -= 360;
+					
+					motorAngle = (uint16_t)offsetAngle;
+						
+						
+					//Implementation of the acceleration- and deceleration-ramps	
 					if(speed < speedSetpoint)
 					{
 						if((speedSetpoint-speed) <= 5)
@@ -178,39 +205,7 @@ int main(void)
 							speed -= RampDeccel;
 					}
 						
-					angle = atan2(ySetpoint, xSetpoint);
-					angle *= 180 / M_PI;
-					angle -= 90;
-					
-					if(angle < 0)
-					{
-						angle += 360;
-						if(angle < 0)
-							angle = 0;
-					}
-					
-					offsetAngle = angle - (yaw - startupYaw);
-					if(offsetAngle < 0)
-						offsetAngle += 360;
-					else if(offsetAngle >= 360)
-						offsetAngle -= 360;
 						
-					motorAngle = (uint16_t)offsetAngle;	
-					
-					/*uart0_putInt(xSetpoint);
-					uart0_putc('\t');
-					uart0_putInt(ySetpoint);
-					uart0_newline();*/
-					
-					/*uart1_putFloat(pitch);
-					uart1_putc('\t');
-					uart1_putFloat(yaw);
-					uart1_putc('\t');
-					uart1_putFloat(offsetAngle);
-					uart1_putc('\t');
-					uart1_putInt(motorAngle);
-					uart1_newline();*/
-							
 					motor_drive(motorAngle, (uint8_t)speed);
 					
 					break;
