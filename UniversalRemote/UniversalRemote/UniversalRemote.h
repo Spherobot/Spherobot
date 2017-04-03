@@ -48,7 +48,6 @@ typedef struct {
 
 enum Type{BOOL=0, INT=1, FLOAT=2, LABEL=3};
 
-void UniversalRemote_Init();
 /******************************************************
 ***													***
 ***	Function: UniversaalRemote_init()				***
@@ -67,8 +66,8 @@ void UniversalRemote_Init();
 ***		None										***
 ***													***
 ******************************************************/
+void UniversalRemote_Init();
 
-Joysticks UniversalRemote_GetValues();
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_GetValues()			***
@@ -87,8 +86,8 @@ Joysticks UniversalRemote_GetValues();
 ***		None										***
 ***													***
 ******************************************************/
+Joysticks UniversalRemote_GetValues();
 
-uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue);
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_addMenuEntry()		***
@@ -118,8 +117,8 @@ uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t typ
 ***		 the time the function gets called			***
 ***													***
 ******************************************************/
+uint8_t UniversalRemote_addMenuEntry(uint16_t* pValue, char Label[], uint8_t type, uint16_t initValue);
 
-void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_ConnectionCheck()		***
@@ -139,8 +138,8 @@ void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 ***		 calls of the function						***
 ***													***
 ******************************************************/
+void UniversalRemote_ConnectionCheck(uint16_t TimeIn_ms);
 
-void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
 /******************************************************
 ***													***
 ***	Function:										***
@@ -158,8 +157,8 @@ void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFun
 ***		-pointer to the call back function			***
 ***													***
 ******************************************************/
+void UniversalRemote_registerTransmissionStoppedFunction(TransmissionCallBackFunction callback);
 
-void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback);
 /******************************************************
 ***													***
 ***	Function:										***
@@ -177,8 +176,8 @@ void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback)
 ***		-pointer to the call back function			***
 ***													***
 ******************************************************/
+void UniversalRemote_registerValueCangedFunction(ValueCallBackFunction callback);
 
-void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, uint8_t index);
 /******************************************************
 ***													***
 ***	Function:										***
@@ -205,8 +204,8 @@ void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, ui
 ***		 linked to									***
 ***													***
 ******************************************************/
+void UniversalRemote_MenuEntryIndexToVariable(uint16_t* pValue, uint8_t type, uint8_t index);
 
-void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[], uint8_t type, uint16_t initValue, uint8_t index2);
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_addMenuEntryByIndex()	***
@@ -234,8 +233,8 @@ void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[], uint8_t 
 ***		 inserted									***
 ***													***
 ******************************************************/
+void UniversalRemote_addMenuEntryByIndex(uint16_t* pValue,char Label[], uint8_t type, uint16_t initValue, uint8_t index2);
 
-void UniversalRemote_RefreshLog();
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_RefreshLog()			***
@@ -253,8 +252,8 @@ void UniversalRemote_RefreshLog();
 ***		None										***
 ***													***
 ******************************************************/
+void UniversalRemote_RefreshLog();
 
-void UniversalRemote_InitDone();
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_InitDone()			***
@@ -272,8 +271,8 @@ void UniversalRemote_InitDone();
 ***		None										***
 ***													***
 ******************************************************/
+void UniversalRemote_InitDone();
 
-void UniversalRemote_addLog(char logMsg[]);
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_addLog()				***
@@ -293,8 +292,8 @@ void UniversalRemote_addLog(char logMsg[]);
 ***		-Message that gets logged					***
 ***													***
 ******************************************************/
+void UniversalRemote_addLog(char logMsg[]);
 
-void UniversalRemote_resetMenu();
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_resetMenu()			***
@@ -313,8 +312,8 @@ void UniversalRemote_resetMenu();
 ***		None										***
 ***													***
 ******************************************************/
+void UniversalRemote_resetMenu();
 
-void UniversalRemote_waitForBTConnections();
 /******************************************************
 ***													***
 ***	Function: UniversalRemote_waitForBTConnections()***
@@ -336,5 +335,6 @@ void UniversalRemote_waitForBTConnections();
 ***		None										***
 ***													***
 ******************************************************/
+void UniversalRemote_waitForBTConnections();
 
 #endif /* UNIVERSALREMOTE_H_ */

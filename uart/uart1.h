@@ -20,7 +20,7 @@ enum uart1_RPARITY{uart1_NO_PARITY, uart1_EVEN_PARITY = 2};
 enum uart1_SEND_INT{uart1_SEND_INT_DISABLED,uart1_SEND_INT_ENABLED};
 enum uart1_REC_INT{uart1_REC_INT_DISABLED,uart1_REC_INT_ENABLED};
 
-void uart1_init(uint32_t baudRate, uint8_t send, uint8_t receive);
+
 /******************************************************
 ***													***
 ***	Function: uart1_init()							***
@@ -38,10 +38,8 @@ void uart1_init(uint32_t baudRate, uint8_t send, uint8_t receive);
 ***		- 0 disables receiving, 1 enables receiving ***
 ***													***
 ******************************************************/
+void uart1_init(uint32_t baudRate, uint8_t send, uint8_t receive);
 
-void uart1_init_x(uint32_t baudRate,
-				  uint8_t send, uint8_t receive,
-				  uint8_t uartIntTx, uint8_t uartIntRx);
 /******************************************************
 ***													***
 ***	Function: uart1_init_x()						***
@@ -65,8 +63,10 @@ void uart1_init_x(uint32_t baudRate,
 ***		  receive interrupt							***
 ***													***
 ******************************************************/
+void uart1_init_x(uint32_t baudRate,
+				  uint8_t send, uint8_t receive,
+				  uint8_t uartIntTx, uint8_t uartIntRx);
 
-void uart1_putc(char c);
 /******************************************************
 ***													***
 ***	Function: uart1_putc()							***
@@ -84,8 +84,8 @@ void uart1_putc(char c);
 ***		- char to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_putc(char c);
 
-void uart1_newline();
 /******************************************************
 ***													***
 ***	Function: uart1_newline()						***
@@ -101,8 +101,8 @@ void uart1_newline();
 ***		None										***
 ***													***
 ******************************************************/
+void uart1_newline();
 
-void uart1_puts(char text[]);
 /******************************************************
 ***													***
 ***	Function: uart1_puts()							***
@@ -119,8 +119,8 @@ void uart1_puts(char text[]);
 ***		- string to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_puts(char text[]);
 
-void uart1_putChar(uint8_t number);
 /******************************************************
 ***													***
 ***	Function: uart1_putChar()						***
@@ -136,8 +136,8 @@ void uart1_putChar(uint8_t number);
 ***		- number to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_putChar(uint8_t number);
 
-void uart1_putInt(uint16_t number);
 /******************************************************
 ***													***
 ***	Function: uart1_putInt()						***
@@ -154,8 +154,8 @@ void uart1_putInt(uint16_t number);
 ***		- number to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_putInt(uint16_t number);
 
-void uart1_putFloat(float number);
 /******************************************************
 ***													***
 ***	Function: uart1_putFloat()						***
@@ -171,8 +171,8 @@ void uart1_putFloat(float number);
 ***		- number to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_putFloat(float number);
 
-char uart1_getc();
 /******************************************************
 ***													***
 ***	Function: uart1_getc()							***
@@ -189,8 +189,8 @@ char uart1_getc();
 ***		None										***
 ***													***
 ******************************************************/
+char uart1_getc();
 
-uint8_t uart1_testAndGetc(char* pC);
 /******************************************************
 ***													***
 ***	Function: uart1_testAndGetc()					***
@@ -211,8 +211,8 @@ uint8_t uart1_testAndGetc(char* pC);
 ***		  gets stored								***
 ***													***
 ******************************************************/
+uint8_t uart1_testAndGetc(char* pC);
 
-uint8_t uart1_getData_int(char* pData);
 /******************************************************
 ***													***
 ***	Function: uart1_getData_int()					***
@@ -230,8 +230,8 @@ uint8_t uart1_getData_int(char* pData);
 ***		  gets stored								***
 ***													***
 ******************************************************/
+uint8_t uart1_getData_int(char* pData);
 
-uint8_t uart1_readyToSend_int();
 /******************************************************
 ***													***
 ***	Function: uart1_readyToSend_int()				***
@@ -249,8 +249,8 @@ uint8_t uart1_readyToSend_int();
 ***		  gets stored								***
 ***													***
 ******************************************************/
+uint8_t uart1_readyToSend_int();
 
-void uart1_puts_int(char text[]);
 /******************************************************
 ***													***
 ***	Function: uart1_puts_int()						***
@@ -268,8 +268,8 @@ void uart1_puts_int(char text[]);
 ***		- string to be transmitted					***
 ***													***
 ******************************************************/
+void uart1_puts_int(char text[]);
 
-void uart1_deactivate();
 /******************************************************
 ***													***
 ***	Function: uart1_deactivate()					***
@@ -285,8 +285,8 @@ void uart1_deactivate();
 ***		None										***
 ***													***
 ******************************************************/
+void uart1_deactivate();
 
-void uart1_registerCallBack(CallBackFunction callback);
 /******************************************************
 ***													***
 ***	Function: uart1_registerCallBack()				***
@@ -303,5 +303,6 @@ void uart1_registerCallBack(CallBackFunction callback);
 ***       called when an char was received			***
 ***													***
 ******************************************************/
+void uart1_registerCallBack(CallBackFunction callback);
 
 #endif /* UART1_H_ */
