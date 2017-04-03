@@ -134,15 +134,10 @@ void uart0_putInt(uint16_t number)
 
 void uart0_putFloat(float number)
 {
-	if(number < 1)
-	{
-		uart0_putc('-');
-		number = number * (-1);
-	}
+	char convertedString[20];
 	
-	uart0_putInt(((int)number));
-	uart0_putc('.');
-	uart0_putChar((number - ((int)number)) * 1000);
+	dtostrf(number, 1, 3, convertedString);
+	uart0_puts(convertedString);
 }
 
 char uart0_getc()
