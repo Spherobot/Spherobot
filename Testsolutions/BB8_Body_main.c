@@ -158,8 +158,13 @@ int main(void)
 					//Get orientation data
 					AHRS_getFusionData(&pitch, &roll, &yaw);
 					
+<<<<<<< HEAD
 					RampAccel = (float)RampAccelSetpoint / 10;
 					RampDeccel = (float)RampDeccelSetpoint / 10;
+=======
+					RampAccel = (float)RampAccelSetpoint/10;
+					RampDeccel = (float)RampDeccelSetpoint/10;
+>>>>>>> refs/remotes/origin/master
 					
 					//Converting Cartesian coordinates into polar coordinates					
 					speedSetpoint = sqrt(xSetpoint*xSetpoint + ySetpoint*ySetpoint);
