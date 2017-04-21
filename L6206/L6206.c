@@ -6,6 +6,7 @@
  */ 
 
 #define WHEELANGLE	60.0/180.0*M_PI
+#define SPEEDOFFSET	20
 
 #include <avr/io.h>
 #include "L6206.h"
@@ -151,7 +152,12 @@ void motor_drive(uint16_t angle, uint8_t speed)
 		xhelp=cos(WHEELANGLE) * x;
 		y = a - xhelp;
 		z = 0;
+		
 	}
+	
+	x+=SPEEDOFFSET;
+	y+=SPEEDOFFSET;
+	z+=SPEEDOFFSET;
 	
 	switch(sektor)
 	{
