@@ -18,6 +18,11 @@
 
 volatile uint8_t measure = 0;
 
+enum state{STARTUP, RUNNING};
+
+#define DEADSPOT 5
+#define MOTORFACTOR 2.50
+
 int main(void)
 {
 	//MPU
@@ -25,14 +30,20 @@ int main(void)
 	float Pitch = 0;
 	float Yaw = 0;
 	
+	float startupRoll;
+	float startupPitch;
+	
 	//PID
 	float xSetpoint = 0;
 	float ySetpoint = 0;
 	float xOutput = 0;
 	float yOutput = 0;
-	float Kp = 12;
-	float Ki = 0.5;
-	float Kd = 0.35;
+	
+	float Kp = 10.5;
+	float Ki = 0.2;
+	float Kd = 0.55;
+	
+	uint8_t i = 0;
 	
 	wdt_enable(WDTO_2S);
 	wdt_reset();
@@ -60,53 +71,86 @@ int main(void)
 	
 	wdt_reset();
 	
+	enum state myState = STARTUP;
+	
     while(1)
     {
 		wdt_reset();
-	
+		
 		if(measure)
 		{
 			BNO055_getDataEuler(&Pitch, &Roll, &Yaw);
 			
-			PID_Compute(0);
-			PID_Compute(1);
-			
-			uart0_puts("Pitch: ");
-			uart0_putFloat(Pitch);
-			uart0_puts("	xOutput: ");
-			uart0_putFloat(xOutput);
-			uart0_newline();
-			
-			uart0_puts("Roll: ");
-			uart0_putFloat(Roll);
-			uart0_puts("	yOutput: ");
-			uart0_putFloat(yOutput);
-			uart0_newline();
-			
-			
-			
-			if(xOutput > 0)
+			switch(myState)
 			{
-				motor2_control('r', xOutput);
-				motor4_control('l', xOutput);
-			}
-			else
-			{
-				motor2_control('l', xOutput * -1);
-				motor4_control('r', xOutput * -1);
-			}
+				case STARTUP:
+				if(i >= 20)
+				{
+					startupRoll = Roll;
+					startupPitch = Pitch;
 					
-			if(yOutput > 0)
-			{
-				motor1_control('l', yOutput);
-				motor3_control('l', yOutput);
-			}
-			else
-			{
-				motor1_control('r', yOutput * -1);
-				motor3_control('r', yOutput * -1);
-			}
+					motor2_control('r', 0);
+					motor2_control('r', 100);
 					
+					myState = RUNNING;
+				}
+				
+				i++;
+				
+				break;
+				case RUNNING:
+				Roll = Roll - startupRoll;
+				Pitch = Pitch - startupPitch;
+			
+				PID_Compute(0);
+				PID_Compute(1);
+			
+	// 			uart0_puts("Pitch: ");
+	// 			uart0_putFloat(Pitch);
+	// 			uart0_puts("	xOutput: ");
+	// 			uart0_putFloat(xOutput);
+	// 			uart0_newline();
+	// 			
+	// 			uart0_puts("Roll: ");
+	// 			uart0_putFloat(Roll);
+	// 			uart0_puts("	yOutput: ");
+	// 			uart0_putFloat(yOutput);
+	// 			uart0_newline();
+			
+			
+				//X-axis
+				if(xOutput > DEADSPOT)
+				{
+					motor2_control('r', (xOutput)*MOTORFACTOR);
+					motor4_control('l', (xOutput)*MOTORFACTOR);
+				}
+				else if(xOutput < 0-DEADSPOT)
+				{
+					motor2_control('l', (xOutput * -1)*MOTORFACTOR);
+					motor4_control('r', (xOutput * -1)*MOTORFACTOR);
+				} else
+				{
+					motor2_control('r', 0);
+					motor4_control('l', 0);
+				}
+			
+				//Y-axis		
+				if(yOutput > DEADSPOT)
+				{
+					motor1_control('l', (yOutput)*MOTORFACTOR);
+					motor3_control('l', (yOutput)*MOTORFACTOR);
+				}
+				else if(yOutput < 0-DEADSPOT)
+				{
+					motor1_control('r', (yOutput * -1)*MOTORFACTOR);
+					motor3_control('r', (yOutput * -1)*MOTORFACTOR);
+				} else
+				{
+					motor1_control('r', 0);
+					motor3_control('r', 0);
+				}
+			}
+			
 			measure = 0;
 		}
     }
