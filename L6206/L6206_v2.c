@@ -69,8 +69,11 @@ void motor1234_init()
 
 void motor1_control(uint8_t direction, uint8_t speed)
 {
+	if(speed > 100)
+		speed = 100;
+	
 	if(speed >= 0 && speed <= 100)
-	OCR2B = (255/100)*speed;
+		OCR2B = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -90,8 +93,11 @@ void motor1_control(uint8_t direction, uint8_t speed)
 
 void motor2_control(uint8_t direction, uint8_t speed)
 {
+	if(speed > 100)
+		speed = 100;
+	
 	if(speed >= 0 && speed <= 100)
-	OCR2A = (255/100)*speed;
+		OCR2A = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -111,8 +117,11 @@ void motor2_control(uint8_t direction, uint8_t speed)
 
 void motor3_control(uint8_t direction, uint8_t speed)
 {
+	if(speed > 100)
+		speed = 100;
+	
 	if(speed >= 0 && speed <= 100)
-	OCR0A = (255/100)*speed;
+		OCR0A = (255/100)*speed;
 	
 	switch (direction)
 	{
@@ -132,8 +141,11 @@ void motor3_control(uint8_t direction, uint8_t speed)
 
 void motor4_control(uint8_t direction, uint8_t speed)
 {
+	if(speed > 100)
+		speed = 100;
+	
 	if(speed >= 0 && speed <= 100)
-	OCR0B = (255/100)*speed;
+		OCR0B = (255/100)*speed;
 	
 	switch (direction)
 	{

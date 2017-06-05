@@ -21,7 +21,12 @@ volatile uint8_t measure = 0;
 enum state{STARTUP, RUNNING};
 
 #define DEADSPOT 5
-#define MOTORFACTOR 2.50
+#define MOTORFACTOR 2.4
+
+#define KP 10.5
+#define KI 0.2
+#define KD 0.35
+#define SAMPLETIME 10 //ms
 
 int main(void)
 {
@@ -30,8 +35,8 @@ int main(void)
 	float Pitch = 0;
 	float Yaw = 0;
 	
-	float startupRoll;
-	float startupPitch;
+	float startupRoll = 0;
+	float startupPitch = 0;
 	
 	//PID
 	float xSetpoint = 0;
@@ -39,9 +44,9 @@ int main(void)
 	float xOutput = 0;
 	float yOutput = 0;
 	
-	float Kp = 10.5;
-	float Ki = 0.2;
-	float Kd = 0.55;
+	float Kp = KP;
+	float Ki = KI;
+	float Kd = KD;
 	
 	uint8_t i = 0;
 	
@@ -53,8 +58,8 @@ int main(void)
 	uart0_puts("Controller Reset!");
 	uart0_newline();
 	
-	PID_Initialize(0, &Pitch, &xOutput ,&xSetpoint, Kp, Ki, Kd, -100, 100, 20);
-	PID_Initialize(1, &Roll, &yOutput ,&ySetpoint, Kp, Ki, Kd, -100, 100, 20);
+	PID_Initialize(0, &Pitch, &xOutput ,&xSetpoint, Kp, Ki, Kd, -100, 100, SAMPLETIME);
+	PID_Initialize(1, &Roll, &yOutput ,&ySetpoint, Kp, Ki, Kd, -100, 100, SAMPLETIME);
 	
 	motor1234_init();
 	
@@ -65,7 +70,8 @@ int main(void)
 // 	TCCR1B &= ~((1<<WGM13) | (1<<CS12));
 	TCCR1B |= (1<<WGM12) | (1<<CS10) | (1<<CS11);	//Prescaler 64
 	TIMSK1 |= (1<<OCIE1A);
-	OCR1A = 6249;	//20ms
+	//OCR1A = 6249;	//20ms
+	OCR1A = 3124;	//10ms
 	
 	sei();
 	
