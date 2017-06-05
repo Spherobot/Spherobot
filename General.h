@@ -10,7 +10,7 @@
 #define GENERAL_H_
 
 //Choose correct 644P-File
-//#define VERSION2				1
+#define VERSION2				1
 
 
 //Debugs

@@ -8,181 +8,147 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
-#include "General_644P_v2.h"
+#include "General.h"
 #include "uart0.h"
 #include "uart1.h"
-#include "UniversalRemote.h"
 #include "L6206_v2.h"
 #include "eeprom.h"
 #include "PID.h"
+#include "BNO055.h"
 
-enum states{STARTUP, RUNNING};
 volatile uint8_t measure = 0;
 
-//PID
-float Kp = 12;
-float Ki = 0.45;
-float Kd = 0.35;
+enum state{STARTUP, RUNNING};
 
-void ValueChanged(uint16_t index)
-{
-	switch(index)
-	{
-		case 0:
-		//Kp
-			EEPROM_write(1,Kp);
-			EEPROM_write(2,Kp>>8);
-		break;
-		case 1:
-			//Ki
-			EEPROM_write(3,Ki);
-			EEPROM_write(4,Ki>>8);
-		break;
-		case 2:
-			//Kd
-			EEPROM_write(5,Kd);
-			EEPROM_write(6,Kd>>8);
-		break;
-	}
-}
+#define DEADSPOT 5
+#define MOTORFACTOR 2.50
 
 int main(void)
 {
 	//MPU
-	float rawRoll = 0;
-	float rawPitch = 0;
-	float rawYaw = 0;
-	float startupRoll = 0;
-	float startupPitch = 0;
-	float startupYaw = 0;
 	float Roll = 0;
 	float Pitch = 0;
 	float Yaw = 0;
 	
+	float startupRoll;
+	float startupPitch;
 	
 	//PID
-	float xSetpoint = 0; //0 Grad??
-	float ySetpoint = 0; //0 Grad??
+	float xSetpoint = 0;
+	float ySetpoint = 0;
 	float xOutput = 0;
 	float yOutput = 0;
 	
-	PID_Initialize(0, &Pitch, &xOutput ,&xSetpoint, Kp, Ki, Kd, -100, 100, 15);
-	PID_Initialize(1, &Roll, &yOutput ,&ySetpoint, Kp, Ki, Kd, -100, 100, 15);
+	float Kp = 10.5;
+	float Ki = 0.2;
+	float Kd = 0.55;
 	
 	uint8_t i = 0;
 	
-	enum states state = STARTUP;
+	wdt_enable(WDTO_2S);
+	wdt_reset();
 	
-	motor1234_init();
-	
-	////////////////////////////////////////////////////////
-	
-	EEPROPM_init();
-	if(EEPROM_read(0)==0b10101010)		//Just a random Number
-	{
-		Kp=EEPROM_read(1) | EEPROM_read(2) << 8;
-		Ki=EEPROM_read(3) | EEPROM_read(4) << 8;
-		Kd=EEPROM_read(5) | EEPROM_read(6) << 8;
-	}else{
-		EEPROM_write(0,0b10101010);
-		//Kp
-		EEPROM_write(1,Kp);
-		EEPROM_write(2,Kp>>8);
-		//Ki
-		EEPROM_write(3,Ki);
-		EEPROM_write(4,Ki>>8);
-		//Kd
-		EEPROM_write(5,Kd);
-		EEPROM_write(6,Kd>>8);
-	}
-	
-	UniversalRemote_Init();
-	
-	
-	UniversalRemote_MenuEntryIndexToVariable(&Kp, 2);		//P value
-	UniversalRemote_MenuEntryIndexToVariable(&Ki, 3);		//I value
-	UniversalRemote_MenuEntryIndexToVariable(&Kd, 4);		//D value
-	UniversalRemote_registerValueCangedFunction(ValueChanged);
-	
-	/////////////////////////////////////////////////////////
-	
-	uart1_init(57600, 1, 1);
 	uart0_init(57600, 1, 1);
-	
-	//timer 1
-	TCCR1A &= ~((1<<WGM10) | (1<<WGM11));
-	TCCR1B &= ~((1<<WGM13) | (1<<CS12));
-	TCCR1B |= (1<<WGM12) | (1<<CS10) | (1<<CS11);	//Prescaler 64
-	TIMSK1 |= (1<<OCIE1A);
-	OCR1A = 3124;	//15ms
-	
-	sei();
 	
 	uart0_puts("Controller Reset!");
 	uart0_newline();
 	
-	wdt_enable(WDTO_1S);
+	PID_Initialize(0, &Pitch, &xOutput ,&xSetpoint, Kp, Ki, Kd, -100, 100, 20);
+	PID_Initialize(1, &Roll, &yOutput ,&ySetpoint, Kp, Ki, Kd, -100, 100, 20);
+	
+	motor1234_init();
+	
+	BNO055_init(0); //no calibration
+	
+	//timer 1
+// 	TCCR1A &= ~((1<<WGM10) | (1<<WGM11));
+// 	TCCR1B &= ~((1<<WGM13) | (1<<CS12));
+	TCCR1B |= (1<<WGM12) | (1<<CS10) | (1<<CS11);	//Prescaler 64
+	TIMSK1 |= (1<<OCIE1A);
+	OCR1A = 6249;	//20ms
+	
+	sei();
+	
 	wdt_reset();
+	
+	enum state myState = STARTUP;
 	
     while(1)
     {
 		wdt_reset();
-	
+		
 		if(measure)
 		{
-			UniversalRemote_ConnectionCheck(10);
-			//____AHRS_getFusionData(&pitch, &roll, &yaw);
+			BNO055_getDataEuler(&Pitch, &Roll, &Yaw);
 			
-			switch(state)
+			switch(myState)
 			{
 				case STARTUP:
-					startupRoll = Roll + startupRoll;
-					startupPitch = Pitch + startupPitch;
-					startupYaw = Yaw + startupYaw;
+				if(i >= 20)
+				{
+					startupRoll = Roll;
+					startupPitch = Pitch;
 					
-					i++;
+					motor2_control('r', 0);
+					motor2_control('r', 100);
 					
-					if(i >= 20)
-					{
-						startupRoll = startupRoll / 20;
-						startupPitch = startupPitch / 20;
-						startupYaw = startupYaw / 20;
-						
-						state = RUNNING;
-					}
-					break;
-					
+					myState = RUNNING;
+				}
+				
+				i++;
+				
+				break;
 				case RUNNING:
-					Roll = rawRoll - startupRoll;
-					Pitch = rawPitch - startupPitch;
-					Yaw = rawYaw - startupYaw;
-					
-					PID_Compute(0);
-					PID_Compute(1);
-					
-					if(xOutput > 0)
-					{
-						motor2_control('r', xOutput);
-						motor4_control('r', xOutput);
-					}
-					else
-					{
-						motor2_control('l', xOutput * -1);
-						motor4_control('l', xOutput * -1);
-					}
-					
-					if(yOutput > 0)
-					{
-						motor1_control('r', yOutput);
-						motor3_control('r', yOutput);
-					}
-					else
-					{
-						motor1_control('l', yOutput * -1);
-						motor3_control('l', yOutput * -1);
-					}
-					
-					break;
+				Roll = Roll - startupRoll;
+				Pitch = Pitch - startupPitch;
+			
+				PID_Compute(0);
+				PID_Compute(1);
+			
+	// 			uart0_puts("Pitch: ");
+	// 			uart0_putFloat(Pitch);
+	// 			uart0_puts("	xOutput: ");
+	// 			uart0_putFloat(xOutput);
+	// 			uart0_newline();
+	// 			
+	// 			uart0_puts("Roll: ");
+	// 			uart0_putFloat(Roll);
+	// 			uart0_puts("	yOutput: ");
+	// 			uart0_putFloat(yOutput);
+	// 			uart0_newline();
+			
+			
+				//X-axis
+				if(xOutput > DEADSPOT)
+				{
+					motor2_control('r', (xOutput)*MOTORFACTOR);
+					motor4_control('l', (xOutput)*MOTORFACTOR);
+				}
+				else if(xOutput < 0-DEADSPOT)
+				{
+					motor2_control('l', (xOutput * -1)*MOTORFACTOR);
+					motor4_control('r', (xOutput * -1)*MOTORFACTOR);
+				} else
+				{
+					motor2_control('r', 0);
+					motor4_control('l', 0);
+				}
+			
+				//Y-axis		
+				if(yOutput > DEADSPOT)
+				{
+					motor1_control('l', (yOutput)*MOTORFACTOR);
+					motor3_control('l', (yOutput)*MOTORFACTOR);
+				}
+				else if(yOutput < 0-DEADSPOT)
+				{
+					motor1_control('r', (yOutput * -1)*MOTORFACTOR);
+					motor3_control('r', (yOutput * -1)*MOTORFACTOR);
+				} else
+				{
+					motor1_control('r', 0);
+					motor3_control('r', 0);
+				}
 			}
 			
 			measure = 0;

@@ -9,8 +9,11 @@
 #ifndef GENERAL_644P_H_
 #define GENERAL_644P_H_
 
+#pragma message ( "INFO: Included 644P general File" )
+
 //constants
 #define F_OSC				20000000
+#define F_CPU				F_OSC
 
 //DDRx
 #define DDR_IIC				DDRC

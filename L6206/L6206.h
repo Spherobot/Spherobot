@@ -11,7 +11,6 @@
 
 #include "General.h"
 
-void motor123_init();
 /******************************************************
 ***													***
 *** Function: motor123_init						***
@@ -29,8 +28,8 @@ void motor123_init();
 ***		-none										***
 ***													***
 ******************************************************/
+void motor123_init();
 
-void motor1_control(uint8_t direction, uint8_t speed);
 /******************************************************
 ***													***
 *** Function: motor1_control						***
@@ -49,8 +48,8 @@ void motor1_control(uint8_t direction, uint8_t speed);
 ***			values: 0 - 100							***
 ***													***
 ******************************************************/
+void motor1_control(uint8_t direction, uint8_t speed);
 
-void motor2_control(uint8_t direction, uint8_t speed);
 /******************************************************
 ***													***
 *** Function: motor2_control						***
@@ -69,8 +68,8 @@ void motor2_control(uint8_t direction, uint8_t speed);
 ***			values: 0 - 100							***
 ***													***
 ******************************************************/
+void motor2_control(uint8_t direction, uint8_t speed);
 
-void motor3_control(uint8_t direction, uint8_t speed);
 /******************************************************
 ***													***
 *** Function: motor3_control						***
@@ -89,7 +88,24 @@ void motor3_control(uint8_t direction, uint8_t speed);
 ***			values: 0 - 100							***
 ***													***
 ******************************************************/
+void motor3_control(uint8_t direction, uint8_t speed);
 
+/******************************************************
+***													***
+***			Function: motor_drive					***
+***			=======================					***
+***													***
+***	This function controls direction and speed		***
+***	of all Motors.									***
+***													***
+***	Pre-condition:									***
+***		-motor123_init()							***
+***													***
+***	Paramteter:										***
+***		-angle										***
+***		-speed										***	
+***													***
+******************************************************/
 void motor_drive(uint16_t angle, uint8_t speed);
 
 #endif /* L6206_H_ */

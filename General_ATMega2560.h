@@ -9,8 +9,11 @@
 #ifndef GENERAL_ATMEGA2560_H_
 #define GENERAL_ATMEGA2560_H_
 
+#pragma message ( "INFO: Included 2560 general File" )
+
 //constants
 #define F_OSC			16000000
+#define F_CPU			F_OSC
 
 //DDRx
 #define DDR_IIC			DDRD
